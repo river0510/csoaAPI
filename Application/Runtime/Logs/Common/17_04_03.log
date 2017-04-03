@@ -1,0 +1,84 @@
+[ 2017-04-03T13:08:46+08:00 ] ::1 /csoa/index/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000423s ]
+ERR: 无法加载模块:Login
+
+[ 2017-04-03T20:08:13+08:00 ] ::1 /csoaAPI/index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000204s ]
+ERR: 无法加载模块:Index
+
+[ 2017-04-03T20:08:24+08:00 ] ::1 /csoaAPI/index.php/index/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000198s ]
+ERR: 无法加载模块:Index
+
+[ 2017-04-03T20:15:55+08:00 ] ::1 /csoaAPI/index.php?m=Login&a=login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000388s ]
+ERR: 无法加载模块:Login
+
+[ 2017-04-03T20:16:27+08:00 ] ::1 /csoaAPI/index.php?m=Index&a=login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000895s ]
+ERR: 无法加载模块:Index
+
+[ 2017-04-03T20:16:30+08:00 ] ::1 /csoaAPI/index.php?m=Index&a=login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000272s ]
+ERR: 无法加载模块:Index
+
+[ 2017-04-03T20:16:31+08:00 ] ::1 /csoaAPI/index.php?m=Index&a=login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000184s ]
+ERR: 无法加载模块:Index
+
+[ 2017-04-03T20:16:34+08:00 ] ::1 /csoaAPI/index.php?m=Index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000202s ]
+ERR: 无法加载模块:Index
+
+[ 2017-04-03T20:16:37+08:00 ] ::1 /csoaAPI/index.php?m=Index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000200s ]
+ERR: 无法加载模块:Index
+
+[ 2017-04-03T20:17:25+08:00 ] ::1 /csoaAPI/index.php/Index/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000185s ]
+ERR: 无法加载模块:Index
+
+[ 2017-04-03T20:19:17+08:00 ] ::1 /csoaAPI/index.php/Index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000189s ]
+ERR: 无法加载模块:Index
+
+[ 2017-04-03T20:19:25+08:00 ] ::1 /csoaAPI/index.php?m=Index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000185s ]
+ERR: 无法加载模块:Index
+
+[ 2017-04-03T20:19:47+08:00 ] ::1 /csoaAPI/index.php?m=Index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000444s ]
+ERR: 无法加载模块:Index
+
+[ 2017-04-03T20:19:51+08:00 ] ::1 /csoaAPI/index.php?s=Index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000180s ]
+ERR: 无法加载模块:Index
+
