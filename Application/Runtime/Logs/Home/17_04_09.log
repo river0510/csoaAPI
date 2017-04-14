@@ -1,0 +1,38 @@
+[ 2017-04-09T22:08:50+08:00 ] ::1 /csoaAPI/index.php/Home/User/getUserInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000034s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002246s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001041s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001156s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0239s ]
+SQL: SHOW COLUMNS FROM `student` [ RunTime:0.0165s ]
+SQL: SHOW COLUMNS FROM `teacher` [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `log` [ RunTime:0.0005s ]
+SQL: SELECT `id`,`card_number`,`name`,`office`,`telephone`,`phone`,`short_phone`,`email`,`qq`,`wechat`,`department`,`comment`,`state`,`role_id` FROM `teacher` WHERE `card_number` = '135951' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `userName`,`time`,`state`,`ip` FROM `log` ORDER BY time desc LIMIT 1   [ RunTime:0.0024s ]
+
+[ 2017-04-09T22:08:50+08:00 ] ::1 /csoaAPI/index.php/Home/User/getRole
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000048s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002249s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000973s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001081s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0240s ]
+SQL: SELECT * FROM `role` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0032s ]
+
+[ 2017-04-09T22:09:03+08:00 ] ::1 /csoaAPI/index.php/Home/User/deleteTeacher
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000033s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000499s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000531s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000951s ]
+SQL: SHOW COLUMNS FROM `teacher` [ RunTime:0.0014s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+ [ SQL语句 ] : DELETE FROM `teacher` WHERE ( id =  )
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+ [ SQL语句 ] : DELETE FROM `teacher` WHERE ( id =  )
+
