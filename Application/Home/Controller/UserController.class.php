@@ -159,11 +159,12 @@ class UserController extends Controller {
     }
 
     public function getRole(){
-        //身份验证
-        verify();
-
         $Role = M('role');
         $role_id = I('post.role_id');
+
+        //身份验证
+        verifyRole($role_id);
+
         $where['id']=$role_id;
 
         $res = $Role->where($where)->find();
@@ -182,10 +183,7 @@ class UserController extends Controller {
         $this->ajaxReturn($data);   
     }
 
-    public function getUserInfo(){  
-        //身份验证
-        verify();
-
+    public function getUserInfo(){
         $User = M('user');
         $Student = M('student');
         $Teacher = M('teacher');
@@ -195,8 +193,9 @@ class UserController extends Controller {
         $userName = I('post.userName');
         $role_id = I('post.role_id');
 
-        // $userName = 'admin';
-        // $role_id = '1';
+        //身份验证
+        verify($userName);
+
 
         $data = [];
         if($role_id == 1){           //管理员
@@ -233,9 +232,6 @@ class UserController extends Controller {
     }
 
     public function modifyPass(){
-        //身份验证
-        verify();
-
         $User = M('user');
         $Student = M('student');
         $Teacher = M('teacher');
@@ -246,9 +242,9 @@ class UserController extends Controller {
         $password = I('password');
         $role_id = I('role_id');
 
-        // $userName = 'admin';
-        // $password = '123456';
-        // $role_id = 1;        
+        //身份验证
+        verify($userName);
+        
         $data = [];
         //1 管理员  2、3 教师   4 学生
         if($role_id == 1){
@@ -301,9 +297,6 @@ class UserController extends Controller {
     }
 
     public function userModify(){
-        //身份验证
-        verify();
-
         $User = M('user');
         $Student = M('student');
         $Teacher = M('teacher');
@@ -311,6 +304,10 @@ class UserController extends Controller {
         $Log = M('log');
 
         $role_id = I('post.role_id');
+        $userName = I('post.card_number');
+        //身份验证
+        verify($userName);
+
         $data = [];
         $update = [];
         if($role_id == 2 || $role_id == 3){
@@ -369,7 +366,7 @@ class UserController extends Controller {
     //教师信息操作
     public function getTeacher(){
         //身份验证
-        verify();
+        verifyRole(1);
 
         $Teacher = M('teacher');
 
@@ -385,6 +382,10 @@ class UserController extends Controller {
     }
 
     public function getOneTeacher(){
+        //身份验证
+        verifyRole(1);
+
+
         $Teacher = M('teacher');
 
         $id = I('get.id');
@@ -403,7 +404,7 @@ class UserController extends Controller {
 
     public function deleteTeacher(){
         //身份验证
-        verify();
+        verifyRole(1);
 
         $Teacher = M('teacher');
 
@@ -422,7 +423,7 @@ class UserController extends Controller {
 
     public function startTeacher(){
         //身份验证
-        verify();
+        verifyRole(1);
 
         $Teacher = M('teacher');
 
@@ -442,7 +443,7 @@ class UserController extends Controller {
 
     public function forbidTeacher(){
         //身份验证
-        verify();
+        verifyRole(1);
 
         $Teacher = M('teacher');
 
@@ -462,7 +463,7 @@ class UserController extends Controller {
 
     public function importTeacher(){
         //身份验证
-        verify();
+        verifyRole(1);
 
         $Teacher = M('teacher');
 
@@ -552,7 +553,7 @@ class UserController extends Controller {
 // 学生信息操作
     public function getStudent(){
         //身份验证
-        verify();
+        verifyRole(1);
 
         $Student = M('student');
 
@@ -569,7 +570,7 @@ class UserController extends Controller {
 
     public function getOneStudent(){
         //身份验证
-        verify();
+        verifyRole(1);
 
         $Student = M('student');
 
@@ -589,7 +590,7 @@ class UserController extends Controller {
 
     public function deleteStudent(){
         //身份验证
-        verify();
+        verifyRole(1);
 
         $Student = M('student');
 
@@ -608,7 +609,7 @@ class UserController extends Controller {
 
     public function startStudent(){
         //身份验证
-        verify();
+        verifyRole(1);
 
         $Student = M('student');
 
@@ -628,7 +629,7 @@ class UserController extends Controller {
 
     public function forbidStudent(){
         //身份验证
-        verify();
+        verifyRole(1);
 
         $Student = M('student');
 
@@ -648,7 +649,7 @@ class UserController extends Controller {
 
     public function importStudent(){
         //身份验证
-        verify();
+        verifyRole(1);
         
         $Student = M('student');
 
