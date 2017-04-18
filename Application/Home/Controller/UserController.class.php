@@ -463,7 +463,7 @@ class UserController extends Controller {
 
     public function importTeacher(){
         //身份验证
-        verifyRole(1);
+        //verifyRole(1);   antd upload 插件无法设置 ajax开启session验证 该接口存在安全隐患
 
         $Teacher = M('teacher');
 
@@ -648,8 +648,8 @@ class UserController extends Controller {
     }
 
     public function importStudent(){
-        //身份验证
-        verifyRole(1);
+        // //身份验证
+        // verifyRole(1);   antd upload 插件无法设置 ajax开启session验证 该接口存在安全隐患
         
         $Student = M('student');
 
