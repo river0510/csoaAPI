@@ -20,7 +20,7 @@ class PracticeController extends Controller {
 		$res1 = $PracticeStudent->where("practice_student.year_id = $year_id")
 				->join('student ON practice_student.student_id = student.id')	
 				->field('practice_student.id,job_id,teacher_id,year_id,student_id,grade,name,major,class,card_number')
-				->order('card_number desc')
+				->order('card_number')
 				->select();
 		//查询每个学生的实习公司 和老师
 		foreach ($res1 as $key => $value) {
@@ -57,27 +57,6 @@ class PracticeController extends Controller {
 		$this->ajaxReturn($data);
 	}
 
-	public function getYear(){
-		//验证身份
-		verifyRole(2);
-
-		$Year = M('practice_year');
-		$res = $Year->order('year desc')->field('id,year')->select();
-		if($res){
-			$data = [
-				'status'=>200,
-				'year'=>$res,
-				'message'=>'年度数据获取成功'
-			];
-		}else{
-			$data = [
-				'status' => 400,
-				'message' => '年度数据获取失败'
-			];
-		}
-		$this->ajaxReturn($data);
-	}
-
 	public function addStudent(){
 		//验证身份
 		verifyRole(2);
@@ -100,7 +79,10 @@ class PracticeController extends Controller {
 			}
 			$id = $res['id'];
 			//查询该学生是否已经插入
-			$where['student_id'] = $id;
+			$where = [
+				'student_id' => $id,
+				'year_id' => $year_id
+			];
 			$res = $PracticeStudent->where($where)->find();
 			if(!$res){
 				$newData['year_id'] = $year_id;
@@ -130,5 +112,140 @@ class PracticeController extends Controller {
 		$this->ajaxReturn($data);
 	}
 
+	public function getYear(){
+		//验证身份
+		verifyRole(2);
+
+		$Year = M('practice_year');
+		$res = $Year->order('year desc')->select();
+		if($res){
+			foreach ($res as $key => $value) {
+				$deadline = $value['deadline'];
+				$res[$key]['deadline'] = date('Y-m-d H:i',$deadline);
+			}
+			$data = [
+				'status'=>200,
+				'year'=>$res,
+				'message'=>'年度数据获取成功'
+			];
+		}else{
+			$data = [
+				'status' => 400,
+				'message' => '年度数据获取失败'
+			];
+		}
+		$this->ajaxReturn($data);
+	}
+	
+	public function addYear(){
+		//验证身份
+		verifyRole(2);
+
+		$Year = M('practice_year');
+		$year = I('post.year');
+		$deadline = I('post.deadline');
+
+		$where['year'] = $year;
+		$res = $Year->where($where)->find();
+		if($res){
+			$data['status']=400;
+			$data['message']='该年度已存在';
+			$this->ajaxReturn($data);
+			exit();
+		}
+
+		if($deadline){
+			$deadline = strtotime($deadline);
+			$newData = [
+				'year'=>$year,
+				'deadline'=>$deadline
+			];
+		}else{
+			$deadline = null;
+			$newData = [
+				'id'=>$id,
+				'deadline'=>$deadline
+			];
+		}
+
+		$res = $Year->add($newData);
+		if($res){
+			$data=[
+				'status'=>200,
+				'message'=>'年度添加成功'
+			];
+		}else{
+			$data=[
+				'status'=>400,
+				'message'=>'年度添加失败'
+			];
+		}
+
+		$this->ajaxReturn($data);
+	}
+
+	public function deleteYear(){
+		//验证身份
+		verifyRole(2);
+
+		$Year = M('practice_year');
+		$PracticeStudent = M('practice_student');
+		$id = I('get.id');
+
+		$res = $Year->where("id = $id")->delete();
+		$where['year_id'] = $id;
+		$Year->where($where)->delete();
+		if($res){
+			$data=[
+				'status'=>200,
+				'message'=>'删除成功'
+			];
+		}else{
+			$data=[
+				'status'=>400,
+				'message'=>'删除失败'
+			];
+		}
+
+		$this->ajaxReturn($data);
+	}
+
+	public function modifyYear(){
+		//验证身份
+		verifyRole(2);
+
+		$Year = M('practice_year');
+		$id = I('post.id');
+		$deadline = I('post.deadline');
+
+		if($deadline){
+			$deadline = strtotime($deadline);
+			$update = [
+				'id'=>$id,
+				'deadline'=>$deadline
+			];
+		}else{
+			$deadline = null;
+			$update = [
+				'id'=>$id,
+				'deadline'=>$deadline
+			];
+		}
+		$res = $Year->save($update);
+
+		if($res){
+			$data=[
+				'status'=>200,
+				'message'=>'修改成功'
+			];
+		}else{
+			$data=[
+				'status'=>400,
+				'message'=>'修改失败'
+			];
+		}
+
+		$this->ajaxReturn($data);		
+	}
 
 }

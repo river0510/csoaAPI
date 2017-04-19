@@ -337,6 +337,8 @@ class UserController extends Controller {
         }else if($role_id == 4){
             $update['card_number'] = I('post.card_number');
             $update['class'] = I('post.class');
+            $update['sex'] = I('post.sex');
+            $update['origin'] = I('post.origin');           
             $update['major'] = I('post.major');
             $update['dorm'] = I('post.dorm');
             $update['identity_card'] = I('post.identity_card');
@@ -345,7 +347,7 @@ class UserController extends Controller {
             $update['email'] = I('post.email');
             $update['qq'] = I('post.qq');
             $update['wechat'] = I('post.wechat');
-
+            
             $where['card_number'] = $update['card_number'];
             $res = $Student->where($where)->save($update);
             if($res){
@@ -697,16 +699,18 @@ class UserController extends Controller {
             $j=$i-2;
             $data[$j]['card_number']= (string)$objPHPExcel->getActiveSheet()->getCell("A".$i)->getValue();
             $data[$j]['name'] = (string)$objPHPExcel->getActiveSheet()->getCell("B".$i)->getValue();
-            $data[$j]['major'] = (string)$objPHPExcel->getActiveSheet()->getCell("C".$i)->getValue();
-            $data[$j]['class'] = (string)$objPHPExcel->getActiveSheet()->getCell("D".$i)->getValue();
-            $data[$j]['dorm'] = (string)$objPHPExcel->getActiveSheet()->getCell("E".$i)->getValue();
-            $data[$j]['identity_card'] = (string)$objPHPExcel->getActiveSheet()->getCell("F".$i)->getValue();
-            $data[$j]['phone'] = (string)$objPHPExcel->getActiveSheet()->getCell("G".$i)->getValue();
-            $data[$j]['short_phone'] = (string)$objPHPExcel->getActiveSheet()->getCell("H".$i)->getValue();
-            $data[$j]['email'] = (string)$objPHPExcel->getActiveSheet()->getCell("I".$i)->getValue();
-            $data[$j]['qq'] = (string)$objPHPExcel->getActiveSheet()->getCell("J".$i)->getValue();
-            $data[$j]['wechat'] = (string)$objPHPExcel->getActiveSheet()->getCell("K".$i)->getValue();
-            $data[$j]['comment'] = (string)$objPHPExcel->getActiveSheet()->getCell("L".$i)->getValue();
+            $data[$j]['sex'] = (string)$objPHPExcel->getActiveSheet()->getCell("C".$i)->getValue();
+            $data[$j]['origin'] = (string)$objPHPExcel->getActiveSheet()->getCell("D".$i)->getValue();
+            $data[$j]['major'] = (string)$objPHPExcel->getActiveSheet()->getCell("E".$i)->getValue();
+            $data[$j]['class'] = (string)$objPHPExcel->getActiveSheet()->getCell("F".$i)->getValue();
+            $data[$j]['dorm'] = (string)$objPHPExcel->getActiveSheet()->getCell("G".$i)->getValue();
+            $data[$j]['identity_card'] = (string)$objPHPExcel->getActiveSheet()->getCell("H".$i)->getValue();
+            $data[$j]['phone'] = (string)$objPHPExcel->getActiveSheet()->getCell("I".$i)->getValue();
+            $data[$j]['short_phone'] = (string)$objPHPExcel->getActiveSheet()->getCell("J".$i)->getValue();
+            $data[$j]['email'] = (string)$objPHPExcel->getActiveSheet()->getCell("K".$i)->getValue();
+            $data[$j]['qq'] = (string)$objPHPExcel->getActiveSheet()->getCell("L".$i)->getValue();
+            $data[$j]['wechat'] = (string)$objPHPExcel->getActiveSheet()->getCell("M".$i)->getValue();
+            $data[$j]['comment'] = (string)$objPHPExcel->getActiveSheet()->getCell("N".$i)->getValue();
         }
 
         foreach($data as $value){
