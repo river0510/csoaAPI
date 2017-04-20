@@ -445,6 +445,149 @@ class PracticeController extends Controller {
 
         $this->ajaxReturn($data);
 	}
+
+	//分配学生 通过岗位id获取学生
+	public function getStudentByJob(){
+		//验证身份是否为教务
+		verifyRole(2);
+
+		$PracticeStudent = M('practice_student');
+		$job_id = I('get.job_id');
+
+		$res = $PracticeStudent
+				->where("job_id = $job_id")
+				->join("student ON student.id = practice_student.student_id")
+				->join("job ON job.id = practice_student.job_id")
+				->join("practice_year ON practice_year.id = practice_student.year_id")
+				->field('job.id,company_name,need_number,apply_number,job_name,card_number,student.name,practice_student.id,year')
+				->order('card_number')->select();
+		if($res){
+			$data=[
+				'status'=>200,
+				'message'=>'学生数据获取成功',
+				'student'=>$res
+			];
+		}else{
+			$data=[
+				'status'=>400,
+				'message'=>'学生数据获取失败'
+			];
+		}
+		$this->ajaxReturn($data);
+	}
+
+	public function distributeStudent(){
+		//验证身份是否为教务
+		verifyRole(2);
+
+		$job_id = I('post.job_id');
+		$year_id = I('post.year_id');
+		$card_number = I('post.card_number');
+		$Student = M('student');
+		$PracticeStudent = M('practice_student');
+		$Job = M('job');
+		//判断学号是否输入
+		if(!$card_number){
+			$data = [
+				'status'=>400,
+				'message'=>'请输入学号'
+			];
+			$this->ajaxReturn($data);
+		}		
+
+		//判断该学生是否导入到该实习年度 
+		$where['card_number'] = $card_number;
+		$res = $Student->where($where)->find();
+		if(!$res){
+			$data = [
+				'status'=>401,
+				'message'=>'该学生信息未导入'
+			];
+			$this->ajaxReturn($data);
+		}
+		$where2['student_id'] = $res['id'];
+		$where2['year_id'] = $year_id;
+
+		$res = $PracticeStudent->where($where2)->find();
+		if(!$res){
+			$data = [
+				'status'=>402,
+				'message'=>'学生未导入该实习年度'
+			];
+			$this->ajaxReturn($data);
+		}else if($res['job_id']){          //判断该学生是否已有实习工作
+			$data = [
+				'status'=>403,
+				'message'=>'该学生已有实习，请先撤销'
+			];
+			$this->ajaxReturn($data);
+		}
+
+		//判断该公司报名人数是否达到上限
+		$res2 = $Job->where("id = $job_id")->find();
+		$max = ceil($res2['need_number'] * 1.5);
+		if($res2['apply_number'] == $max ){
+			$data = [
+				'status'=>405,
+				'message'=>'报名人数已满'
+			];
+			$this->ajaxReturn($data);			
+		}
+		$jobData = $res2;        //申请人数加一
+		$jobData['apply_number']++;
+
+
+		//分配工作
+		$res['job_id'] = $job_id;
+		$res = $PracticeStudent->save($res);
+		$res2 = $Job->save($jobData);
+		if($res && $res2){
+			$data = [
+				'status'=>200,
+				'message'=>'学生分配成功'
+			];
+			$this->ajaxReturn($data);
+		}else{
+			$data = [
+				'status'=>404,
+				'message'=>'学生分配失败'
+			];
+			$this->ajaxReturn($data);
+		}
+	}
+
+	//撤销分配
+	public function unDistribute(){
+		//验证身份是否为教务
+		verifyRole(2);
+
+		$PracticeStudent = M('practice_student');
+		$Job = M('job');
+		$id = I('get.id');
+
+		$res = $PracticeStudent->where("id = $id")->find();
+		$job_id = $res['job_id'];
+		$res['job_id'] = null;
+		$res = $PracticeStudent->save($res);
+
+		//岗位报名人数更新
+		$res2 = $Job->where("id = $job_id")->find();
+		$res2['apply_number']--;
+		$res2 = $Job->save($res2);
+		if($res && $res2){
+			$data = [
+				'status'=>200,
+				'message'=>'岗位撤销成功'
+			];
+			$this->ajaxReturn($data);
+		}else{
+			$data = [
+				'status'=>400,
+				'message'=>'岗位撤销失败'
+			];
+			$this->ajaxReturn($data);
+		}
+	}
 }
 
 
