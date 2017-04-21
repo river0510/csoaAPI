@@ -3,6 +3,7 @@ namespace Home\Controller;
 use Think\Controller;
 
 header("Access-Control-Allow-Origin:http://localhost:8000");
+// header("Access-Control-Allow-Origin:http://192.168.2.1:8000");
 header("Access-Control-Allow-Headers:X-Requested-With");
 header("Access-Control-Allow-Credentials:true");
 
@@ -11,7 +12,7 @@ class PracticeController extends Controller {
 	//实习管理
 	public function getPracticeStudent(){
 		//验证身份是否为教务
-		verifyRole(2);
+		notStudent();
 
 		$year_id = I('get.year_id');
 		$PracticeStudent = M('practice_student');
@@ -61,7 +62,7 @@ class PracticeController extends Controller {
 
 	public function addStudent(){
 		//验证身份
-		verifyRole(2);
+		notStudent();
 
 		$students = I('post.students');
 		$year_id = I('post.year_id');
@@ -117,7 +118,7 @@ class PracticeController extends Controller {
 	//年度管理
 	public function getYear(){
 		//验证身份
-		verifyRole(2);
+		notStudent();
 
 		$Year = M('practice_year');
 		$res = $Year->order('year desc')->select();
@@ -134,7 +135,8 @@ class PracticeController extends Controller {
 		}else{
 			$data = [
 				'status' => 400,
-				'message' => '年度数据获取失败'
+				'year'=>$res,
+				'message' => '无年度数据'
 			];
 		}
 		$this->ajaxReturn($data);
@@ -142,7 +144,7 @@ class PracticeController extends Controller {
 	
 	public function addYear(){
 		//验证身份
-		verifyRole(2);
+		notStudent();
 
 		$Year = M('practice_year');
 		$year = I('post.year');
@@ -189,7 +191,7 @@ class PracticeController extends Controller {
 
 	public function deleteYear(){
 		//验证身份
-		verifyRole(2);
+		notStudent();
 
 		$Year = M('practice_year');
 		$PracticeStudent = M('practice_student');
@@ -215,7 +217,7 @@ class PracticeController extends Controller {
 
 	public function modifyYear(){
 		//验证身份
-		verifyRole(2);
+		notStudent();
 
 		$Year = M('practice_year');
 		$id = I('post.id');
@@ -254,7 +256,7 @@ class PracticeController extends Controller {
 	//岗位管理
 	public function getJob(){
 		//验证身份是否为教务
-		verifyRole(2);
+		notStudent();
 
 		$year_id = I('get.year_id');
 		$Job = M('job');
@@ -270,6 +272,7 @@ class PracticeController extends Controller {
 		}else{
 			$data = [
 				'status' => 400,
+				'job' => $res,
 				'message' => '未找到该年度岗位信息'
 			];
 		}
@@ -278,7 +281,7 @@ class PracticeController extends Controller {
 
 	public function getOneJob(){
 		//验证身份是否为教务
-		verifyRole(2);
+		notStudent();
 
 		$id = I('get.id');
 		$Job = M('job');
@@ -299,6 +302,7 @@ class PracticeController extends Controller {
 		}else{
 			$data = [
 				'status' => 400,
+				'job' => $res,
 				'message' => '未找到该岗位信息'
 			];
 		}
@@ -306,6 +310,9 @@ class PracticeController extends Controller {
 	}
 
 	public function importJob(){
+		//验证身份是否为教务
+		notStudent();
+
         $Job = M('job');
         $year_id = I('get.year_id');
 
@@ -341,29 +348,29 @@ class PracticeController extends Controller {
        
         $sheet = $objPHPExcel->getSheet(0);
         $highestRow = $sheet->getHighestRow(); // 取得总行数
-        echo $highestRow;
         $highestColumn = $sheet->getHighestColumn(); // 取得总列数
         $arrExcel = $objPHPExcel->getSheet(0)->toArray();
 
-        $isSuccess = 1; //判断是否所有数据导入成功
+        $isSuccess = 0; //成功次数
+        $isError = 0;
 
         //excel中的数据全部存入二维数组中
         for($i=2;$i<=$highestRow;$i++)
         {   
             $j=$i-2;
-            $data[$j]['company_name']= (string)$objPHPExcel->getActiveSheet()->getCell("A".$i)->getValue();
-            $data[$j]['company_website'] = (string)$objPHPExcel->getActiveSheet()->getCell("B".$i)->getValue();
-            $data[$j]['job_name'] = (string)$objPHPExcel->getActiveSheet()->getCell("C".$i)->getValue();
-            $data[$j]['job_duty'] = (string)$objPHPExcel->getActiveSheet()->getCell("D".$i)->getValue();
-            $data[$j]['need_number'] = (int)$objPHPExcel->getActiveSheet()->getCell("E".$i)->getValue();
-            $data[$j]['working_time'] = (string)$objPHPExcel->getActiveSheet()->getCell("F".$i)->getValue();
-            $data[$j]['salary'] = (string)$objPHPExcel->getActiveSheet()->getCell("G".$i)->getValue();
-            $data[$j]['demand'] = (string)$objPHPExcel->getActiveSheet()->getCell("H".$i)->getValue();
-            $data[$j]['position'] = (string)$objPHPExcel->getActiveSheet()->getCell("I".$i)->getValue();
-            $data[$j]['contacts'] = (string)$objPHPExcel->getActiveSheet()->getCell("J".$i)->getValue();
-            $data[$j]['contact_number'] = (string)$objPHPExcel->getActiveSheet()->getCell("K".$i)->getValue();
-            $data[$j]['other'] = (string)$objPHPExcel->getActiveSheet()->getCell("L".$i)->getValue();
-            $data[$j]['recommend_teacher'] = (string)$objPHPExcel->getActiveSheet()->getCell("M".$i)->getValue();
+            $data[$j]['company_name']= (string)$objPHPExcel->getActiveSheet()->getCell("B".$i)->getValue();
+            $data[$j]['company_website'] = (string)$objPHPExcel->getActiveSheet()->getCell("C".$i)->getValue();
+            $data[$j]['job_name'] = (string)$objPHPExcel->getActiveSheet()->getCell("D".$i)->getValue();
+            $data[$j]['job_duty'] = (string)$objPHPExcel->getActiveSheet()->getCell("E".$i)->getValue();
+            $data[$j]['need_number'] = (int)$objPHPExcel->getActiveSheet()->getCell("F".$i)->getValue();
+            $data[$j]['working_time'] = (string)$objPHPExcel->getActiveSheet()->getCell("G".$i)->getValue();
+            $data[$j]['salary'] = (string)$objPHPExcel->getActiveSheet()->getCell("H".$i)->getValue();
+            $data[$j]['demand'] = (string)$objPHPExcel->getActiveSheet()->getCell("I".$i)->getValue();
+            $data[$j]['position'] = (string)$objPHPExcel->getActiveSheet()->getCell("J".$i)->getValue();
+            $data[$j]['contacts'] = (string)$objPHPExcel->getActiveSheet()->getCell("K".$i)->getValue();
+            $data[$j]['contact_number'] = (string)$objPHPExcel->getActiveSheet()->getCell("L".$i)->getValue();
+            $data[$j]['other'] = (string)$objPHPExcel->getActiveSheet()->getCell("M".$i)->getValue();
+            $data[$j]['recommend_teacher'] = (string)$objPHPExcel->getActiveSheet()->getCell("N".$i)->getValue();
         }
 
         foreach($data as $value){
@@ -371,21 +378,15 @@ class PracticeController extends Controller {
             $value['year_id'] = $year_id;
             $where['card_number'] = $value['card_number'];
 			$res = $Job->add($value);
-			if(!$res){
-				$isSuccess = 0;
-			}       
+		    if($res)
+                $isSuccess++;
+            else
+                $isError++;
         }
-        if($isSuccess){
-            $returnData = [
-                'status' => 200,
-                'message' => '导入成功'
-            ];
-        }else{
-            $returnData = [
-                'status' => 400,
-                'message' => '部分数据导入失败'
-            ];
-        }
+        $returnData = [
+            'status' => 200,
+            'message' => "导入成功".$isSuccess."条,失败".$isError."条"
+        ];
         $this->ajaxReturn($returnData);
 	}
 
@@ -397,7 +398,13 @@ class PracticeController extends Controller {
 
 		$res = $Job->where("id = $id")->delete();
 		$where['job_id'] = $id;
-		$PracticeStudent->where($where)->delete();
+
+		//删除岗位 并撤销学生的岗位报名
+		$res2 = $PracticeStudent->where($where)->select();
+		foreach ($res2 as $key => $value) {
+			$value['job_id'] = null;
+			$PracticeStudent->save($value);
+		}
 		if($res){
 			$data=[
 				'status'=>200,
@@ -449,28 +456,33 @@ class PracticeController extends Controller {
 	//分配学生 通过岗位id获取学生
 	public function getStudentByJob(){
 		//验证身份是否为教务
-		verifyRole(2);
+		notStudent();
 
 		$PracticeStudent = M('practice_student');
+		$Job = M('job');
 		$job_id = I('get.job_id');
 
 		$res = $PracticeStudent
 				->where("job_id = $job_id")
 				->join("student ON student.id = practice_student.student_id")
-				->join("job ON job.id = practice_student.job_id")
 				->join("practice_year ON practice_year.id = practice_student.year_id")
-				->field('job.id,company_name,need_number,apply_number,job_name,card_number,student.name,practice_student.id,year')
+				->field('card_number,student.name,practice_student.id,year')
 				->order('card_number')->select();
+		$res2 = $Job->where("id = $job_id")->field('company_name,job_name,need_number,apply_number')->find();
 		if($res){
 			$data=[
 				'status'=>200,
 				'message'=>'学生数据获取成功',
-				'student'=>$res
+				'student'=>$res,
+				'job'=>$res2
 			];
 		}else{
 			$data=[
 				'status'=>400,
-				'message'=>'学生数据获取失败'
+				'message'=>'学生数据获取成功',
+				'student'=>$res,
+				'job'=>$res2,
+				'message'=>'未找到该岗位学生数据'
 			];
 		}
 		$this->ajaxReturn($data);
@@ -478,7 +490,7 @@ class PracticeController extends Controller {
 
 	public function distributeStudent(){
 		//验证身份是否为教务
-		verifyRole(2);
+		notStudent();
 
 		$job_id = I('post.job_id');
 		$year_id = I('post.year_id');
@@ -559,7 +571,7 @@ class PracticeController extends Controller {
 	//撤销分配
 	public function unDistribute(){
 		//验证身份是否为教务
-		verifyRole(2);
+		notStudent();
 
 		$PracticeStudent = M('practice_student');
 		$Job = M('job');

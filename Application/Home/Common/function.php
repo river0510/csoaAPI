@@ -25,3 +25,11 @@
 	            exit();
 		}
 	}
+
+	//验证非学生
+	function notStudent(){
+		if($_SESSION['role_id'] == 4){
+			echo '兄弟，你太天真了';
+            exit();
+		}
+	}

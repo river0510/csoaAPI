@@ -3,6 +3,7 @@ namespace Home\Controller;
 use Think\Controller;
 
 header("Access-Control-Allow-Origin:http://localhost:8000");
+// header("Access-Control-Allow-Origin:http://192.168.2.1:8000");
 header("Access-Control-Allow-Headers:X-Requested-With");
 header("Access-Control-Allow-Credentials:true");
 
@@ -347,7 +348,7 @@ class UserController extends Controller {
             $update['email'] = I('post.email');
             $update['qq'] = I('post.qq');
             $update['wechat'] = I('post.wechat');
-            
+
             $where['card_number'] = $update['card_number'];
             $res = $Student->where($where)->save($update);
             if($res){
@@ -376,9 +377,11 @@ class UserController extends Controller {
         $res = $Teacher->field('id,role_id,name,card_number,office,telephone,department,phone,state')->select();
         if($res){
             $data['status'] = 200;
+            $data['message'] = '获取教师数据成功';
             $data['teacher'] = $res;
         }else{
             $data['status']=400;
+            $data['message'] = '未找到教师数据';
         }
         $this->ajaxReturn($data);
     }
@@ -465,7 +468,7 @@ class UserController extends Controller {
 
     public function importTeacher(){
         //身份验证
-        //verifyRole(1);   antd upload 插件无法设置 ajax开启session验证 该接口存在安全隐患
+        verifyRole(1);  
 
         $Teacher = M('teacher');
 
@@ -505,7 +508,8 @@ class UserController extends Controller {
         $highestColumn = $sheet->getHighestColumn(); // 取得总列数
         $arrExcel = $objPHPExcel->getSheet(0)->toArray();
 
-        $isSuccess = 1; //判断是否所有数据导入成功
+        $isSuccess = 0; //导入成功计数
+        $isError = 0; //导入失败计数
 
         //excel中的数据全部存入二维数组中
         for($i=2;$i<=$highestRow;$i++)
@@ -513,42 +517,38 @@ class UserController extends Controller {
             $j=$i-2;
             $data[$j]['card_number']= (string)$objPHPExcel->getActiveSheet()->getCell("A".$i)->getValue();
             $data[$j]['name'] = (string)$objPHPExcel->getActiveSheet()->getCell("B".$i)->getValue();
-            $data[$j]['department'] = (string)$objPHPExcel->getActiveSheet()->getCell("C".$i)->getValue();
-            $data[$j]['office'] = (string)$objPHPExcel->getActiveSheet()->getCell("D".$i)->getValue();
-            $data[$j]['telephone'] = (string)$objPHPExcel->getActiveSheet()->getCell("E".$i)->getValue();
-            $data[$j]['phone'] = (string)$objPHPExcel->getActiveSheet()->getCell("F".$i)->getValue();
-            $data[$j]['short_phone'] = (string)$objPHPExcel->getActiveSheet()->getCell("G".$i)->getValue();
-            $data[$j]['email'] = (string)$objPHPExcel->getActiveSheet()->getCell("H".$i)->getValue();
-            $data[$j]['qq'] = (string)$objPHPExcel->getActiveSheet()->getCell("I".$i)->getValue();
-            $data[$j]['wechat'] = (string)$objPHPExcel->getActiveSheet()->getCell("J".$i)->getValue();
-            $data[$j]['comment'] = (string)$objPHPExcel->getActiveSheet()->getCell("K".$i)->getValue();
-            $data[$j]['role_id'] = (int)$objPHPExcel->getActiveSheet()->getCell("L".$i)->getValue();
+            $data[$j]['office'] = (string)$objPHPExcel->getActiveSheet()->getCell("C".$i)->getValue();
+            $data[$j]['telephone'] = (string)$objPHPExcel->getActiveSheet()->getCell("D".$i)->getValue();
+            $data[$j]['phone'] = (string)$objPHPExcel->getActiveSheet()->getCell("E".$i)->getValue();
+            $data[$j]['short_phone'] = (string)$objPHPExcel->getActiveSheet()->getCell("F".$i)->getValue();
+            $data[$j]['email'] = (string)$objPHPExcel->getActiveSheet()->getCell("G".$i)->getValue();
+            $data[$j]['qq'] = (string)$objPHPExcel->getActiveSheet()->getCell("H".$i)->getValue();
+            $data[$j]['wechat'] = (string)$objPHPExcel->getActiveSheet()->getCell("I".$i)->getValue();
         }
 
         foreach($data as $value){
             $value['password'] = $value['card_number'];
+            $value['role_id'] = 3;   //初始化权限为教师
             $where['card_number'] = $value['card_number'];
             $resFind = $Teacher->where($where)->find();
             if($resFind){
                 $res = $Teacher->where($where)->save($value);
+                if($res)
+                    $isSuccess++;
+                else
+                    $isError++;
             }else{
                 $res = $Teacher->add($value);
-            }
-            if(!$res){
-                $isSuccess = 0;
-            }            
+                if($res)
+                    $isSuccess++;
+                else
+                    $isError++;
+            }        
         }
-        if($isSuccess){
-            $returnData = [
-                'status' => 200,
-                'message' => '导入成功'
-            ];
-        }else{
-            $returnData = [
-                'status' => 400,
-                'message' => '部分数据导入失败'
-            ];
-        }
+        $returnData = [
+            'status' => 200,
+            'message' => "导入成功".$isSuccess."条,失败".$isError."条"
+        ];
         $this->ajaxReturn($returnData);
     }
 
@@ -691,7 +691,8 @@ class UserController extends Controller {
         $highestColumn = $sheet->getHighestColumn(); // 取得总列数
         $arrExcel = $objPHPExcel->getSheet(0)->toArray();
 
-        $isSuccess = 1; //判断是否所有数据导入成功
+        $isSuccess = 0; //导入成功计数
+        $isError = 0; //导入失败计数
 
         //excel中的数据全部存入二维数组中
         for($i=2;$i<=$highestRow;$i++)
@@ -700,9 +701,9 @@ class UserController extends Controller {
             $data[$j]['card_number']= (string)$objPHPExcel->getActiveSheet()->getCell("A".$i)->getValue();
             $data[$j]['name'] = (string)$objPHPExcel->getActiveSheet()->getCell("B".$i)->getValue();
             $data[$j]['sex'] = (string)$objPHPExcel->getActiveSheet()->getCell("C".$i)->getValue();
-            $data[$j]['origin'] = (string)$objPHPExcel->getActiveSheet()->getCell("D".$i)->getValue();
-            $data[$j]['major'] = (string)$objPHPExcel->getActiveSheet()->getCell("E".$i)->getValue();
-            $data[$j]['class'] = (string)$objPHPExcel->getActiveSheet()->getCell("F".$i)->getValue();
+            $data[$j]['major'] = (string)$objPHPExcel->getActiveSheet()->getCell("D".$i)->getValue();
+            $data[$j]['class'] = (string)$objPHPExcel->getActiveSheet()->getCell("E".$i)->getValue();
+            $data[$j]['origin'] = (string)$objPHPExcel->getActiveSheet()->getCell("F".$i)->getValue();
             $data[$j]['dorm'] = (string)$objPHPExcel->getActiveSheet()->getCell("G".$i)->getValue();
             $data[$j]['identity_card'] = (string)$objPHPExcel->getActiveSheet()->getCell("H".$i)->getValue();
             $data[$j]['phone'] = (string)$objPHPExcel->getActiveSheet()->getCell("I".$i)->getValue();
@@ -710,7 +711,6 @@ class UserController extends Controller {
             $data[$j]['email'] = (string)$objPHPExcel->getActiveSheet()->getCell("K".$i)->getValue();
             $data[$j]['qq'] = (string)$objPHPExcel->getActiveSheet()->getCell("L".$i)->getValue();
             $data[$j]['wechat'] = (string)$objPHPExcel->getActiveSheet()->getCell("M".$i)->getValue();
-            $data[$j]['comment'] = (string)$objPHPExcel->getActiveSheet()->getCell("N".$i)->getValue();
         }
 
         foreach($data as $value){
@@ -719,24 +719,22 @@ class UserController extends Controller {
             $resFind = $Student->where($where)->find();
             if($resFind){
                 $res = $Student->where($where)->save($value);
+                if($res)
+                    $isSuccess++;
+                else
+                    $isError++;                
             }else{
                 $res = $Student->add($value);
-            }
-            if(!$res){
-                $isSuccess = 0;
-            }            
+                if($res)
+                    $isSuccess++;
+                else
+                    $isError++;
+            }          
         }
-        if($isSuccess){
-            $returnData = [
-                'status' => 200,
-                'message' => '导入成功'
-            ];
-        }else{
-            $returnData = [
-                'status' => 400,
-                'message' => '部分数据导入失败'
-            ];
-        }
+        $returnData = [
+            'status' => 200,
+            'message' => "导入成功".$isSuccess."条,失败".$isError."条"
+        ];
         $this->ajaxReturn($returnData);
     }    
 
