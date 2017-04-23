@@ -20,7 +20,7 @@
 
 	//验证是否登陆
 	function verifyLogin(){
-		if(isset($_SESSION['userName'])){
+		if(!isset($_SESSION['userName'])){
 				echo '兄弟，你太天真了';
 	            exit();
 		}

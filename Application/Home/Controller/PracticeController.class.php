@@ -125,7 +125,7 @@ class PracticeController extends Controller {
 		if($res){
 			foreach ($res as $key => $value) {
 				$deadline = $value['deadline'];
-				$res[$key]['deadline'] = date('Y-m-d H:i',$deadline);
+				$res[$key]['deadline'] = date('Y-m-d H:i:s',$deadline);
 			}
 			$data = [
 				'status'=>200,
@@ -224,7 +224,7 @@ class PracticeController extends Controller {
 		$deadline = I('post.deadline');
 
 		if($deadline){
-			$deadline = strtotime($deadline);
+			$deadline = strtotime($deadline) + 24 * 60 * 60 - 1;
 			$update = [
 				'id'=>$id,
 				'deadline'=>$deadline
@@ -597,6 +597,223 @@ class PracticeController extends Controller {
 				'status'=>400,
 				'message'=>'岗位撤销失败'
 			];
+			$this->ajaxReturn($data);
+		}
+	}
+
+	//选择岗位
+	public function getJobByStudent(){
+		//验证是否登陆
+		verifyLogin();
+
+		$student_id = $_SESSION['id'];
+		$Year = M('practice_year');
+		$Job = M('job');
+		$PracticeStudent = M('practice_student');
+
+		//获取最新年度
+		$year = $Year->order('year desc')->find();
+
+		//验证该学生是否为本年度实习学生
+		$where['student_id']=$student_id;
+		$where['year_id']=$year['id'];
+		$res = $PracticeStudent->where($where)->find();
+		if(!$res){
+			$data=[
+				'status'=>400,
+				'message'=>"您未加入本年度实习，请联系学院"
+			];
+			$this->ajaxReturn($data);
+		}
+
+		//获取实习岗位
+		$year_id = $year['id'];
+		$jobData = $Job->where("year_id = $year_id")->select();
+
+		//将已报名实习岗位设置标志,并将其放在第一个位
+		$jobNewData = $jobData;
+		if($res['job_id']){
+			$jobNewData = [];
+			foreach ($jobData as $key => $value) {
+				if($res['job_id'] == $value['id']){
+					$jobData[$key]['is_chosed'] = 1;
+					array_push($jobNewData, $jobData[$key]);
+				}
+				else{
+					$jobData[$key]['is_chosed'] = 0;					
+				}
+			}
+			foreach ($jobData as $key => $value) {
+				if($res['job_id'] != $value['id']){
+					array_push($jobNewData, $jobData[$key]);
+				}
+			}
+		}
+		$deadline = $year['deadline'];
+		$deadline = date('Y-m-d H:i:s',$deadline);
+
+		$data = [
+			'status'=>200,
+			'job'=>$jobNewData,
+			'deadline'=>$deadline
+		];
+		$this->ajaxReturn($data);
+
+	}
+
+	public function getOneJobByStudent(){
+
+		$id = I('get.id');
+		$Job = M('job');
+		$where['id']=$id;
+
+		$res = $Job->where($where)->field('contacts,contact_number',true)->find();
+
+		if($res){
+			foreach ($res as $key => $value) {
+				if(!$value)
+					$res[$key] = ''; 
+			}
+			$data = [
+				'status' => 200,
+				'job' => $res,
+				'message' => '岗位数据获取成功'
+			];
+		}else{
+			$data = [
+				'status' => 400,
+				'message' => '未找到该岗位信息'
+			];
+		}
+		$this->ajaxReturn($data);
+	}
+
+	public function applyJob(){
+		//验证是否登陆
+		verifyLogin();
+
+		$job_id = I('get.id');
+		$student_id = $_SESSION['id'];
+
+		$Year = M('practice_year');
+		$latest_year= $Year->order('year desc')->find();
+		$year_id = $latest_year['id'];
+		$deadline = $latest_year['deadline'];
+
+		//先判断deadline
+		$nowTime = time();
+		if($nowTime > $deadline){
+			$data = [
+				'status'=>402,
+				'message'=>'报名时间已截止'
+			];
+			$this->ajaxReturn($data);
+		}
+
+		$PracticeStudent = M('practice_student');
+		$Job = M('job');
+
+		//判断今年是否已有工作
+		$where['student_id'] = $student_id;
+		$where['year_id'] = $year_id;
+		$res = $PracticeStudent->where($where)->find();
+		if($res['job_id']){
+			$data = [
+				'status'=>400,
+				'message'=>'你已报名其他岗位，请先撤销'
+			];
+			$this->ajaxReturn($data);
+		}else{
+			$res['job_id'] = $job_id;
+			$res = $PracticeStudent->lock(true)->save($res);
+
+			//实习岗位添加成功，申请人数加一
+			if($res){
+				$res2 = $Job->where("id = $job_id")->lock(true)->find();
+				$res2['apply_number']++;
+				$res2 = $Job->lock(true)->save($res2);
+				if($res2){
+					$data = [
+						'status'=>200,
+						'message'=>'报名成功'
+					];
+				}else{
+					$data = [
+						'status'=>401,
+						'message'=>'服务器繁忙，可能造成结果延迟，请稍后再试'
+					];
+				}
+			}else{
+				$data = [
+					'status'=>402,
+					'message'=>'报名失败，请稍后再试'
+				];
+			}
+			$this->ajaxReturn($data);
+		}
+	}
+
+	public function deleteApplyJob(){
+		//验证是否登陆
+		verifyLogin();
+
+		$student_id = $_SESSION['id'];
+
+		$Year = M('practice_year');
+		$latest_year= $Year->order('year desc')->find();
+		$year_id = $latest_year['id'];
+		$deadline = $latest_year['deadline'];
+
+		//先判断deadline
+		$nowTime = time();
+		if($nowTime > $deadline){
+			$data = [
+				'status'=>402,
+				'message'=>'报名时间已截止'
+			];
+			$this->ajaxReturn($data);
+		}
+
+		$Job = M('job');
+		$PracticeStudent = M('practice_student');
+
+		//判断今年是否已有工作
+		$where['student_id'] = $student_id;
+		$where['year_id'] = $year_id;
+		$res = $PracticeStudent->where($where)->find();
+		if(!$res['job_id']){
+			$data = [
+				'status'=>400,
+				'message'=>'老哥，你还没报名啊，别搞我'
+			];
+			$this->ajaxReturn($data);
+		}else{
+			$job_id = $res['job_id'];
+			$res['job_id'] = null;
+			$res = $PracticeStudent->lock(true)->save($res);
+
+			//实习岗位撤销成功，申请人数减一
+			if($res){
+				$res2 = $Job->where("id = $job_id")->lock(true)->find();
+				$res2['apply_number']--;
+				$res2 = $Job->lock(true)->save($res2);
+				if($res2){
+					$data = [
+						'status'=>200,
+						'message'=>'撤销成功'
+					];
+				}else{
+					$data = [
+						'status'=>401,
+						'message'=>'服务器繁忙，可能造成结果延迟，请稍后再试'
+					];
+				}
+			}else{
+				$data = [
+					'status'=>402,
+					'message'=>'撤销失败，服务器繁忙，请稍后再试'
+				];
+			}
 			$this->ajaxReturn($data);
 		}
 	}

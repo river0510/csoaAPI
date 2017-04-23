@@ -9,7 +9,10 @@ header("Access-Control-Allow-Credentials:true");
 
 class UserController extends Controller {
     public function login(){  	
-    	
+    	//登陆前，清空session，防止重复登陆
+        session(null);
+
+
     	$User = M('user');
         $Student = M('student');
         $Teacher = M('teacher');
@@ -39,8 +42,10 @@ class UserController extends Controller {
             // }
             if($res['password']== $password){
                 $role_id = $res['role_id'];
+                $id = $res['id'];
                 if(!isset($_SESSION['userName'])){
                     session('userName',$userName);
+                    session('id',$id);
                     session('role_id',$role_id);
                 }
                 $data=[
@@ -48,7 +53,7 @@ class UserController extends Controller {
                     'message'=>'登陆成功',
                     'userName'=>$userName,
                     'role_id'=>$role_id,
-                    'id'=>$res['id']
+                    'id'=>$id
                 ];
             }else{
                 $data = [
@@ -71,16 +76,18 @@ class UserController extends Controller {
             }            
             if($res['password']== $password){
                 $role_id = $res['role_id'];
+                $id = $res['id'];
                 if(!isset($_SESSION['userName'])){
                     session('userName',$userName);
                     session('role_id',$role_id);
+                    session('id',$id);
                 }
                 $data=[
                     'status'=>200,
                     'message'=>'登陆成功',
                     'userName'=>$userName,
                     'role_id'=>$role_id,
-                    'id'=>$res['id']
+                    'id'=>$id
                 ];
             }else{
                 $data = [
@@ -103,16 +110,18 @@ class UserController extends Controller {
             }            
             if($res['password']== $password){
                 $role_id = $res['role_id'];
+                $id = $res['id'];
                 if(!isset($_SESSION['userName'])){
                     session('userName',$userName);
                     session('role_id',$role_id);
+                    session('id',$id);
                 }
                 $data=[
                     'status'=>200,
                     'message'=>'登陆成功',
                     'userName'=>$userName,
                     'role_id'=>$role_id,
-                    'id'=>$res['id']
+                    'id'=>$id
                 ];
             }else{
                 $data = [
