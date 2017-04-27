@@ -3,7 +3,7 @@ namespace Home\Controller;
 use Think\Controller;
 
 header("Access-Control-Allow-Origin:http://localhost:8000");
-// header("Access-Control-Allow-Origin:http://192.168.2.1:8000");
+// header("Access-Control-Allow-Origin:http://172.31.238.205:8000");
 header("Access-Control-Allow-Headers:X-Requested-With");
 header("Access-Control-Allow-Credentials:true");
 
@@ -34,12 +34,16 @@ class PracticeController extends Controller {
 				if($res2){
 					$value['company_name'] = $res2['company_name'];
 				}				
+			}else{
+				$value['company_name'] = null;
 			}
 			if($teacher_id){
 				$res3 = $Teacher->field('name')->where("id = $teacher_id")->find();
 				if($res3){
 					$value['teacher_name'] = $res3['name'];
 				}				
+			}else{
+				$value['teacher_name'] = null;
 			}
 			$res1[$key] = $value;
 		}
@@ -114,6 +118,128 @@ class PracticeController extends Controller {
 		}
 		$this->ajaxReturn($data);
 	}
+
+	//统计结果导出
+    public function export(){
+		//验证身份是否为教务
+		notStudent();
+
+		$year_id = I('get.year_id');
+		$PracticeStudent = M('practice_student');
+		$Job = M('job');
+		$Teacher = M('teacher');
+		$Student = M('student');
+		//查询该年度所有学生数据
+		$exportData = $PracticeStudent->where("practice_student.year_id = $year_id")
+				->join('student ON practice_student.student_id = student.id')	
+				->field('grade,name,major,class,card_number,identity_card,phone')
+				->order('card_number')
+				->select();
+		//查询每个学生的实习公司 和老师
+		foreach ($exportData as $key => $value) {
+			$job_id = $value['job_id'];
+			$teacher_id = $value['teacher_id'];
+			$value['identity_card'] = "`".$value['identity_card'];
+			if($job_id){
+				$res2 = $Job->field('company_name,job_name')->where("id = $job_id")->find();
+				if($res2){
+					$value['company_name'] = $res2['company_name'];
+					$value['job_name'] = $res2['job_name'];
+				}				
+			}else{
+				$value['company_name'] = null;
+				$value['job_name'] = null;
+			}
+			if($teacher_id){
+				$res3 = $Teacher->field('name')->where("id = $teacher_id")->find();
+				if($res3){
+					$value['teacher_name'] = $res3['name'];
+				}				
+			}else{
+				$value['teacher_name'] = null;
+			}
+			$exportData[$key] = $value;
+		}
+
+        $headArr = array();
+        
+        $headArr[]='序号';
+        $headArr[]='姓名';
+        $headArr[]='学号';
+        $headArr[]='专业';
+        $headArr[]='班级';
+        $headArr[]='身份证号码';
+        $headArr[]='手机号码';
+        $headArr[]='实习公司';
+        $headArr[]='实习岗位';
+        $headArr[]='校内指导老师';
+        $headArr[]='成绩';
+        
+        import("Org.Util.PHPExcel");
+        import("Org.Util.PHPExcel.Writer.Excel5");
+        import("Org.Util.PHPExcel.IOFactory.php");
+        
+        $fileName .= "实习学生信息.xls";
+        
+        //创建PHPExcel对象，注意，不能少了\
+        $objPHPExcel = new \PHPExcel();
+        $objProps = $objPHPExcel->getProperties();
+        
+        //设置表头
+        $key = ord("A");
+        //print_r($headArr);exit;
+        foreach($headArr as $v){
+            $colum = chr($key);
+            $objPHPExcel->setActiveSheetIndex(0) ->setCellValue($colum.'1', $v);
+            $objPHPExcel->setActiveSheetIndex(0) ->setCellValue($colum.'1', $v);
+            $key += 1;
+        }
+        
+        $i = 2;
+        $objActSheet = $objPHPExcel->getActiveSheet();
+        $key = 1;
+        foreach ($exportData as $d){ //行写入
+            $objActSheet->setCellValue("A".$i,$key++);
+            $objActSheet->setCellValue("B".$i, $d['name']);
+            $objActSheet->setCellValue("C".$i,$d['card_number']);
+            $objActSheet->setCellValue("D".$i,$d['major']);
+            $objActSheet->setCellValue("E".$i,$d['class']);
+            $objActSheet->setCellValue("F".$i, $d['identity_card']);
+            $objActSheet->setCellValue("G".$i, $d['phone']);
+            $objActSheet->setCellValue("H".$i, $d['company_name']);
+            $objActSheet->setCellValue("I".$i, $d['job_name']);
+            $objActSheet->setCellValue("I".$i, $d['teacher_name']);
+            $objActSheet->setCellValue("I".$i, $d['grade']);
+            $i++;
+        }
+        
+        
+        /* foreach($data as $key => $rows){ //行写入
+         $span = ord("A");
+         foreach($rows as $keyName=>$value){// 列写入
+         $j = chr($span);
+        
+         $objActSheet->setCellValue($j.$column, $value);
+         $span++;
+         }
+         $column++;
+         } */
+        
+        $fileName = iconv("utf-8", "gb2312", $fileName);
+        
+        //重命名表
+        //$objPHPExcel->getActiveSheet()->setTitle('test');
+        //设置活动单指数到第一个表,所以Excel打开这是第一个表
+        $objPHPExcel->setActiveSheetIndex(0);
+        ob_end_clean();//清除缓冲区,避免乱码
+        header('Content-Type: application/vnd.ms-excel');
+        header("Content-Disposition: attachment;filename=\"$fileName\"");
+        header('Cache-Control: max-age=0');
+        
+        $objWriter = \PHPExcel_IOFactory::createWriter($objPHPExcel, 'Excel5');
+        $objWriter->save('php://output'); //文件通过浏览器下载
+        exit;
+    }
 
 	//年度管理
 	public function getYear(){
@@ -537,7 +663,7 @@ class PracticeController extends Controller {
 
 		//判断该公司报名人数是否达到上限
 		$res2 = $Job->where("id = $job_id")->find();
-		$max = ceil($res2['need_number'] * 1.5);
+		$max = $res2['need_number'] ;
 		if($res2['apply_number'] == $max ){
 			$data = [
 				'status'=>405,
@@ -631,9 +757,8 @@ class PracticeController extends Controller {
 		$jobData = $Job->where("year_id = $year_id")->select();
 
 		//将已报名实习岗位设置标志,并将其放在第一个位
-		$jobNewData = $jobData;
+		$jobNewData = [];
 		if($res['job_id']){
-			$jobNewData = [];
 			foreach ($jobData as $key => $value) {
 				if($res['job_id'] == $value['id']){
 					$jobData[$key]['is_chosed'] = 1;
@@ -643,10 +768,12 @@ class PracticeController extends Controller {
 					$jobData[$key]['is_chosed'] = 0;					
 				}
 			}
-			foreach ($jobData as $key => $value) {
-				if($res['job_id'] != $value['id']){
-					array_push($jobNewData, $jobData[$key]);
-				}
+		}
+
+		foreach ($jobData as $key => $value) {
+			//将剩余未选择岗位加入数组，并排除学生自申报岗位
+			if(($res['job_id'] != $value['id']) && ($value['is_other_chose'] == 0)){
+				array_push($jobNewData, $jobData[$key]);
 			}
 		}
 		$deadline = $year['deadline'];
@@ -700,7 +827,19 @@ class PracticeController extends Controller {
 		$year_id = $latest_year['id'];
 		$deadline = $latest_year['deadline'];
 
-		//先判断deadline
+		//先判断个人信息是否完善
+		$Student = M('student');
+		$studentInfo = $Student->where("id = $student_id")->find();
+		$identity_card = trim($studentInfo['identity_card']);
+		if(!$identity_card){
+			$data = [
+				'status'=>404,
+				'message'=>'请先前往账户管理完善信息'
+			];
+			$this->ajaxReturn($data);
+		}
+
+		//先判断deadlin
 		$nowTime = time();
 		if($nowTime > $deadline){
 			$data = [
@@ -724,29 +863,34 @@ class PracticeController extends Controller {
 			];
 			$this->ajaxReturn($data);
 		}else{
+			//判断人数是否超过申请人数，如果实习岗位添加成功，申请人数加一
+
+			$res2 = $Job->where("id = $job_id")->lock(true)->find();
+			//判断人数是否已满
+			if($res2['apply_number'] == $res2['need_number']){
+				$data = [
+					'status'=>403,
+					'message'=>'报名人数已满'
+				];
+				$this->ajaxReturn($data);
+			}
+
+			//报名人数没满，申请人数加一，实习记录更新
 			$res['job_id'] = $job_id;
 			$res = $PracticeStudent->lock(true)->save($res);
 
-			//实习岗位添加成功，申请人数加一
-			if($res){
-				$res2 = $Job->where("id = $job_id")->lock(true)->find();
-				$res2['apply_number']++;
-				$res2 = $Job->lock(true)->save($res2);
-				if($res2){
-					$data = [
-						'status'=>200,
-						'message'=>'报名成功'
-					];
-				}else{
-					$data = [
-						'status'=>401,
-						'message'=>'服务器繁忙，可能造成结果延迟，请稍后再试'
-					];
-				}
+			$res2['apply_number']++;
+			$res2 = $Job->lock(true)->save($res2);
+
+			if($res2 && $res){
+				$data = [
+					'status'=>200,
+					'message'=>'报名成功'
+				];
 			}else{
 				$data = [
-					'status'=>402,
-					'message'=>'报名失败，请稍后再试'
+					'status'=>401,
+					'message'=>'服务器繁忙，可能造成结果延迟，请稍后再试'
 				];
 			}
 			$this->ajaxReturn($data);
@@ -787,14 +931,34 @@ class PracticeController extends Controller {
 				'message'=>'老哥，你还没报名啊，别搞我'
 			];
 			$this->ajaxReturn($data);
-		}else{
+		}else{								//实习信息更新
 			$job_id = $res['job_id'];
 			$res['job_id'] = null;
 			$res = $PracticeStudent->lock(true)->save($res);
 
 			//实习岗位撤销成功，申请人数减一
 			if($res){
+				// 获取岗位信息
 				$res2 = $Job->where("id = $job_id")->lock(true)->find();
+
+				//判断是否为自申报岗位，如果是则删除岗位信息
+				if($res2['is_other_chose']){
+					$is_delete = $Job->where("id = $job_id")->delete();
+					if($is_delete){
+						$data = [
+							'status'=>200,
+							'message'=>'撤销成功'
+						];
+					}else{
+						$data = [
+							'status'=>401,
+							'message'=>'服务器繁忙，可能造成结果延迟，请稍后再试'
+						];						
+					}
+					$this->ajaxReturn($data);
+				}
+
+				//不是自申报岗位，申请人数减一
 				$res2['apply_number']--;
 				$res2 = $Job->lock(true)->save($res2);
 				if($res2){
@@ -816,6 +980,86 @@ class PracticeController extends Controller {
 			}
 			$this->ajaxReturn($data);
 		}
+	}
+
+	public function otherChose(){
+		//验证是否登陆
+		verifyLogin();
+
+		$student_id = $_SESSION['id'];
+		$company_name = I('post.company_name');
+		$job_name = I('post.job_name');
+
+		$Year = M('practice_year');
+		$latest_year= $Year->order('year desc')->find();
+		$year_id = $latest_year['id'];
+		$deadline = $latest_year['deadline'];
+
+		//先判断个人信息是否完善
+		$Student = M('student');
+		$studentInfo = $Student->where("id = $student_id")->find();
+		$identity_card = trim($studentInfo['identity_card']);
+		if(!$identity_card){
+			$data = [
+				'status'=>404,
+				'message'=>'请先前往账户管理完善信息'
+			];
+			$this->ajaxReturn($data);
+		}
+
+		//先判断deadline
+		$nowTime = time();
+		if($nowTime > $deadline){
+			$data = [
+				'status'=>402,
+				'message'=>'报名时间已截止'
+			];
+			$this->ajaxReturn($data);
+		}
+
+		$PracticeStudent = M('practice_student');
+		$Job = M('job');
+
+		//判断今年是否已有工作
+		$where['student_id'] = $student_id;
+		$where['year_id'] = $year_id;
+		$res = $PracticeStudent->where($where)->find();
+		if($res['job_id']){
+			$data = [
+				'status'=>400,
+				'message'=>'你已报名其他岗位，请先撤销'
+			];
+			$this->ajaxReturn($data);
+		}else{	
+			$newJob = [
+				'year_id'=>$year_id,
+				'company_name'=>$company_name,
+				'job_name'=>$job_name,
+				'need_number'=>1,
+				'apply_number'=>1,
+				'is_other_chose'=>1
+			];
+			$job_id = $Job->add($newJob);
+			if($job_id){
+
+				//实习记录更新
+				$res['job_id'] = $job_id;
+				$res = $PracticeStudent->save($res);
+
+				if($res){
+					$data = [
+						'status'=>200,
+						'message'=>'报名成功'
+					];
+				}else{
+					$data = [
+						'status'=>401,
+						'message'=>'服务器繁忙，可能造成结果延迟，请稍后再试'
+					];
+				}
+				$this->ajaxReturn($data);
+			}
+		}	
 	}
 }
 

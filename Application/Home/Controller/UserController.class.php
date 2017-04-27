@@ -3,7 +3,7 @@ namespace Home\Controller;
 use Think\Controller;
 
 header("Access-Control-Allow-Origin:http://localhost:8000");
-// header("Access-Control-Allow-Origin:http://192.168.2.1:8000");
+// header("Access-Control-Allow-Origin:http://172.31.238.205:8000");
 header("Access-Control-Allow-Headers:X-Requested-With");
 header("Access-Control-Allow-Credentials:true");
 
