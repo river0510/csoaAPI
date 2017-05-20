@@ -70,7 +70,7 @@ class PracticeController extends Controller {
 
 		$students = I('post.students');
 		$year_id = I('post.year_id');
-		$PracticeStudent = M('practice_student');
+		$GraduateStudent = M('graduate_student');
 		$Student = M('student');
 
 		$students = trim($students);
@@ -90,11 +90,11 @@ class PracticeController extends Controller {
 				'student_id' => $id,
 				'year_id' => $year_id
 			];
-			$res = $PracticeStudent->where($where)->find();
+			$res = $GraduateStudent->where($where)->find();
 			if(!$res){
 				$newData['year_id'] = $year_id;
 				$newData['student_id'] = $id;
-				$res2=$PracticeStudent->add($newData);
+				$res2=$GraduateStudent->add($newData);
 				if(!$res2)
 					$isSuccess = 0;
 			}
