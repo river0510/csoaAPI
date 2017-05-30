@@ -268,116 +268,116 @@ class GraduateController extends Controller {
 		$this->ajaxReturn($data);
 	}
 	
-	// public function addYear(){
-	// 	//验证身份
-	// 	notStudent();
+	public function addYear(){
+		//验证身份
+		notStudent();
 
-	// 	$Year = M('practice_year');
-	// 	$year = I('post.year');
-	// 	$deadline = I('post.deadline');
+		$Year = M('graduate_year');
+		$year = I('post.year');
+		$deadline = I('post.deadline');
 
-	// 	$where['year'] = $year;
-	// 	$res = $Year->where($where)->find();
-	// 	if($res){
-	// 		$data['status']=400;
-	// 		$data['message']='该年度已存在';
-	// 		$this->ajaxReturn($data);
-	// 		exit();
-	// 	}
+		$where['year'] = $year;
+		$res = $Year->where($where)->find();
+		if($res){
+			$data['status']=400;
+			$data['message']='该年度已存在';
+			$this->ajaxReturn($data);
+			exit();
+		}
 
-	// 	if($deadline){
-	// 		$deadline = strtotime($deadline);
-	// 		$newData = [
-	// 			'year'=>$year,
-	// 			'deadline'=>$deadline
-	// 		];
-	// 	}else{
-	// 		$deadline = null;
-	// 		$newData = [
-	// 			'id'=>$id,
-	// 			'deadline'=>$deadline
-	// 		];
-	// 	}
+		if($deadline){
+			$deadline = strtotime($deadline);
+			$newData = [
+				'year'=>$year,
+				'deadline'=>$deadline
+			];
+		}else{
+			$deadline = null;
+			$newData = [
+				'id'=>$id,
+				'deadline'=>$deadline
+			];
+		}
 
-	// 	$res = $Year->add($newData);
-	// 	if($res){
-	// 		$data=[
-	// 			'status'=>200,
-	// 			'message'=>'年度添加成功'
-	// 		];
-	// 	}else{
-	// 		$data=[
-	// 			'status'=>400,
-	// 			'message'=>'年度添加失败'
-	// 		];
-	// 	}
+		$res = $Year->add($newData);
+		if($res){
+			$data=[
+				'status'=>200,
+				'message'=>'年度添加成功'
+			];
+		}else{
+			$data=[
+				'status'=>400,
+				'message'=>'年度添加失败'
+			];
+		}
 
-	// 	$this->ajaxReturn($data);
-	// }
+		$this->ajaxReturn($data);
+	}
 
-	// public function deleteYear(){
-	// 	//验证身份
-	// 	notStudent();
+	public function deleteYear(){
+		//验证身份
+		notStudent();
 
-	// 	$Year = M('practice_year');
-	// 	$PracticeStudent = M('practice_student');
-	// 	$id = I('get.id');
+		$Year = M('graduate_year');
+		$GraduateStudent = M('graduate_student');
+		$id = I('get.id');
 
-	// 	$res = $Year->where("id = $id")->delete();
-	// 	$where['year_id'] = $id;
-	// 	$Year->where($where)->delete();
-	// 	if($res){
-	// 		$data=[
-	// 			'status'=>200,
-	// 			'message'=>'删除成功'
-	// 		];
-	// 	}else{
-	// 		$data=[
-	// 			'status'=>400,
-	// 			'message'=>'删除失败'
-	// 		];
-	// 	}
+		$res = $Year->where("id = $id")->delete();
+		$where['year_id'] = $id;
+		$Year->where($where)->delete();
+		if($res){
+			$data=[
+				'status'=>200,
+				'message'=>'删除成功'
+			];
+		}else{
+			$data=[
+				'status'=>400,
+				'message'=>'删除失败'
+			];
+		}
 
-	// 	$this->ajaxReturn($data);
-	// }
+		$this->ajaxReturn($data);
+	}
 
-	// public function modifyYear(){
-	// 	//验证身份
-	// 	notStudent();
+	public function modifyYear(){
+		//验证身份
+		notStudent();
 
-	// 	$Year = M('practice_year');
-	// 	$id = I('post.id');
-	// 	$deadline = I('post.deadline');
+		$Year = M('graduate_year');
+		$id = I('post.id');
+		$deadline = I('post.deadline');
 
-	// 	if($deadline){
-	// 		$deadline = strtotime($deadline) + 24 * 60 * 60 - 1;
-	// 		$update = [
-	// 			'id'=>$id,
-	// 			'deadline'=>$deadline
-	// 		];
-	// 	}else{
-	// 		$deadline = null;
-	// 		$update = [
-	// 			'id'=>$id,
-	// 			'deadline'=>$deadline
-	// 		];
-	// 	}
-	// 	$res = $Year->save($update);
+		if($deadline){
+			$deadline = strtotime($deadline) + 24 * 60 * 60 - 1;
+			$update = [
+				'id'=>$id,
+				'deadline'=>$deadline
+			];
+		}else{
+			$deadline = null;
+			$update = [
+				'id'=>$id,
+				'deadline'=>$deadline
+			];
+		}
+		$res = $Year->save($update);
 
-	// 	if($res){
-	// 		$data=[
-	// 			'status'=>200,
-	// 			'message'=>'修改成功'
-	// 		];
-	// 	}else{
-	// 		$data=[
-	// 			'status'=>400,
-	// 			'message'=>'修改失败'
-	// 		];
-	// 	}
+		if($res){
+			$data=[
+				'status'=>200,
+				'message'=>'修改成功'
+			];
+		}else{
+			$data=[
+				'status'=>400,
+				'message'=>'修改失败'
+			];
+		}
 
-	// 	$this->ajaxReturn($data);		
-	// }
+		$this->ajaxReturn($data);		
+	}
 
 	// //岗位管理
 	// public function getJob(){
