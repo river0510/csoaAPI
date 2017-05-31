@@ -727,66 +727,48 @@ class GraduateController extends Controller {
 	// 	}
 	// }
 
-	// //选择岗位
-	// public function getJobByStudent(){
-	// 	//验证是否登陆
-	// 	verifyLogin();
+	//选择岗位
+	public function getProject(){
+		//验证是否为教师
+		verifyRole(3);
 
-	// 	$student_id = $_SESSION['id'];
-	// 	$Year = M('practice_year');
-	// 	$Job = M('job');
-	// 	$PracticeStudent = M('practice_student');
+		$teacher_id = $_SESSION['id'];
+		$Year = M('graduate_year');
+		$Project = M('project');
 
-	// 	//获取最新年度
-	// 	$year = $Year->order('year desc')->find();
+		//获取最新年度
+		$year = $Year->order('year desc')->find();
 
-	// 	//验证该学生是否为本年度实习学生
-	// 	$where['student_id']=$student_id;
-	// 	$where['year_id']=$year['id'];
-	// 	$res = $PracticeStudent->where($where)->find();
-	// 	if(!$res){
-	// 		$data=[
-	// 			'status'=>400,
-	// 			'message'=>"您未加入本年度实习，请联系学院"
-	// 		];
-	// 		$this->ajaxReturn($data);
-	// 	}
+		//获取所有课题
+		$year_id = $year['id'];
+		$projectData = $Project->where("year_id = $year_id")->select();
 
-	// 	//获取实习岗位
-	// 	$year_id = $year['id'];
-	// 	$jobData = $Job->where("year_id = $year_id")->select();
+		//将该老师的课题设置标志,并将其放在第一个位
+		$projectNewData = [];
+		foreach ($projectData as $key => $value) {
+			if($teacher_id == $value['teacher_id']){
+				$projectData[$key]['is_mine'] = 1;
+				array_push($projectNewData, $projectData[$key]);
+			}
+			else{
+				$projectData[$key]['is_mine'] = 0;					
+			}
+		}
+		
+		//将剩余不是该老师的课题加入数组
+		foreach ($projectData as $key => $value) {
+			if($value['is_mine'] == 0){
+				array_push($projectNewData, $projectData[$key]);
+			}
+		}
 
-	// 	//将已报名实习岗位设置标志,并将其放在第一个位
-	// 	$jobNewData = [];
-	// 	if($res['job_id']){
-	// 		foreach ($jobData as $key => $value) {
-	// 			if($res['job_id'] == $value['id']){
-	// 				$jobData[$key]['is_chosed'] = 1;
-	// 				array_push($jobNewData, $jobData[$key]);
-	// 			}
-	// 			else{
-	// 				$jobData[$key]['is_chosed'] = 0;					
-	// 			}
-	// 		}
-	// 	}
+		$data = [
+			'status'=>200,
+			'project'=>$projectNewData
+		];
+		$this->ajaxReturn($data);
 
-	// 	foreach ($jobData as $key => $value) {
-	// 		//将剩余未选择岗位加入数组，并排除学生自申报岗位
-	// 		if(($res['job_id'] != $value['id']) && ($value['is_other_chose'] == 0)){
-	// 			array_push($jobNewData, $jobData[$key]);
-	// 		}
-	// 	}
-	// 	$deadline = $year['deadline'];
-	// 	$deadline = date('Y-m-d H:i:s',$deadline);
-
-	// 	$data = [
-	// 		'status'=>200,
-	// 		'job'=>$jobNewData,
-	// 		'deadline'=>$deadline
-	// 	];
-	// 	$this->ajaxReturn($data);
-
-	// }
+	}
 
 	// public function getOneJobByStudent(){
 
@@ -982,92 +964,52 @@ class GraduateController extends Controller {
 	// 	}
 	// }
 
-	// public function otherChose(){
-	// 	//验证是否登陆
-	// 	verifyLogin();
+	public function projectCreate(){
+		//验证是否为教师
+		verifyRole(3);
 
-	// 	$student_id = $_SESSION['id'];
-	// 	$company_name = I('post.company_name');
-	// 	$job_name = I('post.job_name');
+		$Year = M('graduate_year');
+		$latest_year= $Year->order('year desc')->find();
+		$year_id = $latest_year['id'];
 
-	// 	$Year = M('practice_year');
-	// 	$latest_year= $Year->order('year desc')->find();
-	// 	$year_id = $latest_year['id'];
-	// 	$deadline = $latest_year['deadline'];
+		$teacher_id = $_SESSION['id'];
+		$project_name=I('post.project_name');
+		$project_from=I('post.project_from');
+		$project_direction=I('post.project_direction');
+		$number=I('post.number');
+		$project_background=I('post.project_background');
+		$project_work=I('post.project_work');
+		$demand=I('post.demand');
+		$other=I('post.other');
+		$state= 0;  //状态默认 未锁定
 
-	// 	//先判断个人信息是否完善
-	// 	$Student = M('student');
-	// 	$studentInfo = $Student->where("id = $student_id")->find();
-	// 	$identity_card = trim($studentInfo['identity_card']);
-	// 	if(!$identity_card){
-	// 		$data = [
-	// 			'status'=>404,
-	// 			'message'=>'请先前往账户管理完善信息'
-	// 		];
-	// 		$this->ajaxReturn($data);
-	// 	}
+		$project = [
+			'teacher_id' => $teacher_id,
+			'year_id' => $year_id,
+			'project_name' => $project_name,
+			'project_from' => $project_from,
+			'project_direction' => $project_direction,
+			'number' => $number,
+			'project_background' => $project_background,
+			'project_work' => $project_work,
+			'demand' => $demand,
+			'other' => $other,
+			'state' => $state
+		];
 
-	// 	//先判断deadline
-	// 	$nowTime = time();
-	// 	if($nowTime > $deadline){
-	// 		$data = [
-	// 			'status'=>402,
-	// 			'message'=>'报名时间已截止'
-	// 		];
-	// 		$this->ajaxReturn($data);
-	// 	}
-
-	// 	$PracticeStudent = M('practice_student');
-	// 	$Job = M('job');
-
-	// 	//判断今年是否已有工作
-	// 	$where['student_id'] = $student_id;
-	// 	$where['year_id'] = $year_id;
-	// 	$res = $PracticeStudent->where($where)->find();
-	// 	if($res['job_id']){
-	// 		$data = [
-	// 			'status'=>400,
-	// 			'message'=>'你已报名其他岗位，请先撤销'
-	// 		];
-	// 		$this->ajaxReturn($data);
-	// 	}else{	
-	// 		$newJob = [
-	// 			'year_id'=>$year_id,
-	// 			'company_name'=>$company_name,
-	// 			'job_name'=>$job_name,
-	// 			'need_number'=>1,
-	// 			'apply_number'=>1,
-	// 			'is_other_chose'=>1
-	// 		];
-	// 		$job_id = $Job->add($newJob);
-	// 		if($job_id){
-
-	// 			//实习记录更新
-	// 			$res['job_id'] = $job_id;
-	// 			$res = $PracticeStudent->save($res);
-
-	// 			if($res){
-	// 				$data = [
-	// 					'status'=>200,
-	// 					'message'=>'报名成功'
-	// 				];
-	// 			}else{
-	// 				$data = [
-	// 					'status'=>401,
-	// 					'message'=>'服务器繁忙，可能造成结果延迟，请稍后再试'
-	// 				];
-	// 			}
-	// 			$this->ajaxReturn($data);
-	// 		}
-	// 	}	
-	// }
+		$Project = M('project');
+		$res = $Project->add($project);
+		if($res){
+			$data = [
+				'status' => 200,
+				'message' => '题目上报成功'
+			];
+		}else{
+			$data = [
+				'status' => 400,
+				'message' => '题目上报失败'
+			];			
+		}
+		$this->ajaxReturn($data);
+	}
 }
-
-
-
-
-
-
-
-
-

@@ -416,3 +416,995 @@ SQL: SELECT graduate_student.id,`project_id`,`teacher_id`,`year_id`,`student_id`
 SQL: SELECT `project_name` FROM `project` WHERE ( id = 1 ) LIMIT 1   [ RunTime:0.0002s ]
 SQL: SELECT `name` FROM `teacher` WHERE ( id = 42 ) LIMIT 1   [ RunTime:0.0002s ]
 
+[ 2017-05-30T14:43:04+08:00 ] ::1 /csoaAPI/index.php/Home/User/logout
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000202s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000246s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000276s ]
+
+[ 2017-05-30T14:43:19+08:00 ] ::1 /csoaAPI/index.php/Home/User/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000180s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000380s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000413s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `student` [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `teacher` [ RunTime:0.0014s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `log` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `user` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `teacher` WHERE `card_number` = '14769' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `student` WHERE `card_number` = '14769' LIMIT 1   [ RunTime:0.0005s ]
+SQL: INSERT INTO `log` (`userName`,`time`,`ip`,`state`) VALUES ('14769','1496126599','0.0.0.0','登陆成功') [ RunTime:0.0004s ]
+
+[ 2017-05-30T14:43:19+08:00 ] ::1 /csoaAPI/index.php/Home/User/getRole
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000209s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000370s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000421s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `role` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0005s ]
+
+[ 2017-05-30T14:43:19+08:00 ] ::1 /csoaAPI/index.php/Home/User/getUserInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000320s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000247s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000281s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `student` [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `teacher` [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `log` [ RunTime:0.0004s ]
+SQL: SELECT `id`,`card_number`,`name`,`office`,`telephone`,`phone`,`short_phone`,`email`,`qq`,`wechat`,`department`,`comment`,`state`,`role_id` FROM `teacher` WHERE `card_number` = '14769' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `userName`,`time`,`state`,`ip` FROM `log` ORDER BY time desc LIMIT 1   [ RunTime:0.0016s ]
+
+[ 2017-05-30T14:52:13+08:00 ] ::1 /csoaAPI/index.php/Home/User/logout
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000293s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000234s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000262s ]
+
+[ 2017-05-30T14:57:44+08:00 ] ::1 /csoaAPI/index.php/Home/User/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000482s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000826s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000920s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `student` [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `teacher` [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `log` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `user` LIMIT 1   [ RunTime:0.0014s ]
+SQL: SELECT * FROM `teacher` WHERE `card_number` = '14769' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `student` WHERE `card_number` = '14769' LIMIT 1   [ RunTime:0.0006s ]
+SQL: INSERT INTO `log` (`userName`,`time`,`ip`,`state`) VALUES ('14769','1496127464','0.0.0.0','登陆成功') [ RunTime:0.0004s ]
+
+[ 2017-05-30T14:57:44+08:00 ] ::1 /csoaAPI/index.php/Home/User/getRole
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000348s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000669s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000742s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `role` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0005s ]
+
+[ 2017-05-30T14:57:44+08:00 ] ::1 /csoaAPI/index.php/Home/User/getUserInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000216s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000259s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000295s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `student` [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `teacher` [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `log` [ RunTime:0.0008s ]
+SQL: SELECT `id`,`card_number`,`name`,`office`,`telephone`,`phone`,`short_phone`,`email`,`qq`,`wechat`,`department`,`comment`,`state`,`role_id` FROM `teacher` WHERE `card_number` = '14769' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `userName`,`time`,`state`,`ip` FROM `log` ORDER BY time desc LIMIT 1   [ RunTime:0.0032s ]
+
+[ 2017-05-30T14:58:17+08:00 ] ::1 /csoaAPI/index.php/Home/Practice/getJobByStudent
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000186s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000263s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000298s ]
+SQL: SHOW COLUMNS FROM `practice_year` [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `job` [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `practice_student` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `practice_year` ORDER BY year desc LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `practice_student` WHERE `student_id` = 42 AND `year_id` = 19 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `job` WHERE ( year_id = 19 )  [ RunTime:0.0009s ]
+
+[ 2017-05-30T14:58:24+08:00 ] ::1 /csoaAPI/index.php/Home/Practice/getOneJobByStudent?id=53
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000227s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001011s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001061s ]
+SQL: SHOW COLUMNS FROM `job` [ RunTime:0.0006s ]
+SQL: SELECT `id`,`year_id`,`company_name`,`company_website`,`job_name`,`job_duty`,`need_number`,`apply_number`,`working_time`,`salary`,`demand`,`position`,`recommend_teacher`,`other`,`is_other_chose` FROM `job` WHERE `id` = 53 LIMIT 1   [ RunTime:0.0004s ]
+
+[ 2017-05-30T15:03:10+08:00 ] ::1 /csoaAPI/index.php/Home/User/getRole
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000962s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001054s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001136s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `role` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0005s ]
+
+[ 2017-05-30T15:03:11+08:00 ] ::1 /csoaAPI/index.php/Home/Practice/getJobByStudent
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000330s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000501s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000565s ]
+SQL: SHOW COLUMNS FROM `practice_year` [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `job` [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `practice_student` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `practice_year` ORDER BY year desc LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `practice_student` WHERE `student_id` = 42 AND `year_id` = 19 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `job` WHERE ( year_id = 19 )  [ RunTime:0.0013s ]
+
+[ 2017-05-30T15:03:15+08:00 ] ::1 /csoaAPI/index.php/Home/Practice/getJobByStudent
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000310s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000556s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000622s ]
+SQL: SHOW COLUMNS FROM `practice_year` [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `job` [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `practice_student` [ RunTime:0.0011s ]
+SQL: SELECT * FROM `practice_year` ORDER BY year desc LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `practice_student` WHERE `student_id` = 42 AND `year_id` = 19 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT * FROM `job` WHERE ( year_id = 19 )  [ RunTime:0.0014s ]
+
+[ 2017-05-30T15:20:37+08:00 ] ::1 /csoaAPI/index.php/Home/User/getRole
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000382s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000448s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000493s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `role` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2017-05-30T15:20:37+08:00 ] ::1 /csoaAPI/index.php/Home/Practice/getJobByStudent
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000294s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000238s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000269s ]
+SQL: SHOW COLUMNS FROM `practice_year` [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `job` [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `practice_student` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `practice_year` ORDER BY year desc LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `practice_student` WHERE `student_id` = 42 AND `year_id` = 19 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `job` WHERE ( year_id = 19 )  [ RunTime:0.0009s ]
+
+[ 2017-05-30T15:22:22+08:00 ] ::1 /csoaAPI/index.php/Home/User/getRole
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000522s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000616s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000681s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `role` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0005s ]
+
+[ 2017-05-30T15:22:22+08:00 ] ::1 /csoaAPI/index.php/Home/Practice/getJobByStudent
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000209s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000333s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000377s ]
+SQL: SHOW COLUMNS FROM `practice_year` [ RunTime:0.0016s ]
+SQL: SHOW COLUMNS FROM `job` [ RunTime:0.0021s ]
+SQL: SHOW COLUMNS FROM `practice_student` [ RunTime:0.0012s ]
+SQL: SELECT * FROM `practice_year` ORDER BY year desc LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT * FROM `practice_student` WHERE `student_id` = 42 AND `year_id` = 19 LIMIT 1   [ RunTime:0.0015s ]
+SQL: SELECT * FROM `job` WHERE ( year_id = 19 )  [ RunTime:0.0025s ]
+
+[ 2017-05-30T15:23:19+08:00 ] ::1 /csoaAPI/index.php/Home/User/getRole
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000206s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000378s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000427s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `role` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2017-05-30T15:23:19+08:00 ] ::1 /csoaAPI/index.php/Home/Practice/getJobByStudent
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000323s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000427s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000484s ]
+SQL: SHOW COLUMNS FROM `practice_year` [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `job` [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `practice_student` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `practice_year` ORDER BY year desc LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `practice_student` WHERE `student_id` = 42 AND `year_id` = 19 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT * FROM `job` WHERE ( year_id = 19 )  [ RunTime:0.0016s ]
+
+[ 2017-05-30T15:24:07+08:00 ] ::1 /csoaAPI/index.php/Home/User/getRole
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000196s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000239s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000269s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `role` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2017-05-30T15:24:07+08:00 ] ::1 /csoaAPI/index.php/Home/Practice/getJobByStudent
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000188s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000237s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000266s ]
+SQL: SHOW COLUMNS FROM `practice_year` [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `job` [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `practice_student` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `practice_year` ORDER BY year desc LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `practice_student` WHERE `student_id` = 42 AND `year_id` = 19 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `job` WHERE ( year_id = 19 )  [ RunTime:0.0011s ]
+
+[ 2017-05-30T15:24:30+08:00 ] ::1 /csoaAPI/index.php/Home/User/getRole
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000428s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000321s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000363s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `role` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2017-05-30T15:24:30+08:00 ] ::1 /csoaAPI/index.php/Home/Practice/getJobByStudent
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000187s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000237s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000266s ]
+SQL: SHOW COLUMNS FROM `practice_year` [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `job` [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `practice_student` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `practice_year` ORDER BY year desc LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `practice_student` WHERE `student_id` = 42 AND `year_id` = 19 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `job` WHERE ( year_id = 19 )  [ RunTime:0.0011s ]
+
+[ 2017-05-30T15:24:34+08:00 ] ::1 /csoaAPI/index.php/Home/Practice/getJobByStudent
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000234s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000237s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000271s ]
+SQL: SHOW COLUMNS FROM `practice_year` [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `job` [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `practice_student` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `practice_year` ORDER BY year desc LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `practice_student` WHERE `student_id` = 42 AND `year_id` = 19 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `job` WHERE ( year_id = 19 )  [ RunTime:0.0008s ]
+
+[ 2017-05-30T15:24:46+08:00 ] ::1 /csoaAPI/index.php/Home/User/getRole
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000217s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000445s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000549s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `role` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0004s ]
+
+[ 2017-05-30T15:24:46+08:00 ] ::1 /csoaAPI/index.php/Home/Practice/getJobByStudent
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000181s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000226s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000323s ]
+SQL: SHOW COLUMNS FROM `practice_year` [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `job` [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `practice_student` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `practice_year` ORDER BY year desc LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `practice_student` WHERE `student_id` = 42 AND `year_id` = 19 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `job` WHERE ( year_id = 19 )  [ RunTime:0.0009s ]
+
+[ 2017-05-30T15:24:48+08:00 ] ::1 /csoaAPI/index.php/Home/Practice/getJobByStudent
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000184s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000254s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000288s ]
+SQL: SHOW COLUMNS FROM `practice_year` [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `job` [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `practice_student` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `practice_year` ORDER BY year desc LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `practice_student` WHERE `student_id` = 42 AND `year_id` = 19 LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT * FROM `job` WHERE ( year_id = 19 )  [ RunTime:0.0008s ]
+
+[ 2017-05-30T15:28:48+08:00 ] ::1 /csoaAPI/index.php/Home/Practice/getJobByStudent
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000506s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000635s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000680s ]
+SQL: SHOW COLUMNS FROM `practice_year` [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `job` [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `practice_student` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `practice_year` ORDER BY year desc LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `practice_student` WHERE `student_id` = 42 AND `year_id` = 19 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `job` WHERE ( year_id = 19 )  [ RunTime:0.0006s ]
+
+[ 2017-05-30T15:29:37+08:00 ] ::1 /csoaAPI/index.php/Home/Practice/getJobByStudent
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000528s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000444s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000485s ]
+SQL: SHOW COLUMNS FROM `practice_year` [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `job` [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `practice_student` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `practice_year` ORDER BY year desc LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `practice_student` WHERE `student_id` = 42 AND `year_id` = 19 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `job` WHERE ( year_id = 19 )  [ RunTime:0.0008s ]
+
+[ 2017-05-30T15:29:42+08:00 ] ::1 /csoaAPI/index.php/Home/User/getRole
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000184s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000227s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000256s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `role` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2017-05-30T15:29:42+08:00 ] ::1 /csoaAPI/index.php/Home/Practice/getJobByStudent
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000188s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000229s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000257s ]
+SQL: SHOW COLUMNS FROM `practice_year` [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `job` [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `practice_student` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `practice_year` ORDER BY year desc LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `practice_student` WHERE `student_id` = 42 AND `year_id` = 19 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `job` WHERE ( year_id = 19 )  [ RunTime:0.0008s ]
+
+[ 2017-05-30T15:30:01+08:00 ] ::1 /csoaAPI/index.php/Home/User/getRole
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000327s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000423s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000499s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `role` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0004s ]
+
+[ 2017-05-30T15:30:01+08:00 ] ::1 /csoaAPI/index.php/Home/Practice/getJobByStudent
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000239s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000258s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000294s ]
+SQL: SHOW COLUMNS FROM `practice_year` [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `job` [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `practice_student` [ RunTime:0.0009s ]
+SQL: SELECT * FROM `practice_year` ORDER BY year desc LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `practice_student` WHERE `student_id` = 42 AND `year_id` = 19 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT * FROM `job` WHERE ( year_id = 19 )  [ RunTime:0.0012s ]
+
+[ 2017-05-30T15:30:13+08:00 ] ::1 /csoaAPI/index.php/Home/User/getRole
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000527s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000706s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000780s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `role` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0005s ]
+
+[ 2017-05-30T15:30:13+08:00 ] ::1 /csoaAPI/index.php/Home/Practice/getJobByStudent
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000291s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000479s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000543s ]
+SQL: SHOW COLUMNS FROM `practice_year` [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `job` [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `practice_student` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `practice_year` ORDER BY year desc LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `practice_student` WHERE `student_id` = 42 AND `year_id` = 19 LIMIT 1   [ RunTime:0.0021s ]
+SQL: SELECT * FROM `job` WHERE ( year_id = 19 )  [ RunTime:0.0013s ]
+
+[ 2017-05-30T15:30:21+08:00 ] ::1 /csoaAPI/index.php/Home/Practice/getJobByStudent
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000292s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000409s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000458s ]
+SQL: SHOW COLUMNS FROM `practice_year` [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `job` [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `practice_student` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `practice_year` ORDER BY year desc LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `practice_student` WHERE `student_id` = 42 AND `year_id` = 19 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `job` WHERE ( year_id = 19 )  [ RunTime:0.0008s ]
+
+[ 2017-05-30T15:30:47+08:00 ] ::1 /csoaAPI/index.php/Home/Practice/getJobByStudent
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000182s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000229s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000258s ]
+SQL: SHOW COLUMNS FROM `practice_year` [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `job` [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `practice_student` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `practice_year` ORDER BY year desc LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `practice_student` WHERE `student_id` = 42 AND `year_id` = 19 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT * FROM `job` WHERE ( year_id = 19 )  [ RunTime:0.0012s ]
+
+[ 2017-05-30T15:35:27+08:00 ] ::1 /csoaAPI/index.php/Home/User/getRole
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000187s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000237s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000267s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `role` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2017-05-30T15:35:27+08:00 ] ::1 /csoaAPI/index.php/Home/Practice/getJobByStudent
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000180s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000229s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000257s ]
+SQL: SHOW COLUMNS FROM `practice_year` [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `job` [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `practice_student` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `practice_year` ORDER BY year desc LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `practice_student` WHERE `student_id` = 42 AND `year_id` = 19 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `job` WHERE ( year_id = 19 )  [ RunTime:0.0010s ]
+
+[ 2017-05-30T15:36:19+08:00 ] ::1 /csoaAPI/index.php/Home/User/getRole
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000239s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000458s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000542s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0012s ]
+SQL: SELECT * FROM `role` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0004s ]
+
+[ 2017-05-30T15:36:19+08:00 ] ::1 /csoaAPI/index.php/Home/Practice/getJobByStudent
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000190s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000309s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000390s ]
+SQL: SHOW COLUMNS FROM `practice_year` [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `job` [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `practice_student` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `practice_year` ORDER BY year desc LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `practice_student` WHERE `student_id` = 42 AND `year_id` = 19 LIMIT 1   [ RunTime:0.0012s ]
+SQL: SELECT * FROM `job` WHERE ( year_id = 19 )  [ RunTime:0.0011s ]
+
+[ 2017-05-30T15:37:16+08:00 ] ::1 /csoaAPI/index.php/Home/Practice/otherChose
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000198s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000232s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000262s ]
+SQL: SHOW COLUMNS FROM `practice_year` [ RunTime:0.0014s ]
+SQL: SELECT * FROM `practice_year` ORDER BY year desc LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `student` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `student` WHERE ( id = 42 ) LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2017-05-30T15:37:18+08:00 ] ::1 /csoaAPI/index.php/Home/Practice/getJobByStudent
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000196s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000230s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000258s ]
+SQL: SHOW COLUMNS FROM `practice_year` [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `job` [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `practice_student` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `practice_year` ORDER BY year desc LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `practice_student` WHERE `student_id` = 42 AND `year_id` = 19 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `job` WHERE ( year_id = 19 )  [ RunTime:0.0007s ]
+
+[ 2017-05-30T15:41:52+08:00 ] ::1 /csoaAPI/index.php/Home/User/getRole
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000934s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000685s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000759s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `role` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0005s ]
+
+[ 2017-05-30T15:41:52+08:00 ] ::1 /csoaAPI/index.php/Home/Practice/getJobByStudent
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000201s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000425s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000484s ]
+SQL: SHOW COLUMNS FROM `practice_year` [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `job` [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `practice_student` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `practice_year` ORDER BY year desc LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `practice_student` WHERE `student_id` = 42 AND `year_id` = 19 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT * FROM `job` WHERE ( year_id = 19 )  [ RunTime:0.0015s ]
+
+[ 2017-05-30T15:42:04+08:00 ] ::1 /csoaAPI/index.php/Home/Practice/getJobByStudent
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000036s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000248s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000234s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000265s ]
+SQL: SHOW COLUMNS FROM `practice_year` [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `job` [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `practice_student` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `practice_year` ORDER BY year desc LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `practice_student` WHERE `student_id` = 42 AND `year_id` = 19 LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT * FROM `job` WHERE ( year_id = 19 )  [ RunTime:0.0007s ]
+
+[ 2017-05-30T15:42:08+08:00 ] ::1 /csoaAPI/index.php/Home/User/getRole
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000189s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000231s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000260s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `role` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2017-05-30T15:42:08+08:00 ] ::1 /csoaAPI/index.php/Home/Practice/getJobByStudent
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000197s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000238s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000269s ]
+SQL: SHOW COLUMNS FROM `practice_year` [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `job` [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `practice_student` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `practice_year` ORDER BY year desc LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `practice_student` WHERE `student_id` = 42 AND `year_id` = 19 LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT * FROM `job` WHERE ( year_id = 19 )  [ RunTime:0.0008s ]
+
+[ 2017-05-30T15:42:16+08:00 ] ::1 /csoaAPI/index.php/Home/Practice/getJobByStudent
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000213s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000251s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000290s ]
+SQL: SHOW COLUMNS FROM `practice_year` [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `job` [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `practice_student` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `practice_year` ORDER BY year desc LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `practice_student` WHERE `student_id` = 42 AND `year_id` = 19 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `job` WHERE ( year_id = 19 )  [ RunTime:0.0009s ]
+
+[ 2017-05-30T15:58:20+08:00 ] ::1 /csoaAPI/index.php/Home/Graduate/projectCreate
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000186s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000232s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000262s ]
+
+[ 2017-05-30T15:59:45+08:00 ] ::1 /csoaAPI/index.php/Home/User/getRole
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000281s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000403s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000465s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `role` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0004s ]
+
+[ 2017-05-30T15:59:45+08:00 ] ::1 /csoaAPI/index.php/Home/Practice/getJobByStudent
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000362s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000388s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000442s ]
+SQL: SHOW COLUMNS FROM `practice_year` [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `job` [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `practice_student` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `practice_year` ORDER BY year desc LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `practice_student` WHERE `student_id` = 42 AND `year_id` = 19 LIMIT 1   [ RunTime:0.0009s ]
+SQL: SELECT * FROM `job` WHERE ( year_id = 19 )  [ RunTime:0.0014s ]
+
+[ 2017-05-30T15:59:59+08:00 ] ::1 /csoaAPI/index.php/Home/Graduate/projectCreate
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000204s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000338s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000374s ]
+
+[ 2017-05-30T16:00:20+08:00 ] ::1 /csoaAPI/index.php/Home/Graduate/projectCreate
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000273s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000371s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000433s ]
+SQL: SHOW COLUMNS FROM `practice_year` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `practice_year` ORDER BY year desc LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001589s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001646s ]
+
+[ 2017-05-30T16:00:54+08:00 ] ::1 /csoaAPI/index.php/Home/Graduate/projectCreate
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000417s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000249s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000281s ]
+SQL: SHOW COLUMNS FROM `practice_year` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `practice_year` ORDER BY year desc LIMIT 1   [ RunTime:0.0006s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000339s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000371s ]
+
+[ 2017-05-30T16:01:40+08:00 ] ::1 /csoaAPI/index.php/Home/User/getRole
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000210s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000258s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000296s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `role` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2017-05-30T16:01:40+08:00 ] ::1 /csoaAPI/index.php/Home/Practice/getJobByStudent
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000355s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000470s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000532s ]
+SQL: SHOW COLUMNS FROM `practice_year` [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `job` [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `practice_student` [ RunTime:0.0011s ]
+SQL: SELECT * FROM `practice_year` ORDER BY year desc LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `practice_student` WHERE `student_id` = 42 AND `year_id` = 19 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `job` WHERE ( year_id = 19 )  [ RunTime:0.0008s ]
+
+[ 2017-05-30T16:01:58+08:00 ] ::1 /csoaAPI/index.php/Home/Graduate/projectCreate
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000187s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000511s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000571s ]
+SQL: SHOW COLUMNS FROM `practice_year` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `practice_year` ORDER BY year desc LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000329s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000361s ]
+
+[ 2017-05-30T16:12:26+08:00 ] ::1 /csoaAPI/index.php/Home/Graduate/projectCreate
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000645s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000880s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000940s ]
+SQL: SHOW COLUMNS FROM `practice_year` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `practice_year` ORDER BY year desc LIMIT 1   [ RunTime:0.0011s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001255s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001569s ]
+
+[ 2017-05-30T16:13:09+08:00 ] ::1 /csoaAPI/index.php/Home/Graduate/projectCreate
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000472s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000602s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000647s ]
+SQL: SHOW COLUMNS FROM `practice_year` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `practice_year` ORDER BY year desc LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001195s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001263s ]
+
+[ 2017-05-30T16:15:38+08:00 ] ::1 /csoaAPI/index.php/Home/Graduate/projectCreate
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000188s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000232s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000261s ]
+SQL: SHOW COLUMNS FROM `practice_year` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `practice_year` ORDER BY year desc LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `project` [ RunTime:0.0006s ]
+SQL: INSERT INTO `project` (`teacher_id`,`year_id`,`project_name`,`project_from`,`project_direction`,`number`,`project_background`,`project_work`,`demand`,`other`,`state`) VALUES ('42','19','223','5','2','1','455','123','1231','23','0') [ RunTime:0.0014s ]
+
+[ 2017-05-30T16:15:38+08:00 ] ::1 /csoaAPI/index.php/Home/Practice/getJobByStudent
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000340s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000472s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000624s ]
+SQL: SHOW COLUMNS FROM `practice_year` [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `job` [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `practice_student` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `practice_year` ORDER BY year desc LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT * FROM `practice_student` WHERE `student_id` = 42 AND `year_id` = 19 LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT * FROM `job` WHERE ( year_id = 19 )  [ RunTime:0.0024s ]
+
+[ 2017-05-30T16:23:16+08:00 ] ::1 /csoaAPI/index.php/Home/Practice/getOneJobByStudent?id=53
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000194s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000240s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000270s ]
+SQL: SHOW COLUMNS FROM `job` [ RunTime:0.0005s ]
+SQL: SELECT `id`,`year_id`,`company_name`,`company_website`,`job_name`,`job_duty`,`need_number`,`apply_number`,`working_time`,`salary`,`demand`,`position`,`recommend_teacher`,`other`,`is_other_chose` FROM `job` WHERE `id` = 53 LIMIT 1   [ RunTime:0.0007s ]
+
+[ 2017-05-30T16:51:44+08:00 ] ::1 /csoaAPI/index.php/Home/User/getRole
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000324s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000423s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000491s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `role` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0004s ]
+
+[ 2017-05-30T16:51:44+08:00 ] ::1 /csoaAPI/index.php/Home/Graduate/getProject
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000356s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000377s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000428s ]
+ERR: 1146:Table 'csoa.project_year' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `project_year`
+ERR: 1146:Table 'csoa.project_year' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `project_year`
+
+[ 2017-05-30T16:52:31+08:00 ] ::1 /csoaAPI/index.php/Home/User/getRole
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000199s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000242s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000279s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `role` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0005s ]
+
+[ 2017-05-30T16:52:31+08:00 ] ::1 /csoaAPI/index.php/Home/Graduate/getProject
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000345s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000269s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000305s ]
+ERR: 1146:Table 'csoa.project_year' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `project_year`
+ERR: 1146:Table 'csoa.project_year' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `project_year`
+
+[ 2017-05-30T16:53:34+08:00 ] ::1 /csoaAPI/index.php/Home/User/getRole
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000583s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000644s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000707s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0011s ]
+SQL: SELECT * FROM `role` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0004s ]
+
+[ 2017-05-30T16:53:34+08:00 ] ::1 /csoaAPI/index.php/Home/Graduate/getProject
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000327s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000254s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000290s ]
+SQL: SHOW COLUMNS FROM `graduate_year` [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `project` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `graduate_year` ORDER BY year desc LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `project` WHERE ( year_id = 1 )  [ RunTime:0.0004s ]
+
+[ 2017-05-30T16:54:02+08:00 ] ::1 /csoaAPI/index.php/Home/Graduate/projectCreate
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000411s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000508s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000562s ]
+SQL: SHOW COLUMNS FROM `graduate_year` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `graduate_year` ORDER BY year desc LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `project` [ RunTime:0.0004s ]
+SQL: INSERT INTO `project` (`teacher_id`,`year_id`,`project_name`,`project_from`,`project_direction`,`number`,`project_background`,`project_work`,`demand`,`other`,`state`) VALUES ('42','1','123','6','2','1','123','123','123','123','0') [ RunTime:0.0003s ]
+
+[ 2017-05-30T16:54:02+08:00 ] ::1 /csoaAPI/index.php/Home/Graduate/getProject
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000521s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000240s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000271s ]
+SQL: SHOW COLUMNS FROM `graduate_year` [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `project` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `graduate_year` ORDER BY year desc LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `project` WHERE ( year_id = 1 )  [ RunTime:0.0003s ]
+
+[ 2017-05-30T17:00:23+08:00 ] ::1 /csoaAPI/index.php/Home/User/getRole
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000402s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000483s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000529s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `role` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2017-05-30T17:00:23+08:00 ] ::1 /csoaAPI/index.php/Home/Graduate/getProject
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000179s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000229s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000258s ]
+SQL: SHOW COLUMNS FROM `graduate_year` [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `project` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `graduate_year` ORDER BY year desc LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `project` WHERE ( year_id = 1 )  [ RunTime:0.0003s ]
+
+[ 2017-05-30T17:00:26+08:00 ] ::1 /csoaAPI/index.php/Home/Practice/getOneJobByStudent?id=3
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000187s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000242s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000275s ]
+SQL: SHOW COLUMNS FROM `job` [ RunTime:0.0005s ]
+SQL: SELECT `id`,`year_id`,`company_name`,`company_website`,`job_name`,`job_duty`,`need_number`,`apply_number`,`working_time`,`salary`,`demand`,`position`,`recommend_teacher`,`other`,`is_other_chose` FROM `job` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2017-05-30T17:00:36+08:00 ] ::1 /csoaAPI/index.php/Home/User/getRole
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000185s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000261s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000294s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `role` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2017-05-30T17:00:36+08:00 ] ::1 /csoaAPI/index.php/Home/Graduate/getProject
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000181s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000226s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000254s ]
+SQL: SHOW COLUMNS FROM `graduate_year` [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `project` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `graduate_year` ORDER BY year desc LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `project` WHERE ( year_id = 1 )  [ RunTime:0.0003s ]
+
+[ 2017-05-30T17:01:36+08:00 ] ::1 /csoaAPI/index.php/Home/User/getRole
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000185s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000366s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000432s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `role` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0005s ]
+
+[ 2017-05-30T17:01:36+08:00 ] ::1 /csoaAPI/index.php/Home/Graduate/getProject
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000186s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000232s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000261s ]
+SQL: SHOW COLUMNS FROM `graduate_year` [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `project` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `graduate_year` ORDER BY year desc LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `project` WHERE ( year_id = 1 )  [ RunTime:0.0003s ]
+
+[ 2017-05-30T17:05:32+08:00 ] ::1 /csoaAPI/index.php/Home/User/getRole
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000372s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000450s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000492s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `role` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2017-05-30T17:05:33+08:00 ] ::1 /csoaAPI/index.php/Home/Graduate/getProject
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000192s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000232s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000261s ]
+SQL: SHOW COLUMNS FROM `graduate_year` [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `project` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `graduate_year` ORDER BY year desc LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `project` WHERE ( year_id = 1 )  [ RunTime:0.0003s ]
+
+[ 2017-05-30T17:05:36+08:00 ] ::1 /csoaAPI/index.php/Home/User/getUserInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000361s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000337s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000379s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0017s ]
+SQL: SHOW COLUMNS FROM `student` [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `teacher` [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `log` [ RunTime:0.0006s ]
+SQL: SELECT `id`,`card_number`,`name`,`office`,`telephone`,`phone`,`short_phone`,`email`,`qq`,`wechat`,`department`,`comment`,`state`,`role_id` FROM `teacher` WHERE `card_number` = '14769' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `userName`,`time`,`state`,`ip` FROM `log` ORDER BY time desc LIMIT 1   [ RunTime:0.0016s ]
+
+[ 2017-05-30T17:05:39+08:00 ] ::1 /csoaAPI/index.php/Home/Graduate/getProject
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000196s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000249s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000282s ]
+SQL: SHOW COLUMNS FROM `graduate_year` [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `project` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `graduate_year` ORDER BY year desc LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `project` WHERE ( year_id = 1 )  [ RunTime:0.0002s ]
+
