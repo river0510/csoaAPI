@@ -516,34 +516,34 @@ class GraduateController extends Controller {
  //        $this->ajaxReturn($returnData);
 	// }
 
-	// public function deleteJob(){
-	// 	$Job = M('job');
-	// 	$PracticeStudent = M('practice_student');
+	public function deleteProject(){
+		$Project = M('project');
+		$GraduateStudent = M('graduate_student');
 
-	// 	$id = I('get.id');
+		$id = I('get.id');
 
-	// 	$res = $Job->where("id = $id")->delete();
-	// 	$where['job_id'] = $id;
+		$res = $Project->where("id = $id")->delete();
+		$where['project_id'] = $id;
 
-	// 	//删除岗位 并撤销学生的岗位报名
-	// 	$res2 = $PracticeStudent->where($where)->select();
-	// 	foreach ($res2 as $key => $value) {
-	// 		$value['job_id'] = null;
-	// 		$PracticeStudent->save($value);
-	// 	}
-	// 	if($res){
-	// 		$data=[
-	// 			'status'=>200,
-	// 			'message'=>'删除成功'
-	// 		];
-	// 	}else{
-	// 		$data=[
-	// 			'status'=>400,
-	// 			'message'=>'删除失败'
-	// 		];
-	// 	}
-	// 	$this->ajaxReturn($data);
-	// }
+		//删除岗位 并撤销学生的岗位报名
+		$res2 = $GraduateStudent->where($where)->select();
+		foreach ($res2 as $key => $value) {
+			$value['project_id'] = null;
+			$GraduateStudent->save($value);
+		}
+		if($res){
+			$data=[
+				'status'=>200,
+				'message'=>'删除成功'
+			];
+		}else{
+			$data=[
+				'status'=>400,
+				'message'=>'删除失败'
+			];
+		}
+		$this->ajaxReturn($data);
+	}
 
 	// public function modifyJob(){
 	// 	$Job = M('job');
@@ -727,7 +727,102 @@ class GraduateController extends Controller {
 	// 	}
 	// }
 
-	//选择岗位
+	//创建课题
+	public function projectCreate(){
+		//验证是否为教师
+		verifyRole(3);
+
+		$Year = M('graduate_year');
+		$latest_year= $Year->order('year desc')->find();
+		$year_id = $latest_year['id'];
+
+		$teacher_id = $_SESSION['id'];
+		$project_name=I('post.project_name');
+		$project_from=I('post.project_from');
+		$project_direction=I('post.project_direction');
+		$number=I('post.number');
+		$project_background=I('post.project_background');
+		$project_work=I('post.project_work');
+		$demand=I('post.demand');
+		$other=I('post.other');
+		$state= 0;  //状态默认 未锁定
+
+		$project = [
+			'teacher_id' => $teacher_id,
+			'year_id' => $year_id,
+			'project_name' => $project_name,
+			'project_from' => $project_from,
+			'project_direction' => $project_direction,
+			'number' => $number,
+			'project_background' => $project_background,
+			'project_work' => $project_work,
+			'demand' => $demand,
+			'other' => $other,
+			'state' => $state
+		];
+
+		$Project = M('project');
+		$res = $Project->add($project);
+		if($res){
+			$data = [
+				'status' => 200,
+				'message' => '题目上报成功'
+			];
+		}else{
+			$data = [
+				'status' => 400,
+				'message' => '题目上报失败'
+			];			
+		}
+		$this->ajaxReturn($data);
+	}
+
+
+	public function projectModify(){
+		//验证是否为教师
+		verifyRole(3);
+
+		$id = I('post.id');
+		$project_name=I('post.project_name');
+		$project_from=I('post.project_from');
+		$project_direction=I('post.project_direction');
+		$number=I('post.number');
+		$project_background=I('post.project_background');
+		$project_work=I('post.project_work');
+		$demand=I('post.demand');
+		$other=I('post.other');
+		$state= 0;  //状态默认 未锁定
+
+		$project = [
+			'id' => $id,
+			'project_name' => $project_name,
+			'project_from' => $project_from,
+			'project_direction' => $project_direction,
+			'number' => $number,
+			'project_background' => $project_background,
+			'project_work' => $project_work,
+			'demand' => $demand,
+			'other' => $other,
+			'state' => $state
+		];
+
+		$Project = M('project');
+		$res = $Project->save($project);
+		if($res){
+			$data = [
+				'status' => 200,
+				'message' => '题目修改成功'
+			];
+		}else{
+			$data = [
+				'status' => 400,
+				'message' => '题目修改失败'
+			];			
+		}
+		$this->ajaxReturn($data);
+	}
+
+	//获取课题
 	public function getProject(){
 		//验证是否为教师
 		verifyRole(3);
@@ -770,32 +865,31 @@ class GraduateController extends Controller {
 
 	}
 
-	// public function getOneJobByStudent(){
+	//获取一个课题
+	public function getOneProject(){
+		//验证是否为教师
+		verifyRole(3);
 
-	// 	$id = I('get.id');
-	// 	$Job = M('job');
-	// 	$where['id']=$id;
+		$id = I('get.id');
+		$Project = M('project');
+		$where['id']=$id;
 
-	// 	$res = $Job->where($where)->field('contacts,contact_number',true)->find();
+		$res = $Project->where($where)->find();
 
-	// 	if($res){
-	// 		foreach ($res as $key => $value) {
-	// 			if(!$value)
-	// 				$res[$key] = ''; 
-	// 		}
-	// 		$data = [
-	// 			'status' => 200,
-	// 			'job' => $res,
-	// 			'message' => '岗位数据获取成功'
-	// 		];
-	// 	}else{
-	// 		$data = [
-	// 			'status' => 400,
-	// 			'message' => '未找到该岗位信息'
-	// 		];
-	// 	}
-	// 	$this->ajaxReturn($data);
-	// }
+		if($res){
+			$data = [
+				'status' => 200,
+				'project' => $res,
+				'message' => '题目数据获取成功'
+			];
+		}else{
+			$data = [
+				'status' => 400,
+				'message' => '未找到题目信息'
+			];
+		}
+		$this->ajaxReturn($data);
+	}
 
 	// public function applyJob(){
 	// 	//验证是否登陆
@@ -964,52 +1058,4 @@ class GraduateController extends Controller {
 	// 	}
 	// }
 
-	public function projectCreate(){
-		//验证是否为教师
-		verifyRole(3);
-
-		$Year = M('graduate_year');
-		$latest_year= $Year->order('year desc')->find();
-		$year_id = $latest_year['id'];
-
-		$teacher_id = $_SESSION['id'];
-		$project_name=I('post.project_name');
-		$project_from=I('post.project_from');
-		$project_direction=I('post.project_direction');
-		$number=I('post.number');
-		$project_background=I('post.project_background');
-		$project_work=I('post.project_work');
-		$demand=I('post.demand');
-		$other=I('post.other');
-		$state= 0;  //状态默认 未锁定
-
-		$project = [
-			'teacher_id' => $teacher_id,
-			'year_id' => $year_id,
-			'project_name' => $project_name,
-			'project_from' => $project_from,
-			'project_direction' => $project_direction,
-			'number' => $number,
-			'project_background' => $project_background,
-			'project_work' => $project_work,
-			'demand' => $demand,
-			'other' => $other,
-			'state' => $state
-		];
-
-		$Project = M('project');
-		$res = $Project->add($project);
-		if($res){
-			$data = [
-				'status' => 200,
-				'message' => '题目上报成功'
-			];
-		}else{
-			$data = [
-				'status' => 400,
-				'message' => '题目上报失败'
-			];			
-		}
-		$this->ajaxReturn($data);
-	}
 }
