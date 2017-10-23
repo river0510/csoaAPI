@@ -2088,3 +2088,51 @@ SQL: SHOW COLUMNS FROM `project` [ RunTime:0.0006s ]
 SQL: SELECT * FROM `graduate_year` ORDER BY year desc LIMIT 1   [ RunTime:0.0003s ]
 SQL: SELECT * FROM `project` WHERE ( year_id = 1 )  [ RunTime:0.0004s ]
 
+[ 2017-06-06T21:14:17+08:00 ] ::1 /csoaAPI/index.php/Home/Graduate/deleteProject?id=6
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000046s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000979s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000459s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000516s ]
+SQL: SHOW COLUMNS FROM `project` [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `graduate_student` [ RunTime:0.0003s ]
+SQL: DELETE FROM `project` WHERE ( id = 6 ) [ RunTime:0.0002s ]
+SQL: SELECT * FROM `graduate_student` WHERE `project_id` = 6  [ RunTime:0.0002s ]
+
+[ 2017-06-06T21:14:17+08:00 ] ::1 /csoaAPI/index.php/Home/Graduate/getProject
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000233s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000232s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000258s ]
+SQL: SHOW COLUMNS FROM `graduate_year` [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `project` [ RunTime:0.0009s ]
+SQL: SELECT * FROM `graduate_year` ORDER BY year desc LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT * FROM `project` WHERE ( year_id = 1 )  [ RunTime:0.0009s ]
+
+[ 2017-06-06T21:14:20+08:00 ] ::1 /csoaAPI/index.php/Home/Graduate/deleteProject?id=7
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000792s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000266s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000331s ]
+SQL: SHOW COLUMNS FROM `project` [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `graduate_student` [ RunTime:0.0004s ]
+SQL: DELETE FROM `project` WHERE ( id = 7 ) [ RunTime:0.0002s ]
+SQL: SELECT * FROM `graduate_student` WHERE `project_id` = 7  [ RunTime:0.0002s ]
+
+[ 2017-06-06T21:14:20+08:00 ] ::1 /csoaAPI/index.php/Home/Graduate/getProject
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000169s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000213s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000238s ]
+SQL: SHOW COLUMNS FROM `graduate_year` [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `project` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `graduate_year` ORDER BY year desc LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `project` WHERE ( year_id = 1 )  [ RunTime:0.0002s ]
+

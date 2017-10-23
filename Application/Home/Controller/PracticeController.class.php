@@ -2,6 +2,7 @@
 namespace Home\Controller;
 use Think\Controller;
 
+// header("Access-Control-Allow-Origin:http://192.168.253.3:8000");
 header("Access-Control-Allow-Origin:http://localhost:8000");
 // header("Access-Control-Allow-Origin:http://172.31.238.205:8000");
 header("Access-Control-Allow-Headers:X-Requested-With");
@@ -885,7 +886,7 @@ class PracticeController extends Controller {
 			if($res2 && $res){
 				$data = [
 					'status'=>200,
-					'message'=>'报名成功'
+					'message'=>'报名成功,已自动显示在第一列'
 				];
 			}else{
 				$data = [

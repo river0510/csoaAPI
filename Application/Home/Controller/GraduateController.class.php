@@ -2,6 +2,7 @@
 namespace Home\Controller;
 use Think\Controller;
 
+// header("Access-Control-Allow-Origin:http://192.168.253.3:8000");
 header("Access-Control-Allow-Origin:http://localhost:8000");
 // header("Access-Control-Allow-Origin:http://172.31.238.205:8000");
 header("Access-Control-Allow-Headers:X-Requested-With");
@@ -22,14 +23,17 @@ class GraduateController extends Controller {
 		//查询该年度所有学生数据
 		$res1 = $GraduateStudent->where("graduate_student.year_id = $year_id")
 				->join('student ON graduate_student.student_id = student.id')	
-				->field('graduate_student.id,project_id,teacher_id,year_id,student_id,grade,name,card_number')
+				->field('graduate_student.id,project_id,year_id,student_id,grade,name,card_number')
 				->order('card_number')
 				->select();
 		//查询每个学生的毕设课题 和老师
 		foreach ($res1 as $key => $value) {
 			$project_id = $value['project_id'];
-			$teacher_id = $value['teacher_id'];
+
 			if($project_id){
+				$oneProject = $Project->where("id = $project_id")->find();
+				$teacher_id = $oneProject['teacher_id'];
+
 				$res2 = $Project->field('project_name')->where("id = $project_id")->find();
 				if($res2){
 					$value['project_name'] = $res2['project_name'];
@@ -52,13 +56,13 @@ class GraduateController extends Controller {
 			$data = [
 				'status' => 200,
 				'graduateStudent' => $res1,
-				'message' => '实习学生数据获取成功'
+				'message' => '毕设学生数据获取成功'
 			];
 		}else{
 			$data = [
 				'status' => 400,
 				'graduateStudent' => $res1,
-				'message' => '未找到该年度学生实习信息'
+				'message' => '未找到该年度学生毕设信息'
 			];
 		}
 		$this->ajaxReturn($data);
@@ -405,15 +409,18 @@ class GraduateController extends Controller {
 	// 	$this->ajaxReturn($data);
 	// }
 
-	// public function getOneJob(){
+	// public function getOneProject(){
 	// 	//验证身份是否为教务
 	// 	notStudent();
 
 	// 	$id = I('get.id');
-	// 	$Job = M('job');
+	// 	$Project = M('project');
 	// 	$where['id']=$id;
 
-	// 	$res = $Job->where($where)->find();
+	// 	$res = $Project->where($where)
+	// 					->join('teacher ON project.teacher_id = teacher.id')
+	// 					->feild('name,project_name,project_from,project_direction,number,project_background,demand,other')
+	// 					->find();
 
 	// 	if($res){
 	// 		foreach ($res as $key => $value) {
@@ -422,14 +429,14 @@ class GraduateController extends Controller {
 	// 		}
 	// 		$data = [
 	// 			'status' => 200,
-	// 			'job' => $res,
-	// 			'message' => '岗位数据获取成功'
+	// 			'project' => $res,
+	// 			'message' => '课题数据获取成功'
 	// 		];
 	// 	}else{
 	// 		$data = [
 	// 			'status' => 400,
-	// 			'job' => $res,
-	// 			'message' => '未找到该岗位信息'
+	// 			'project' => $res,
+	// 			'message' => '未找到该课题信息'
 	// 		];
 	// 	}
 	// 	$this->ajaxReturn($data);
@@ -579,59 +586,148 @@ class GraduateController extends Controller {
  //        $this->ajaxReturn($data);
 	// }
 
-	// //分配学生 通过岗位id获取学生
-	// public function getStudentByJob(){
-	// 	//验证身份是否为教务
-	// 	notStudent();
+	//确认学生 获取毕设课题下学生信息
+	public function getStudentByProject(){
+		//验证是否为教师
+		verifyRole(3);
 
-	// 	$PracticeStudent = M('practice_student');
-	// 	$Job = M('job');
-	// 	$job_id = I('get.job_id');
+		$GraduateStudent = M('graduate_student');
+		$Project = M('project');
+		$project_id = I('get.project_id');
 
-	// 	$res = $PracticeStudent
-	// 			->where("job_id = $job_id")
-	// 			->join("student ON student.id = practice_student.student_id")
-	// 			->join("practice_year ON practice_year.id = practice_student.year_id")
-	// 			->field('card_number,student.name,practice_student.id,year')
-	// 			->order('card_number')->select();
-	// 	$res2 = $Job->where("id = $job_id")->field('company_name,job_name,need_number,apply_number')->find();
-	// 	if($res){
-	// 		$data=[
-	// 			'status'=>200,
-	// 			'message'=>'学生数据获取成功',
-	// 			'student'=>$res,
-	// 			'job'=>$res2
-	// 		];
-	// 	}else{
-	// 		$data=[
-	// 			'status'=>400,
-	// 			'message'=>'学生数据获取成功',
-	// 			'student'=>$res,
-	// 			'job'=>$res2,
-	// 			'message'=>'未找到该岗位学生数据'
-	// 		];
-	// 	}
-	// 	$this->ajaxReturn($data);
-	// }
+		$res = $GraduateStudent
+				->where("project_id = $project_id")
+				->join("student ON student.id = graduate_student.student_id")
+				->join("graduate_year ON graduate_year.id = graduate_student.year_id")
+				->field('card_number,student.name,sex,major,phone,email,graduate_student.state,graduate_student.id,year')
+				->order('card_number')->select();
+		$res2 = $Project->where("id = $project_id")->field('project_name,number,apply_number')->find();
+		if($res){
+			$data=[
+				'status'=>200,
+				'message'=>'学生数据获取成功',
+				'student'=>$res,
+				'project'=>$res2
+			];
+		}else{
+			$data=[
+				'status'=>400,
+				'message'=>'学生数据获取成功',
+				'student'=>$res,
+				'project'=>$res2,
+				'message'=>'未找到该岗位学生数据'
+			];
+		}
+		$this->ajaxReturn($data);
+	}
 
-	// public function distributeStudent(){
-	// 	//验证身份是否为教务
-	// 	notStudent();
 
-	// 	$job_id = I('post.job_id');
-	// 	$year_id = I('post.year_id');
-	// 	$card_number = I('post.card_number');
-	// 	$Student = M('student');
-	// 	$PracticeStudent = M('practice_student');
-	// 	$Job = M('job');
-	// 	//判断学号是否输入
-	// 	if(!$card_number){
-	// 		$data = [
-	// 			'status'=>400,
-	// 			'message'=>'请输入学号'
-	// 		];
-	// 		$this->ajaxReturn($data);
-	// 	}		
+	//确认 撤销 学生选题
+	public function confirmStudent(){
+		//验证是否为教师
+		verifyRole(3);
+
+		$GraduateStudent = M('graduate_student');
+		$Project = M('project');
+		$id = I('get.id');
+
+		$student = $GraduateStudent->where("id = $id")->find();
+		$state = $student['state'];
+
+		//如果$state == 0 则是要确认操作，需要判断是否超过确认人数
+		if($state == 0){
+			//先判断所有课题确认人数 是否超过十人
+			$teacher_id = $_SESSION['id'];
+
+			$Year = M('graduate_year');
+			$latest_year= $Year->order('year desc')->find();
+			$year_id = $latest_year['id'];
+
+			$where['teacher_id'] = $teacher_id;
+			$where['year_id'] = $year_id;
+			$allProjects = $Project->where($where)->field("confirm_number")->select();
+			$allConfirmNumber = 0;
+			foreach ($allProjects as $key => $value) {
+				$allConfirmNumber += $value['confirm_number'];
+			}
+			if($allConfirmNumber == 10){
+				$data=[
+					'status'=>400,
+					'message'=>'确认人数已超过10人'
+				];
+				$this->ajaxReturn($data);
+			}
+		}
+
+		//未超过10人 则确认 或撤销
+
+		$student['state'] = !$student['state'];
+		$res = $GraduateStudent->save($student);
+
+		//确认人数加一 撤销 减一
+		$where['id'] = $student['project_id'];
+		$project = $Project->where($where)->find();
+
+		//修改后的 state == 1 说明已被确认， 人数加一，反之减一
+		if($student['state'] == 1){
+			$project['confirm_number']++;
+		}else{
+			$project['confirm_number']--;
+		}
+		$res2 = $Project->save($project);
+
+		if($res){
+			$data = [
+				'message'=>'操作成功',
+				'status'=>200,
+			];
+		}else{
+			$data = [
+				'message'=>'操作失败',
+				'status'=>400,
+			];			
+		}
+		$this->ajaxReturn($data);
+
+	}
+
+	//确认学生中的删除学生
+	public function deleteByConfirm(){
+		//验证是否为教师
+		verifyRole(3);
+
+		$GraduateStudent = M('graduate_student');
+		$Project = M('project');
+		$id = I('get.id');
+
+		$student = $GraduateStudent->where("id = $id")->find();
+		//申请人数减一
+		$where['id'] = $student['project_id'];
+		$project = $Project->where($where)->find();
+		$project['apply_number']--;
+		$Project->save($project);
+
+		//关联信息删除
+		$student['project_id'] = null;
+		$student['state'] = 0;
+		$student['grade'] = null;
+		$student['other'] = null;
+		$res=$GraduateStudent->save($student);
+
+
+		if($res){
+			$data = [
+				'status'=>200,
+				'message'=>'删除成功'
+			];
+		}else{
+			$data = [
+				'status'=>400,
+				'message'=>'删除失败'
+			];
+		}	
+		$this->ajaxReturn($data);
+	}
 
 	// 	//判断该学生是否导入到该实习年度 
 	// 	$where['card_number'] = $card_number;
@@ -865,16 +961,42 @@ class GraduateController extends Controller {
 
 	}
 
-	//获取一个课题
-	public function getOneProject(){
+	//获取课题
+	public function getProjectByTeacher(){
 		//验证是否为教师
 		verifyRole(3);
 
+		$teacher_id = $_SESSION['id'];
+		$Year = M('graduate_year');
+		$Project = M('project');
+
+		//获取最新年度
+		$year = $Year->order('year desc')->find();
+
+		//获取所有课题
+		$year_id = $year['id'];
+		$where['year_id'] = $year_id;
+		$where['teacher_id'] = $teacher_id;
+		$projectData = $Project->where($where)->select();
+
+		$data = [
+			'status'=>200,
+			'project'=>$projectData
+		];
+		$this->ajaxReturn($data);
+
+	}
+
+	//获取一个课题
+	public function getOneProject(){
+
 		$id = I('get.id');
 		$Project = M('project');
-		$where['id']=$id;
+		$where['project.id']=$id;
 
-		$res = $Project->where($where)->find();
+		$res = $Project->where($where)
+						->join('teacher on teacher.id = project.teacher_id')
+						->find();
 
 		if($res){
 			$data = [
@@ -891,171 +1013,292 @@ class GraduateController extends Controller {
 		$this->ajaxReturn($data);
 	}
 
-	// public function applyJob(){
-	// 	//验证是否登陆
-	// 	verifyLogin();
+	//解锁  锁定.  注： 功能未完成, 关闭该题目 报名功能
+	public function toggleLock(){
+		//验证是否为教师
+		verifyRole(3);
 
-	// 	$job_id = I('get.id');
-	// 	$student_id = $_SESSION['id'];
+		$id = I('get.id');
+		$Project = M('project');
+		$where['id'] = $id;
 
-	// 	$Year = M('practice_year');
-	// 	$latest_year= $Year->order('year desc')->find();
-	// 	$year_id = $latest_year['id'];
-	// 	$deadline = $latest_year['deadline'];
+		$res = $Project->where($where)->find();
+		$res['state'] = !$res['state'];
 
-	// 	//先判断个人信息是否完善
-	// 	$Student = M('student');
-	// 	$studentInfo = $Student->where("id = $student_id")->find();
-	// 	$identity_card = trim($studentInfo['identity_card']);
-	// 	if(!$identity_card){
-	// 		$data = [
-	// 			'status'=>404,
-	// 			'message'=>'请先前往账户管理完善信息'
-	// 		];
-	// 		$this->ajaxReturn($data);
-	// 	}
+		$res = $Project->save($res);
+		if($res){
+			$data = [
+				'status' => 200,
+				'message' => '操作成功'
+			];
+		}else{
+			$data = [
+				'status' => 400,
+				'message' => '操作失败'
+			];
+		}
+		$this->ajaxReturn($data);
+	}
 
-	// 	//先判断deadlin
-	// 	$nowTime = time();
-	// 	if($nowTime > $deadline){
-	// 		$data = [
-	// 			'status'=>402,
-	// 			'message'=>'报名时间已截止'
-	// 		];
-	// 		$this->ajaxReturn($data);
-	// 	}
+	//学生报名
+	public function getProjectByStudent(){
+		//验证是否登陆
+		verifyLogin();
 
-	// 	$PracticeStudent = M('practice_student');
-	// 	$Job = M('job');
+		$student_id = $_SESSION['id'];
+		$Year = M('graduate_year');
+		$Project = M('project');
+		$GraduateStudent = M('graduate_student');
 
-	// 	//判断今年是否已有工作
-	// 	$where['student_id'] = $student_id;
-	// 	$where['year_id'] = $year_id;
-	// 	$res = $PracticeStudent->where($where)->find();
-	// 	if($res['job_id']){
-	// 		$data = [
-	// 			'status'=>400,
-	// 			'message'=>'你已报名其他岗位，请先撤销'
-	// 		];
-	// 		$this->ajaxReturn($data);
-	// 	}else{
-	// 		//判断人数是否超过申请人数，如果实习岗位添加成功，申请人数加一
+		//获取最新年度
+		$year = $Year->order('year desc')->find();
 
-	// 		$res2 = $Job->where("id = $job_id")->lock(true)->find();
-	// 		//判断人数是否已满
-	// 		if($res2['apply_number'] == $res2['need_number']){
-	// 			$data = [
-	// 				'status'=>403,
-	// 				'message'=>'报名人数已满'
-	// 			];
-	// 			$this->ajaxReturn($data);
-	// 		}
+		//验证该学生是否为本年度毕业学生
+		$where['student_id']=$student_id;
+		$where['year_id']=$year['id'];
+		$res = $GraduateStudent->where($where)->find();
+		if(!$res){
+			$data=[
+				'status'=>400,
+				'message'=>"您未加入本年度毕设选题，请联系学院"
+			];
+			$this->ajaxReturn($data);
+		}
 
-	// 		//报名人数没满，申请人数加一，实习记录更新
-	// 		$res['job_id'] = $job_id;
-	// 		$res = $PracticeStudent->lock(true)->save($res);
+		//获取毕设课题
+		$year_id = $year['id'];
+		$projectData = $Project->where("year_id = $year_id")->select();
 
-	// 		$res2['apply_number']++;
-	// 		$res2 = $Job->lock(true)->save($res2);
+		//将已报名毕设设置标志,并将其放在第一个位
+		$projectNewData = [];
+		if($res['project_id']){
+			foreach ($projectData as $key => $value) {
+				if($res['project_id'] == $value['id']){
+					$projectData[$key]['is_chosed'] = 1;
+					array_push($projectNewData, $projectData[$key]);
+				}
+				else{
+					$projectData[$key]['is_chosed'] = 0;					
+				}
+			}
+		}
 
-	// 		if($res2 && $res){
-	// 			$data = [
-	// 				'status'=>200,
-	// 				'message'=>'报名成功'
-	// 			];
-	// 		}else{
-	// 			$data = [
-	// 				'status'=>401,
-	// 				'message'=>'服务器繁忙，可能造成结果延迟，请稍后再试'
-	// 			];
-	// 		}
-	// 		$this->ajaxReturn($data);
-	// 	}
-	// }
+		foreach ($projectData as $key => $value) {
+			//将剩余未选择岗位加入数组，并排除学生自申报岗位
+			if(($res['project_id'] != $value['id']) && ($value['is_other_chose'] == 0)){
+				array_push($projectNewData, $projectData[$key]);
+			}
+		}
+		$deadline = $year['deadline'];
+		$deadline = date('Y-m-d H:i:s',$deadline);
 
-	// public function deleteApplyJob(){
-	// 	//验证是否登陆
-	// 	verifyLogin();
+		$data = [
+			'status'=>200,
+			'project'=>$projectNewData,
+			'deadline'=>$deadline
+		];
+		$this->ajaxReturn($data);
 
-	// 	$student_id = $_SESSION['id'];
+	}
 
-	// 	$Year = M('practice_year');
-	// 	$latest_year= $Year->order('year desc')->find();
-	// 	$year_id = $latest_year['id'];
-	// 	$deadline = $latest_year['deadline'];
+	public function getOneProjectByStudent(){
+		//验证是否登陆
+		verifyLogin();
 
-	// 	//先判断deadline
-	// 	$nowTime = time();
-	// 	if($nowTime > $deadline){
-	// 		$data = [
-	// 			'status'=>402,
-	// 			'message'=>'报名时间已截止'
-	// 		];
-	// 		$this->ajaxReturn($data);
-	// 	}
+		$id = I('get.id');
+		$Job = M('job');
+		$where['id']=$id;
 
-	// 	$Job = M('job');
-	// 	$PracticeStudent = M('practice_student');
+		$res = $Job->where($where)->field('contacts,contact_number',true)->find();
 
-	// 	//判断今年是否已有工作
-	// 	$where['student_id'] = $student_id;
-	// 	$where['year_id'] = $year_id;
-	// 	$res = $PracticeStudent->where($where)->find();
-	// 	if(!$res['job_id']){
-	// 		$data = [
-	// 			'status'=>400,
-	// 			'message'=>'老哥，你还没报名啊，别搞我'
-	// 		];
-	// 		$this->ajaxReturn($data);
-	// 	}else{								//实习信息更新
-	// 		$job_id = $res['job_id'];
-	// 		$res['job_id'] = null;
-	// 		$res = $PracticeStudent->lock(true)->save($res);
+		if($res){
+			foreach ($res as $key => $value) {
+				if(!$value)
+					$res[$key] = ''; 
+			}
+			$data = [
+				'status' => 200,
+				'job' => $res,
+				'message' => '岗位数据获取成功'
+			];
+		}else{
+			$data = [
+				'status' => 400,
+				'message' => '未找到该岗位信息'
+			];
+		}
+		$this->ajaxReturn($data);
+	}
 
-	// 		//实习岗位撤销成功，申请人数减一
-	// 		if($res){
-	// 			// 获取岗位信息
-	// 			$res2 = $Job->where("id = $job_id")->lock(true)->find();
+	public function applyProject(){
+		//验证是否登陆
+		verifyLogin();
 
-	// 			//判断是否为自申报岗位，如果是则删除岗位信息
-	// 			if($res2['is_other_chose']){
-	// 				$is_delete = $Job->where("id = $job_id")->delete();
-	// 				if($is_delete){
-	// 					$data = [
-	// 						'status'=>200,
-	// 						'message'=>'撤销成功'
-	// 					];
-	// 				}else{
-	// 					$data = [
-	// 						'status'=>401,
-	// 						'message'=>'服务器繁忙，可能造成结果延迟，请稍后再试'
-	// 					];						
-	// 				}
-	// 				$this->ajaxReturn($data);
-	// 			}
+		$project_id = I('get.id');
+		$student_id = $_SESSION['id'];
 
-	// 			//不是自申报岗位，申请人数减一
-	// 			$res2['apply_number']--;
-	// 			$res2 = $Job->lock(true)->save($res2);
-	// 			if($res2){
-	// 				$data = [
-	// 					'status'=>200,
-	// 					'message'=>'撤销成功'
-	// 				];
-	// 			}else{
-	// 				$data = [
-	// 					'status'=>401,
-	// 					'message'=>'服务器繁忙，可能造成结果延迟，请稍后再试'
-	// 				];
-	// 			}
-	// 		}else{
-	// 			$data = [
-	// 				'status'=>402,
-	// 				'message'=>'撤销失败，服务器繁忙，请稍后再试'
-	// 			];
-	// 		}
-	// 		$this->ajaxReturn($data);
-	// 	}
-	// }
+		$Year = M('graduate_year');
+		$latest_year= $Year->order('year desc')->find();
+		$year_id = $latest_year['id'];
+		$deadline = $latest_year['deadline'];
+
+		//先判断个人信息是否完善
+		$Student = M('student');
+		$studentInfo = $Student->where("id = $student_id")->find();
+		$identity_card = trim($studentInfo['identity_card']);
+		if(!$identity_card){
+			$data = [
+				'status'=>404,
+				'message'=>'请先前往账户管理完善信息'
+			];
+			$this->ajaxReturn($data);
+		}
+
+		//先判断deadline
+		$nowTime = time();
+		if($nowTime > $deadline){
+			$data = [
+				'status'=>402,
+				'message'=>'报名时间已截止'
+			];
+			$this->ajaxReturn($data);
+		}
+
+		$GraduateStudent = M('graduate_student');
+		$Project = M('project');
+
+		//判断今年是否已有工作
+		$where['student_id'] = $student_id;
+		$where['year_id'] = $year_id;
+		$res = $GraduateStudent->where($where)->find();
+		if($res['project_id']){
+			$data = [
+				'status'=>400,
+				'message'=>'你已报名其他岗位，请先撤销'
+			];
+			$this->ajaxReturn($data);
+		}
+
+		//判断今年选择的课题是否被确认
+		if($res['state'] == 1){
+			$data = [
+				'status'=>400,
+				'message'=>'你选择的课题已被老师确认，请找老师撤销'
+			];
+			$this->ajaxReturn($data);
+		}
+
+		// //判断人数是否超过申请人数，如果课题报名成功，申请人数加一
+
+		$res2 = $Project->where("id = $project_id")->lock(true)->find();
+		// //判断人数是否已满
+		// if($res2['apply_number'] == $res2['number']){
+		// 	$data = [
+		// 		'status'=>403,
+		// 		'message'=>'报名人数已满'
+		// 	];
+		// 	$this->ajaxReturn($data);
+		// }
+
+		//报名人数没满，申请人数加一，毕设记录更新
+		$res['project_id'] = $project_id;
+		$res = $GraduateStudent->lock(true)->save($res);
+
+		$res2['apply_number']++;
+		$res2 = $Project->lock(true)->save($res2);
+
+		if($res2 && $res){
+			$data = [
+				'status'=>200,
+				'message'=>'报名成功,已自动显示在第一列'
+			];
+		}else{
+			$data = [
+				'status'=>401,
+				'message'=>'服务器繁忙，可能造成结果延迟，请稍后再试'
+			];
+		}
+		$this->ajaxReturn($data);
+		
+	}
+
+	public function deleteApplyProject(){
+		//验证是否登陆
+		verifyLogin();
+
+		$student_id = $_SESSION['id'];
+
+		$Year = M('graduate_year');
+		$latest_year= $Year->order('year desc')->find();
+		$year_id = $latest_year['id'];
+		$deadline = $latest_year['deadline'];
+
+		//先判断deadline
+		$nowTime = time();
+		if($nowTime > $deadline){
+			$data = [
+				'status'=>402,
+				'message'=>'报名时间已截止'
+			];
+			$this->ajaxReturn($data);
+		}
+
+		$Project = M('project');
+		$GraduateStudent = M('graduate_student');
+
+		//判断今年是否已选课题
+		$where['student_id'] = $student_id;
+		$where['year_id'] = $year_id;
+		$res = $GraduateStudent->where($where)->find();
+
+		if(!$res['project_id']){
+			$data = [
+				'status'=>400,
+				'message'=>'老哥，你还没报名啊，别搞我'
+			];
+			$this->ajaxReturn($data);
+		}
+
+		//判断老师是否确认
+		if($res['state']== 1){
+			$data = [
+				'status'=>400,
+				'message'=>'课题已被老师确认，无法撤销，请联系老师撤销确认'
+			];
+			$this->ajaxReturn($data);
+		}
+
+		$project_id = $res['project_id'];
+		$res['project_id'] = null;
+		$res = $GraduateStudent->lock(true)->save($res);
+
+		//实习岗位撤销成功，申请人数减一
+		if($res){
+			// 获取岗位信息
+			$res2 = $Project->where("id = $project_id")->lock(true)->find();
+
+			//申请人数减一
+			$res2['apply_number']--;
+			$res2 = $Project->lock(true)->save($res2);
+			if($res2){
+				$data = [
+					'status'=>200,
+					'message'=>'撤销成功'
+				];
+			}else{
+				$data = [
+					'status'=>401,
+					'message'=>'服务器繁忙，可能造成结果延迟，请稍后再试'
+				];
+			}
+		}else{
+			$data = [
+				'status'=>402,
+				'message'=>'撤销失败，服务器繁忙，请稍后再试'
+			];
+		}
+		$this->ajaxReturn($data);
+		
+	}
 
 }
