@@ -1,0 +1,273 @@
+[ 2017-10-24T15:36:34+08:00 ] ::1 /csoaAPI/index.php/Home/User/getRole
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000048s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002401s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000779s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000855s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0198s ]
+
+[ 2017-10-24T15:36:34+08:00 ] ::1 /csoaAPI/index.php/Home/User/getUserInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000057s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002433s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000732s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000819s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0028s ]
+SQL: SHOW COLUMNS FROM `student` [ RunTime:0.0233s ]
+SQL: SHOW COLUMNS FROM `teacher` [ RunTime:0.0013s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0026s ]
+SQL: SHOW COLUMNS FROM `log` [ RunTime:0.0020s ]
+
+[ 2017-10-24T15:36:42+08:00 ] ::1 /csoaAPI/index.php/Home/User/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000340s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001062s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001150s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0013s ]
+SQL: SHOW COLUMNS FROM `student` [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `teacher` [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `log` [ RunTime:0.0023s ]
+SQL: SELECT * FROM `user` LIMIT 1   [ RunTime:0.0073s ]
+SQL: SELECT * FROM `teacher` WHERE `card_number` = '14769' LIMIT 1   [ RunTime:0.0025s ]
+SQL: SELECT * FROM `student` WHERE `card_number` = '14769' LIMIT 1   [ RunTime:0.0016s ]
+SQL: INSERT INTO `log` (`userName`,`time`,`ip`,`state`) VALUES ('14769','1508830602','0.0.0.0','登陆成功') [ RunTime:0.0045s ]
+
+[ 2017-10-24T15:36:42+08:00 ] ::1 /csoaAPI/index.php/Home/User/getRole
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000789s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000423s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000486s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `role` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0007s ]
+
+[ 2017-10-24T15:36:42+08:00 ] ::1 /csoaAPI/index.php/Home/User/getUserInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000316s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000363s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000414s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `student` [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `teacher` [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `log` [ RunTime:0.0005s ]
+SQL: SELECT `id`,`card_number`,`name`,`office`,`telephone`,`phone`,`short_phone`,`email`,`qq`,`wechat`,`department`,`comment`,`state`,`role_id` FROM `teacher` WHERE `card_number` = '14769' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `userName`,`time`,`state`,`ip` FROM `log` ORDER BY time desc LIMIT 1   [ RunTime:0.0038s ]
+
+[ 2017-10-24T15:36:44+08:00 ] ::1 /csoaAPI/index.php/Home/Graduate/getProjectByTeacher
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000287s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000419s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000476s ]
+SQL: SHOW COLUMNS FROM `graduate_year` [ RunTime:0.0016s ]
+SQL: SHOW COLUMNS FROM `project` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `graduate_year` ORDER BY year desc LIMIT 1   [ RunTime:0.0012s ]
+SQL: SELECT * FROM `project` WHERE `year_id` = 4 AND `teacher_id` = 42  [ RunTime:0.0009s ]
+
+[ 2017-10-24T15:36:45+08:00 ] ::1 /csoaAPI/index.php/Home/Graduate/getProject
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000264s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000445s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000559s ]
+SQL: SHOW COLUMNS FROM `graduate_year` [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `project` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `graduate_year` ORDER BY year desc LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `project` WHERE ( year_id = 4 )  [ RunTime:0.0003s ]
+
+[ 2017-10-24T15:42:04+08:00 ] ::1 /csoaAPI/index.php/Home/User/getRole
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000205s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000239s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000272s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `role` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0006s ]
+
+[ 2017-10-24T15:42:04+08:00 ] ::1 /csoaAPI/index.php/Home/Graduate/getProject
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000447s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000365s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000408s ]
+SQL: SHOW COLUMNS FROM `graduate_year` [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `project` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `graduate_year` ORDER BY year desc LIMIT 1   [ RunTime:0.0003s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '== project.teacher_id  WHERE ( year_id = 4 )' at line 1
+ [ SQL语句 ] : SELECT project.id,`teacher_id`,`project_name`,`project_from`,`number`,`apply_number`,`state`,name as teacher_name FROM `project` INNER JOIN teacher on teacher.id == project.teacher_id  WHERE ( year_id = 4 ) 
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '== project.teacher_id  WHERE ( year_id = 4 )' at line 1
+ [ SQL语句 ] : SELECT project.id,`teacher_id`,`project_name`,`project_from`,`number`,`apply_number`,`state`,name as teacher_name FROM `project` INNER JOIN teacher on teacher.id == project.teacher_id  WHERE ( year_id = 4 ) 
+
+[ 2017-10-24T15:42:19+08:00 ] ::1 /csoaAPI/index.php/Home/User/getRole
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000200s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000241s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000275s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0013s ]
+SQL: SELECT * FROM `role` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0006s ]
+
+[ 2017-10-24T15:42:19+08:00 ] ::1 /csoaAPI/index.php/Home/Graduate/getProject
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000342s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000398s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000447s ]
+SQL: SHOW COLUMNS FROM `graduate_year` [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `project` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `graduate_year` ORDER BY year desc LIMIT 1   [ RunTime:0.0003s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '== project.teacher_id  WHERE ( year_id = 4 )' at line 1
+ [ SQL语句 ] : SELECT project.id,`teacher_id`,`project_name`,`project_from`,`number`,`apply_number`,`state`,name as teacher_name FROM `project` INNER JOIN teacher on teacher.id == project.teacher_id  WHERE ( year_id = 4 ) 
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '== project.teacher_id  WHERE ( year_id = 4 )' at line 1
+ [ SQL语句 ] : SELECT project.id,`teacher_id`,`project_name`,`project_from`,`number`,`apply_number`,`state`,name as teacher_name FROM `project` INNER JOIN teacher on teacher.id == project.teacher_id  WHERE ( year_id = 4 ) 
+
+[ 2017-10-24T15:42:48+08:00 ] ::1 /csoaAPI/index.php/Home/User/getRole
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000219s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000282s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000325s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `role` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0005s ]
+
+[ 2017-10-24T15:42:48+08:00 ] ::1 /csoaAPI/index.php/Home/Graduate/getProject
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000344s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000491s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000551s ]
+SQL: SHOW COLUMNS FROM `graduate_year` [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `project` [ RunTime:0.0009s ]
+SQL: SELECT * FROM `graduate_year` ORDER BY year desc LIMIT 1   [ RunTime:0.0004s ]
+ERR: 1052:Column 'state' in field list is ambiguous
+ [ SQL语句 ] : SELECT project.id,`teacher_id`,`project_name`,`project_from`,`number`,`apply_number`,`state`,name as teacher_name FROM `project` INNER JOIN teacher on teacher.id = project.teacher_id  WHERE ( year_id = 4 ) 
+ERR: 1052:Column 'state' in field list is ambiguous
+ [ SQL语句 ] : SELECT project.id,`teacher_id`,`project_name`,`project_from`,`number`,`apply_number`,`state`,name as teacher_name FROM `project` INNER JOIN teacher on teacher.id = project.teacher_id  WHERE ( year_id = 4 ) 
+
+[ 2017-10-24T15:43:02+08:00 ] ::1 /csoaAPI/index.php/Home/User/getRole
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000348s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000404s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000467s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `role` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0005s ]
+
+[ 2017-10-24T15:43:02+08:00 ] ::1 /csoaAPI/index.php/Home/Graduate/getProject
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000218s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000258s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000295s ]
+SQL: SHOW COLUMNS FROM `graduate_year` [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `project` [ RunTime:0.0011s ]
+SQL: SELECT * FROM `graduate_year` ORDER BY year desc LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT project.id,`teacher_id`,`project_name`,`project_from`,`number`,`apply_number`,project.state,name as teacher_name FROM `project` INNER JOIN teacher on teacher.id = project.teacher_id  WHERE ( year_id = 4 )  [ RunTime:0.0007s ]
+
+[ 2017-10-24T15:43:47+08:00 ] ::1 /csoaAPI/index.php/Home/User/getRole
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000275s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000496s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000573s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0009s ]
+SQL: SELECT * FROM `role` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0005s ]
+
+[ 2017-10-24T15:43:47+08:00 ] ::1 /csoaAPI/index.php/Home/Graduate/getProject
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000426s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000412s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000469s ]
+SQL: SHOW COLUMNS FROM `graduate_year` [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `project` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `graduate_year` ORDER BY year desc LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT project.id,`teacher_id`,`project_name`,`project_direction`,`number`,`apply_number`,project.state,name as teacher_name FROM `project` INNER JOIN teacher on teacher.id = project.teacher_id  WHERE ( year_id = 4 )  [ RunTime:0.0017s ]
+
+[ 2017-10-24T15:44:06+08:00 ] ::1 /csoaAPI/index.php/Home/User/getRole
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000369s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000458s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000531s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0031s ]
+SQL: SELECT * FROM `role` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0006s ]
+
+[ 2017-10-24T15:44:06+08:00 ] ::1 /csoaAPI/index.php/Home/Graduate/getProject
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000089s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001653s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000424s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000481s ]
+SQL: SHOW COLUMNS FROM `graduate_year` [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `project` [ RunTime:0.0009s ]
+SQL: SELECT * FROM `graduate_year` ORDER BY year desc LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT project.id,`teacher_id`,`project_name`,`project_direction`,`number`,`apply_number`,project.state,name as teacher_name FROM `project` INNER JOIN teacher on teacher.id = project.teacher_id  WHERE ( year_id = 4 )  [ RunTime:0.0007s ]
+
+[ 2017-10-24T15:45:05+08:00 ] ::1 /csoaAPI/index.php/Home/User/getRole
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000217s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000252s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000286s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `role` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0005s ]
+
+[ 2017-10-24T15:45:05+08:00 ] ::1 /csoaAPI/index.php/Home/Graduate/getProject
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000195s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000236s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000267s ]
+SQL: SHOW COLUMNS FROM `graduate_year` [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `project` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `graduate_year` ORDER BY year desc LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT project.id,`teacher_id`,`project_name`,`project_direction`,`number`,`apply_number`,project.state,name as teacher_name FROM `project` INNER JOIN teacher on teacher.id = project.teacher_id  WHERE ( year_id = 4 ) ORDER BY teacher.name  [ RunTime:0.0011s ]
+
+[ 2017-10-24T15:45:12+08:00 ] ::1 /csoaAPI/index.php/Home/User/getRole
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000324s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000480s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000551s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0024s ]
+SQL: SELECT * FROM `role` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0005s ]
+
+[ 2017-10-24T15:45:12+08:00 ] ::1 /csoaAPI/index.php/Home/Graduate/getProject
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000345s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000453s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000513s ]
+SQL: SHOW COLUMNS FROM `graduate_year` [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `project` [ RunTime:0.0011s ]
+SQL: SELECT * FROM `graduate_year` ORDER BY year desc LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT project.id,`teacher_id`,`project_name`,`project_direction`,`number`,`apply_number`,project.state,name as teacher_name FROM `project` INNER JOIN teacher on teacher.id = project.teacher_id  WHERE ( year_id = 4 ) ORDER BY teacher.name  [ RunTime:0.0008s ]
+

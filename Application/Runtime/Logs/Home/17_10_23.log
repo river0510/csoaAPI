@@ -2867,3 +2867,1565 @@ INFO: [ app_begin ] --END-- [ RunTime:0.000516s ]
 SQL: SHOW COLUMNS FROM `project` [ RunTime:0.0009s ]
 SQL: SELECT * FROM `project` INNER JOIN teacher on teacher.id = project.teacher_id  WHERE project.id = '9' LIMIT 1   [ RunTime:0.0015s ]
 
+[ 2017-10-23T21:57:30+08:00 ] ::1 /csoaAPI/index.php/Home/User/getRole
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002099s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001384s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001478s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0014s ]
+SQL: SELECT * FROM `role` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0007s ]
+
+[ 2017-10-23T21:57:30+08:00 ] ::1 /csoaAPI/index.php/Home/Graduate/getProjectByStudent
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000317s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001248s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001317s ]
+SQL: SHOW COLUMNS FROM `graduate_year` [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `project` [ RunTime:0.0014s ]
+SQL: SHOW COLUMNS FROM `graduate_student` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `graduate_year` ORDER BY year desc LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `graduate_student` WHERE `student_id` = 196 AND `year_id` = 4 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT * FROM `project` WHERE ( year_id = 4 )  [ RunTime:0.0006s ]
+NOTIC: [8] Undefined index: is_other_chose /Library/WebServer/Documents/csoaAPI/Application/Home/Controller/GraduateController.class.php 第 1088 行.
+
+[ 2017-10-23T21:58:13+08:00 ] ::1 /csoaAPI/index.php/Home/Graduate/getOneProject?id=9
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000994s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000457s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000530s ]
+SQL: SHOW COLUMNS FROM `project` [ RunTime:0.0014s ]
+SQL: SELECT * FROM `project` INNER JOIN teacher on teacher.id = project.teacher_id  WHERE project.id = '9' LIMIT 1   [ RunTime:0.0019s ]
+
+[ 2017-10-23T21:58:17+08:00 ] ::1 /csoaAPI/index.php/Home/Graduate/getOneProject?id=9
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000281s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000256s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000296s ]
+SQL: SHOW COLUMNS FROM `project` [ RunTime:0.0035s ]
+SQL: SELECT * FROM `project` INNER JOIN teacher on teacher.id = project.teacher_id  WHERE project.id = '9' LIMIT 1   [ RunTime:0.0010s ]
+
+[ 2017-10-23T21:58:24+08:00 ] ::1 /csoaAPI/index.php/Home/User/logout
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000835s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000364s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000424s ]
+
+[ 2017-10-23T21:58:27+08:00 ] ::1 /csoaAPI/index.php/Home/User/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000586s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000786s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000875s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `student` [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `teacher` [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `log` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `user` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `teacher` WHERE `card_number` = '14765' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `student` WHERE `card_number` = '14765' LIMIT 1   [ RunTime:0.0008s ]
+SQL: INSERT INTO `log` (`userName`,`time`,`ip`,`state`) VALUES ('14765','1508767107','0.0.0.0','登陆成功') [ RunTime:0.0019s ]
+
+[ 2017-10-23T21:58:27+08:00 ] ::1 /csoaAPI/index.php/Home/User/getRole
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000325s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000951s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001048s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0014s ]
+SQL: SELECT * FROM `role` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0006s ]
+
+[ 2017-10-23T21:58:27+08:00 ] ::1 /csoaAPI/index.php/Home/User/getUserInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000466s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000875s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000961s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `student` [ RunTime:0.0043s ]
+SQL: SHOW COLUMNS FROM `teacher` [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `log` [ RunTime:0.0006s ]
+SQL: SELECT `id`,`card_number`,`name`,`office`,`telephone`,`phone`,`short_phone`,`email`,`qq`,`wechat`,`department`,`comment`,`state`,`role_id` FROM `teacher` WHERE `card_number` = '14765' LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT `userName`,`time`,`state`,`ip` FROM `log` ORDER BY time desc LIMIT 1   [ RunTime:0.0040s ]
+
+[ 2017-10-23T21:58:29+08:00 ] ::1 /csoaAPI/index.php/Home/Graduate/getProject
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000421s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000489s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000558s ]
+SQL: SHOW COLUMNS FROM `graduate_year` [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `project` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `graduate_year` ORDER BY year desc LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `project` WHERE ( year_id = 4 )  [ RunTime:0.0005s ]
+
+[ 2017-10-23T21:58:30+08:00 ] ::1 /csoaAPI/index.php/Home/Graduate/getOneProject?id=9
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000352s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000716s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000788s ]
+SQL: SHOW COLUMNS FROM `project` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `project` INNER JOIN teacher on teacher.id = project.teacher_id  WHERE project.id = '9' LIMIT 1   [ RunTime:0.0006s ]
+
+[ 2017-10-23T21:58:34+08:00 ] ::1 /csoaAPI/index.php/Home/Graduate/projectModify
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000356s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000654s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000735s ]
+SQL: SHOW COLUMNS FROM `project` [ RunTime:0.0012s ]
+SQL: UPDATE `project` SET `project_name`='师生共拟',`project_from`='学生自拟',`project_direction`='理论研究',`number`='1',`project_background`='测试',`project_work`='测试',`demand`='测试',`other`='null',`state`='0' WHERE `id` = 64 [ RunTime:0.0005s ]
+
+[ 2017-10-23T21:58:57+08:00 ] ::1 /csoaAPI/index.php/Home/Graduate/getProject
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000835s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000684s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000755s ]
+SQL: SHOW COLUMNS FROM `graduate_year` [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `project` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `graduate_year` ORDER BY year desc LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `project` WHERE ( year_id = 4 )  [ RunTime:0.0003s ]
+
+[ 2017-10-23T22:00:22+08:00 ] ::1 /csoaAPI/index.php/Home/User/getRole
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000873s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002659s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002763s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0013s ]
+SQL: SELECT * FROM `role` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0012s ]
+
+[ 2017-10-23T22:00:22+08:00 ] ::1 /csoaAPI/index.php/Home/Graduate/getProject
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000536s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000618s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000713s ]
+SQL: SHOW COLUMNS FROM `graduate_year` [ RunTime:0.0019s ]
+SQL: SHOW COLUMNS FROM `project` [ RunTime:0.0011s ]
+SQL: SELECT * FROM `graduate_year` ORDER BY year desc LIMIT 1   [ RunTime:0.0047s ]
+SQL: SELECT * FROM `project` WHERE ( year_id = 4 )  [ RunTime:0.0012s ]
+
+[ 2017-10-23T22:03:13+08:00 ] ::1 /csoaAPI/index.php/Home/Graduate/getOneProject?id=9
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000479s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000280s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000320s ]
+SQL: SHOW COLUMNS FROM `project` [ RunTime:0.0009s ]
+SQL: SELECT * FROM `project` INNER JOIN teacher on teacher.id = project.teacher_id  WHERE project.id = '9' LIMIT 1   [ RunTime:0.0007s ]
+
+[ 2017-10-23T22:03:19+08:00 ] ::1 /csoaAPI/index.php/Home/Graduate/projectModify
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000956s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000700s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000825s ]
+SQL: SHOW COLUMNS FROM `project` [ RunTime:0.0015s ]
+SQL: UPDATE `project` SET `project_name`='师生共拟',`project_from`='学生自拟',`project_direction`='理论研究',`number`='1',`project_background`='测试',`project_work`='测试',`demand`='测试',`other`='null',`state`='0' WHERE `id` = 64 [ RunTime:0.0008s ]
+
+[ 2017-10-23T22:11:55+08:00 ] ::1 /csoaAPI/index.php/Home/Graduate/getProject
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000786s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001068s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001186s ]
+SQL: SHOW COLUMNS FROM `graduate_year` [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `project` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `graduate_year` ORDER BY year desc LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `project` WHERE ( year_id = 4 )  [ RunTime:0.0003s ]
+
+[ 2017-10-23T22:12:11+08:00 ] ::1 /csoaAPI/index.php/Home/Graduate/projectCreate
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000228s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000255s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000290s ]
+SQL: SHOW COLUMNS FROM `graduate_year` [ RunTime:0.0015s ]
+SQL: SELECT * FROM `graduate_year` ORDER BY year desc LIMIT 1   [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `project` [ RunTime:0.0008s ]
+SQL: INSERT INTO `project` (`teacher_id`,`year_id`,`project_name`,`project_from`,`project_direction`,`number`,`project_background`,`project_work`,`demand`,`other`,`state`) VALUES ('64','4','测试1','国家级项目','理论研究','1','哈哈哈哈','哈哈哈哈','哈哈哈','undefined','0') [ RunTime:0.0009s ]
+
+[ 2017-10-23T22:12:11+08:00 ] ::1 /csoaAPI/index.php/Home/Graduate/getProject
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000228s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000314s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000358s ]
+SQL: SHOW COLUMNS FROM `graduate_year` [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `project` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `graduate_year` ORDER BY year desc LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `project` WHERE ( year_id = 4 )  [ RunTime:0.0005s ]
+
+[ 2017-10-23T22:12:14+08:00 ] ::1 /csoaAPI/index.php/Home/Graduate/getOneProject?id=9
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000368s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000462s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000519s ]
+SQL: SHOW COLUMNS FROM `project` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `project` INNER JOIN teacher on teacher.id = project.teacher_id  WHERE project.id = '9' LIMIT 1   [ RunTime:0.0008s ]
+
+[ 2017-10-23T22:12:16+08:00 ] ::1 /csoaAPI/index.php/Home/Graduate/getProject
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000383s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000721s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000533s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000982s ]
+SQL: SHOW COLUMNS FROM `graduate_year` [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `project` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `graduate_year` ORDER BY year desc LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT * FROM `project` WHERE ( year_id = 4 )  [ RunTime:0.0006s ]
+
+[ 2017-10-23T22:12:17+08:00 ] ::1 /csoaAPI/index.php/Home/Graduate/getOneProject?id=11
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000362s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000460s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000525s ]
+SQL: SHOW COLUMNS FROM `project` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `project` INNER JOIN teacher on teacher.id = project.teacher_id  WHERE project.id = '11' LIMIT 1   [ RunTime:0.0009s ]
+
+[ 2017-10-23T22:20:59+08:00 ] ::1 /csoaAPI/index.php/Home/Graduate/getProject
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000770s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000974s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001065s ]
+SQL: SHOW COLUMNS FROM `graduate_year` [ RunTime:0.0015s ]
+SQL: SHOW COLUMNS FROM `project` [ RunTime:0.0009s ]
+SQL: SELECT * FROM `graduate_year` ORDER BY year desc LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT * FROM `project` WHERE ( year_id = 4 )  [ RunTime:0.0062s ]
+
+[ 2017-10-23T22:21:02+08:00 ] ::1 /csoaAPI/index.php/Home/User/getRole
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001014s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000620s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000683s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0013s ]
+SQL: SELECT * FROM `role` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0008s ]
+
+[ 2017-10-23T22:21:02+08:00 ] ::1 /csoaAPI/index.php/Home/Graduate/getProject
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000395s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000486s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000554s ]
+SQL: SHOW COLUMNS FROM `graduate_year` [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `project` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `graduate_year` ORDER BY year desc LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `project` WHERE ( year_id = 4 )  [ RunTime:0.0005s ]
+
+[ 2017-10-23T22:21:03+08:00 ] ::1 /csoaAPI/index.php/Home/Graduate/getOneProject?id=11
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000438s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000460s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000546s ]
+SQL: SHOW COLUMNS FROM `project` [ RunTime:0.0012s ]
+SQL: SELECT * FROM `project` INNER JOIN teacher on teacher.id = project.teacher_id  WHERE project.id = '11' LIMIT 1   [ RunTime:0.0010s ]
+
+[ 2017-10-23T22:21:05+08:00 ] ::1 /csoaAPI/index.php/Home/Graduate/getProject
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001154s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000540s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000608s ]
+SQL: SHOW COLUMNS FROM `graduate_year` [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `project` [ RunTime:0.0009s ]
+SQL: SELECT * FROM `graduate_year` ORDER BY year desc LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `project` WHERE ( year_id = 4 )  [ RunTime:0.0020s ]
+
+[ 2017-10-23T22:21:06+08:00 ] ::1 /csoaAPI/index.php/Home/Graduate/getOneProject?id=9
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000633s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000481s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000537s ]
+SQL: SHOW COLUMNS FROM `project` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `project` INNER JOIN teacher on teacher.id = project.teacher_id  WHERE project.id = '9' LIMIT 1   [ RunTime:0.0007s ]
+
+[ 2017-10-23T22:21:07+08:00 ] ::1 /csoaAPI/index.php/Home/Graduate/getProject
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000405s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000492s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000556s ]
+SQL: SHOW COLUMNS FROM `graduate_year` [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `project` [ RunTime:0.0013s ]
+SQL: SELECT * FROM `graduate_year` ORDER BY year desc LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `project` WHERE ( year_id = 4 )  [ RunTime:0.0005s ]
+
+[ 2017-10-23T22:21:17+08:00 ] ::1 /csoaAPI/index.php/Home/Graduate/getOneProject?id=11
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000549s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000641s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000735s ]
+SQL: SHOW COLUMNS FROM `project` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `project` INNER JOIN teacher on teacher.id = project.teacher_id  WHERE project.id = '11' LIMIT 1   [ RunTime:0.0010s ]
+
+[ 2017-10-23T22:21:23+08:00 ] ::1 /csoaAPI/index.php/Home/Graduate/projectModify
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000338s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000386s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000443s ]
+SQL: SHOW COLUMNS FROM `project` [ RunTime:0.0050s ]
+SQL: UPDATE `project` SET `project_name`='测试1',`project_from`='国家级项目',`project_direction`='理论研究',`number`='1',`project_background`='哈哈哈哈',`project_work`='哈哈哈哈',`demand`='哈哈哈111',`other`='undefined',`state`='0' WHERE `id` = 64 [ RunTime:0.0006s ]
+
+[ 2017-10-23T22:22:18+08:00 ] ::1 /csoaAPI/index.php/Home/Graduate/projectModify
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000039s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001102s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001310s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001466s ]
+SQL: SHOW COLUMNS FROM `project` [ RunTime:0.0010s ]
+SQL: UPDATE `project` SET `project_name`='测试1',`project_from`='国家级项目',`project_direction`='理论研究',`number`='1',`project_background`='哈哈哈哈',`project_work`='哈哈哈哈',`demand`='哈哈哈11111',`other`='undefined',`state`='0' WHERE `id` = 64 [ RunTime:0.0003s ]
+
+[ 2017-10-23T22:23:10+08:00 ] ::1 /csoaAPI/index.php/Home/Graduate/projectModify
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000937s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000850s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000945s ]
+SQL: SHOW COLUMNS FROM `project` [ RunTime:0.0008s ]
+SQL: UPDATE `project` SET `project_name`='测试1',`project_from`='国家级项目',`project_direction`='理论研究',`number`='1',`project_background`='哈哈哈哈',`project_work`='哈哈哈哈',`demand`='哈哈哈',`other`='undefined',`state`='0' WHERE `id` = 64 [ RunTime:0.0004s ]
+
+[ 2017-10-23T22:23:15+08:00 ] ::1 /csoaAPI/index.php/Home/User/getRole
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000421s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001093s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001175s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0009s ]
+SQL: SELECT * FROM `role` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0006s ]
+
+[ 2017-10-23T22:23:15+08:00 ] ::1 /csoaAPI/index.php/Home/Graduate/getProject
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000416s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000606s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000681s ]
+SQL: SHOW COLUMNS FROM `graduate_year` [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `project` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `graduate_year` ORDER BY year desc LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `project` WHERE ( year_id = 4 )  [ RunTime:0.0006s ]
+
+[ 2017-10-23T22:23:16+08:00 ] ::1 /csoaAPI/index.php/Home/Graduate/getOneProject?id=11
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001063s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000463s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000527s ]
+SQL: SHOW COLUMNS FROM `project` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `project` INNER JOIN teacher on teacher.id = project.teacher_id  WHERE project.id = '11' LIMIT 1   [ RunTime:0.0010s ]
+
+[ 2017-10-23T22:23:23+08:00 ] ::1 /csoaAPI/index.php/Home/Graduate/projectModify
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000423s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002436s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005020s ]
+SQL: SHOW COLUMNS FROM `project` [ RunTime:0.0006s ]
+SQL: UPDATE `project` SET `project_name`='测试1',`project_from`='国家级项目',`project_direction`='理论研究',`number`='1',`project_background`='哈哈哈哈111',`project_work`='哈哈哈哈',`demand`='哈哈哈',`other`='undefined',`state`='0' WHERE `id` = 64 [ RunTime:0.0003s ]
+
+[ 2017-10-23T22:24:28+08:00 ] ::1 /csoaAPI/index.php/Home/Graduate/projectModify
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000664s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000717s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000790s ]
+SQL: SHOW COLUMNS FROM `project` [ RunTime:0.0006s ]
+SQL: UPDATE `project` SET `project_name`='测试1',`project_from`='国家级项目',`project_direction`='理论研究',`number`='1',`project_background`='哈哈哈哈',`project_work`='哈哈哈哈',`demand`='哈哈哈',`other`='',`state`='0' WHERE `id` = 64 [ RunTime:0.0003s ]
+
+[ 2017-10-23T22:27:15+08:00 ] ::1 /csoaAPI/index.php/Home/Graduate/projectModify
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000724s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001093s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001187s ]
+SQL: SHOW COLUMNS FROM `project` [ RunTime:0.0016s ]
+SQL: UPDATE `project` SET `project_name`='',`project_from`='',`project_direction`='',`number`='0',`project_background`='',`project_work`='',`demand`='',`other`='',`state`='0' WHERE `id` = 0 [ RunTime:0.0006s ]
+
+[ 2017-10-23T22:28:37+08:00 ] ::1 /csoaAPI/index.php/Home/Graduate/projectModify
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000077s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002235s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000889s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000949s ]
+SQL: SHOW COLUMNS FROM `project` [ RunTime:0.0012s ]
+SQL: UPDATE `project` SET `project_name`='',`project_from`='',`project_direction`='',`number`='0',`project_background`='',`project_work`='',`demand`='',`other`='',`state`='0' WHERE `id` = 0 [ RunTime:0.0004s ]
+
+[ 2017-10-23T22:28:41+08:00 ] ::1 /csoaAPI/index.php/Home/User/getRole
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000399s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000460s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000531s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0012s ]
+SQL: SELECT * FROM `role` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0008s ]
+
+[ 2017-10-23T22:28:41+08:00 ] ::1 /csoaAPI/index.php/Home/Graduate/getProject
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000376s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000514s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000589s ]
+SQL: SHOW COLUMNS FROM `graduate_year` [ RunTime:0.0014s ]
+SQL: SHOW COLUMNS FROM `project` [ RunTime:0.0014s ]
+SQL: SELECT * FROM `graduate_year` ORDER BY year desc LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `project` WHERE ( year_id = 4 )  [ RunTime:0.0006s ]
+
+[ 2017-10-23T22:28:43+08:00 ] ::1 /csoaAPI/index.php/Home/Graduate/getOneProject?id=11
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000454s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000453s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000531s ]
+SQL: SHOW COLUMNS FROM `project` [ RunTime:0.0011s ]
+SQL: SELECT * FROM `project` INNER JOIN teacher on teacher.id = project.teacher_id  WHERE project.id = '11' LIMIT 1   [ RunTime:0.0009s ]
+
+[ 2017-10-23T22:28:45+08:00 ] ::1 /csoaAPI/index.php/Home/Graduate/projectModify
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000396s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000490s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000561s ]
+SQL: SHOW COLUMNS FROM `project` [ RunTime:0.0017s ]
+SQL: UPDATE `project` SET `project_name`='测试1',`project_from`='国家级项目',`project_direction`='理论研究',`number`='1',`project_background`='哈哈哈哈',`project_work`='哈哈哈哈',`demand`='哈哈哈',`other`='undefined',`state`='0' WHERE `id` = 64 [ RunTime:0.0032s ]
+
+[ 2017-10-23T22:29:05+08:00 ] ::1 /csoaAPI/index.php/Home/Graduate/projectModify
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000675s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.010115s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.010240s ]
+SQL: SHOW COLUMNS FROM `project` [ RunTime:0.0029s ]
+SQL: UPDATE `project` SET `project_name`='测试1',`project_from`='国家级项目',`project_direction`='理论研究',`number`='1',`project_background`='哈哈哈哈',`project_work`='哈哈哈哈',`demand`='哈哈哈1111',`other`='undefined',`state`='0' WHERE `id` = 64 [ RunTime:0.0008s ]
+
+[ 2017-10-23T22:29:28+08:00 ] ::1 /csoaAPI/index.php/Home/Graduate/projectModify
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000536s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003232s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003330s ]
+NOTIC: [8] Array to string conversion /Library/WebServer/Documents/csoaAPI/Application/Home/Controller/GraduateController.class.php 第 904 行.
+SQL: SHOW COLUMNS FROM `project` [ RunTime:0.0020s ]
+SQL: UPDATE `project` SET `project_name`='测试1',`project_from`='国家级项目',`project_direction`='理论研究',`number`='1',`project_background`='哈哈哈哈',`project_work`='哈哈哈哈',`demand`='哈哈哈1111',`other`='undefined',`state`='0' WHERE `id` = 64 [ RunTime:0.0005s ]
+
+[ 2017-10-23T22:29:52+08:00 ] ::1 /csoaAPI/index.php/Home/Graduate/projectModify
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000034s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001515s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001085s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001205s ]
+SQL: SHOW COLUMNS FROM `project` [ RunTime:0.0131s ]
+SQL: UPDATE `project` SET `project_name`='测试1',`project_from`='国家级项目',`project_direction`='理论研究',`number`='1',`project_background`='哈哈哈哈',`project_work`='哈哈哈哈',`demand`='哈哈哈1111',`other`='undefined',`state`='0' WHERE `id` = 64 [ RunTime:0.0005s ]
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Library/WebServer/Documents/csoaAPI/Application/Home/Controller/GraduateController.class.php:904) /Library/WebServer/Documents/csoaAPI/ThinkPHP/Library/Think/Controller.class.php 第 215 行.
+
+[ 2017-10-23T22:33:15+08:00 ] ::1 /csoaAPI/index.php/Home/User/getRole
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000755s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002404s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002511s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0011s ]
+SQL: SELECT * FROM `role` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0007s ]
+
+[ 2017-10-23T22:33:15+08:00 ] ::1 /csoaAPI/index.php/Home/Graduate/getProject
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000584s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.018049s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.018200s ]
+SQL: SHOW COLUMNS FROM `graduate_year` [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `project` [ RunTime:0.0387s ]
+SQL: SELECT * FROM `graduate_year` ORDER BY year desc LIMIT 1   [ RunTime:0.0034s ]
+SQL: SELECT * FROM `project` WHERE ( year_id = 4 )  [ RunTime:0.0044s ]
+
+[ 2017-10-23T22:33:17+08:00 ] ::1 /csoaAPI/index.php/Home/Graduate/getOneProject?id=11
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000479s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000892s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001054s ]
+SQL: SHOW COLUMNS FROM `project` [ RunTime:0.0008s ]
+ERR: Think\Model:feild方法不存在！
+
+[ 2017-10-23T22:33:47+08:00 ] ::1 /csoaAPI/index.php/Home/User/getRole
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000377s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000491s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000569s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0009s ]
+SQL: SELECT * FROM `role` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0007s ]
+
+[ 2017-10-23T22:33:47+08:00 ] ::1 /csoaAPI/index.php/Home/Graduate/getProject
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000377s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000448s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000512s ]
+SQL: SHOW COLUMNS FROM `graduate_year` [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `project` [ RunTime:0.0009s ]
+SQL: SELECT * FROM `graduate_year` ORDER BY year desc LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `project` WHERE ( year_id = 4 )  [ RunTime:0.0005s ]
+
+[ 2017-10-23T22:33:49+08:00 ] ::1 /csoaAPI/index.php/Home/Graduate/getOneProject?id=11
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000419s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000489s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000561s ]
+SQL: SHOW COLUMNS FROM `project` [ RunTime:0.0010s ]
+ERR: 1052:Column 'id' in field list is ambiguous
+ [ SQL语句 ] : SELECT `id`,`teacher_id`,`year_id`,`project_name`,`project_from`,`project_direction`,`number`,`apply_number`,`confirm_number`,`project_background`,`project_work`,`demand`,`other`,`state` FROM `project` INNER JOIN teacher on teacher.id = project.teacher_id  WHERE project.id = '11' LIMIT 1  
+ERR: 1052:Column 'id' in field list is ambiguous
+ [ SQL语句 ] : SELECT `id`,`teacher_id`,`year_id`,`project_name`,`project_from`,`project_direction`,`number`,`apply_number`,`confirm_number`,`project_background`,`project_work`,`demand`,`other`,`state` FROM `project` INNER JOIN teacher on teacher.id = project.teacher_id  WHERE project.id = '11' LIMIT 1  
+
+[ 2017-10-23T22:37:44+08:00 ] ::1 /csoaAPI/index.php/Home/Graduate/getProject
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000395s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001082s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001166s ]
+SQL: SHOW COLUMNS FROM `graduate_year` [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `project` [ RunTime:0.0011s ]
+SQL: SELECT * FROM `graduate_year` ORDER BY year desc LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `project` WHERE ( year_id = 4 )  [ RunTime:0.0005s ]
+
+[ 2017-10-23T22:37:46+08:00 ] ::1 /csoaAPI/index.php/Home/User/getRole
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000350s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001002s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001090s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `role` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0006s ]
+
+[ 2017-10-23T22:37:46+08:00 ] ::1 /csoaAPI/index.php/Home/Graduate/getProject
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000378s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000478s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000542s ]
+SQL: SHOW COLUMNS FROM `graduate_year` [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `project` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `graduate_year` ORDER BY year desc LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `project` WHERE ( year_id = 4 )  [ RunTime:0.0005s ]
+
+[ 2017-10-23T22:37:47+08:00 ] ::1 /csoaAPI/index.php/Home/Graduate/getOneProject?id=11
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000388s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000505s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000576s ]
+SQL: SHOW COLUMNS FROM `project` [ RunTime:0.0009s ]
+ERR: 1052:Column 'state' in field list is ambiguous
+ [ SQL语句 ] : SELECT project.id,`teacher_id`,`year_id`,`project_name`,`project_from`,`project_direction`,`number`,`apply_number`,`project_background`,`project_work`,`demand`,`other`,`state`,`name`,`office`,`telephone`,`phone`,`short_phone`,`email`,`qq`,`wechat`,`department` FROM `project` INNER JOIN teacher on teacher.id = project.teacher_id  WHERE project.id = '11' LIMIT 1  
+ERR: 1052:Column 'state' in field list is ambiguous
+ [ SQL语句 ] : SELECT project.id,`teacher_id`,`year_id`,`project_name`,`project_from`,`project_direction`,`number`,`apply_number`,`project_background`,`project_work`,`demand`,`other`,`state`,`name`,`office`,`telephone`,`phone`,`short_phone`,`email`,`qq`,`wechat`,`department` FROM `project` INNER JOIN teacher on teacher.id = project.teacher_id  WHERE project.id = '11' LIMIT 1  
+
+[ 2017-10-23T22:38:05+08:00 ] ::1 /csoaAPI/index.php/Home/Graduate/getProject
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000543s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000687s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000791s ]
+SQL: SHOW COLUMNS FROM `graduate_year` [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `project` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `graduate_year` ORDER BY year desc LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `project` WHERE ( year_id = 4 )  [ RunTime:0.0005s ]
+
+[ 2017-10-23T22:38:07+08:00 ] ::1 /csoaAPI/index.php/Home/User/getRole
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000422s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001797s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001877s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0009s ]
+SQL: SELECT * FROM `role` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0025s ]
+
+[ 2017-10-23T22:38:07+08:00 ] ::1 /csoaAPI/index.php/Home/Graduate/getProject
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000347s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000452s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000524s ]
+SQL: SHOW COLUMNS FROM `graduate_year` [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `project` [ RunTime:0.0011s ]
+SQL: SELECT * FROM `graduate_year` ORDER BY year desc LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `project` WHERE ( year_id = 4 )  [ RunTime:0.0006s ]
+
+[ 2017-10-23T22:38:09+08:00 ] ::1 /csoaAPI/index.php/Home/Graduate/getOneProject?id=11
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000403s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000478s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000543s ]
+SQL: SHOW COLUMNS FROM `project` [ RunTime:0.0007s ]
+SQL: SELECT project.id,`teacher_id`,`year_id`,`project_name`,`project_from`,`project_direction`,`number`,`apply_number`,`project_background`,`project_work`,`demand`,`other`,project.state,`name`,`office`,`telephone`,`phone`,`short_phone`,`email`,`qq`,`wechat`,`department` FROM `project` INNER JOIN teacher on teacher.id = project.teacher_id  WHERE project.id = '11' LIMIT 1   [ RunTime:0.0009s ]
+
+[ 2017-10-23T22:38:12+08:00 ] ::1 /csoaAPI/index.php/Home/Graduate/getProject
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000240s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000489s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000547s ]
+SQL: SHOW COLUMNS FROM `graduate_year` [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `project` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `graduate_year` ORDER BY year desc LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `project` WHERE ( year_id = 4 )  [ RunTime:0.0005s ]
+
+[ 2017-10-23T22:38:13+08:00 ] ::1 /csoaAPI/index.php/Home/User/getRole
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000408s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000511s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000589s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0011s ]
+SQL: SELECT * FROM `role` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0006s ]
+
+[ 2017-10-23T22:38:13+08:00 ] ::1 /csoaAPI/index.php/Home/Graduate/getProject
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000424s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000458s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000524s ]
+SQL: SHOW COLUMNS FROM `graduate_year` [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `project` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `graduate_year` ORDER BY year desc LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `project` WHERE ( year_id = 4 )  [ RunTime:0.0006s ]
+
+[ 2017-10-23T22:38:15+08:00 ] ::1 /csoaAPI/index.php/Home/Graduate/getOneProject?id=11
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000796s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000484s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000545s ]
+SQL: SHOW COLUMNS FROM `project` [ RunTime:0.0006s ]
+SQL: SELECT project.id,`teacher_id`,`year_id`,`project_name`,`project_from`,`project_direction`,`number`,`apply_number`,`project_background`,`project_work`,`demand`,`other`,project.state,`name`,`office`,`telephone`,`phone`,`short_phone`,`email`,`qq`,`wechat`,`department` FROM `project` INNER JOIN teacher on teacher.id = project.teacher_id  WHERE project.id = '11' LIMIT 1   [ RunTime:0.0007s ]
+
+[ 2017-10-23T22:38:17+08:00 ] ::1 /csoaAPI/index.php/Home/Graduate/getProject
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001182s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000433s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000494s ]
+SQL: SHOW COLUMNS FROM `graduate_year` [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `project` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `graduate_year` ORDER BY year desc LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `project` WHERE ( year_id = 4 )  [ RunTime:0.0005s ]
+
+[ 2017-10-23T22:38:18+08:00 ] ::1 /csoaAPI/index.php/Home/User/getRole
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000421s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000438s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000509s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `role` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0006s ]
+
+[ 2017-10-23T22:38:18+08:00 ] ::1 /csoaAPI/index.php/Home/Graduate/getProject
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000411s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000524s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000596s ]
+SQL: SHOW COLUMNS FROM `graduate_year` [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `project` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `graduate_year` ORDER BY year desc LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `project` WHERE ( year_id = 4 )  [ RunTime:0.0005s ]
+
+[ 2017-10-23T22:38:21+08:00 ] ::1 /csoaAPI/index.php/Home/Graduate/getOneProject?id=9
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000419s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000473s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000521s ]
+SQL: SHOW COLUMNS FROM `project` [ RunTime:0.0007s ]
+SQL: SELECT project.id,`teacher_id`,`year_id`,`project_name`,`project_from`,`project_direction`,`number`,`apply_number`,`project_background`,`project_work`,`demand`,`other`,project.state,`name`,`office`,`telephone`,`phone`,`short_phone`,`email`,`qq`,`wechat`,`department` FROM `project` INNER JOIN teacher on teacher.id = project.teacher_id  WHERE project.id = '9' LIMIT 1   [ RunTime:0.0007s ]
+
+[ 2017-10-23T22:38:23+08:00 ] ::1 /csoaAPI/index.php/Home/Graduate/getProject
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000343s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000435s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000489s ]
+SQL: SHOW COLUMNS FROM `graduate_year` [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `project` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `graduate_year` ORDER BY year desc LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `project` WHERE ( year_id = 4 )  [ RunTime:0.0005s ]
+
+[ 2017-10-23T22:38:35+08:00 ] ::1 /csoaAPI/index.php/Home/Graduate/getOneProject?id=9
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000954s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001279s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001358s ]
+SQL: SHOW COLUMNS FROM `project` [ RunTime:0.0021s ]
+SQL: SELECT project.id,`teacher_id`,`year_id`,`project_name`,`project_from`,`project_direction`,`number`,`apply_number`,`project_background`,`project_work`,`demand`,`other`,project.state,`name`,`office`,`telephone`,`phone`,`short_phone`,`email`,`qq`,`wechat`,`department` FROM `project` INNER JOIN teacher on teacher.id = project.teacher_id  WHERE project.id = '9' LIMIT 1   [ RunTime:0.0009s ]
+
+[ 2017-10-23T22:38:36+08:00 ] ::1 /csoaAPI/index.php/Home/Graduate/getProject
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000874s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000514s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000584s ]
+SQL: SHOW COLUMNS FROM `graduate_year` [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `project` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `graduate_year` ORDER BY year desc LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `project` WHERE ( year_id = 4 )  [ RunTime:0.0006s ]
+
+[ 2017-10-23T22:38:37+08:00 ] ::1 /csoaAPI/index.php/Home/Graduate/getOneProject?id=11
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000295s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000303s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000342s ]
+SQL: SHOW COLUMNS FROM `project` [ RunTime:0.0010s ]
+SQL: SELECT project.id,`teacher_id`,`year_id`,`project_name`,`project_from`,`project_direction`,`number`,`apply_number`,`project_background`,`project_work`,`demand`,`other`,project.state,`name`,`office`,`telephone`,`phone`,`short_phone`,`email`,`qq`,`wechat`,`department` FROM `project` INNER JOIN teacher on teacher.id = project.teacher_id  WHERE project.id = '11' LIMIT 1   [ RunTime:0.0009s ]
+
+[ 2017-10-23T22:38:39+08:00 ] ::1 /csoaAPI/index.php/Home/Graduate/getProject
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000360s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000941s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001021s ]
+SQL: SHOW COLUMNS FROM `graduate_year` [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `project` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `graduate_year` ORDER BY year desc LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT * FROM `project` WHERE ( year_id = 4 )  [ RunTime:0.0005s ]
+
+[ 2017-10-23T22:38:40+08:00 ] ::1 /csoaAPI/index.php/Home/Graduate/getOneProject?id=11
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000202s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000569s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000629s ]
+SQL: SHOW COLUMNS FROM `project` [ RunTime:0.0014s ]
+SQL: SELECT project.id,`teacher_id`,`year_id`,`project_name`,`project_from`,`project_direction`,`number`,`apply_number`,`project_background`,`project_work`,`demand`,`other`,project.state,`name`,`office`,`telephone`,`phone`,`short_phone`,`email`,`qq`,`wechat`,`department` FROM `project` INNER JOIN teacher on teacher.id = project.teacher_id  WHERE project.id = '11' LIMIT 1   [ RunTime:0.0009s ]
+
+[ 2017-10-23T22:38:43+08:00 ] ::1 /csoaAPI/index.php/Home/Graduate/projectModify
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000451s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000453s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000523s ]
+SQL: SHOW COLUMNS FROM `project` [ RunTime:0.0010s ]
+SQL: UPDATE `project` SET `project_name`='测试2',`project_from`='国家级项目',`project_direction`='理论研究',`number`='1',`project_background`='哈哈哈哈',`project_work`='哈哈哈哈',`demand`='哈哈哈',`other`='undefined',`state`='0' WHERE `id` = 11 [ RunTime:0.0016s ]
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Library/WebServer/Documents/csoaAPI/Application/Home/Controller/GraduateController.class.php:904) /Library/WebServer/Documents/csoaAPI/ThinkPHP/Library/Think/Controller.class.php 第 215 行.
+
+[ 2017-10-23T22:39:13+08:00 ] ::1 /csoaAPI/index.php/Home/Graduate/getProject
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.006524s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001004s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001173s ]
+SQL: SHOW COLUMNS FROM `graduate_year` [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `project` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `graduate_year` ORDER BY year desc LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `project` WHERE ( year_id = 4 )  [ RunTime:0.0005s ]
+
+[ 2017-10-23T22:39:15+08:00 ] ::1 /csoaAPI/index.php/Home/User/getRole
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000422s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000508s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000576s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0009s ]
+SQL: SELECT * FROM `role` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0007s ]
+
+[ 2017-10-23T22:39:15+08:00 ] ::1 /csoaAPI/index.php/Home/Graduate/getProject
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000430s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000498s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000567s ]
+SQL: SHOW COLUMNS FROM `graduate_year` [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `project` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `graduate_year` ORDER BY year desc LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `project` WHERE ( year_id = 4 )  [ RunTime:0.0005s ]
+
+[ 2017-10-23T22:39:18+08:00 ] ::1 /csoaAPI/index.php/Home/Graduate/getOneProject?id=9
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000405s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000497s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000556s ]
+SQL: SHOW COLUMNS FROM `project` [ RunTime:0.0008s ]
+SQL: SELECT project.id,`teacher_id`,`year_id`,`project_name`,`project_from`,`project_direction`,`number`,`apply_number`,`project_background`,`project_work`,`demand`,`other`,project.state,`name`,`office`,`telephone`,`phone`,`short_phone`,`email`,`qq`,`wechat`,`department` FROM `project` INNER JOIN teacher on teacher.id = project.teacher_id  WHERE project.id = '9' LIMIT 1   [ RunTime:0.0008s ]
+
+[ 2017-10-23T22:39:20+08:00 ] ::1 /csoaAPI/index.php/Home/Graduate/projectModify
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000190s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000297s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000339s ]
+SQL: SHOW COLUMNS FROM `project` [ RunTime:0.0007s ]
+SQL: UPDATE `project` SET `project_name`='师生共拟',`project_from`='学生自拟',`project_direction`='应用开发',`number`='1',`project_background`='测试111',`project_work`='测试',`demand`='测试',`other`='null',`state`='0' WHERE `id` = 9 [ RunTime:0.0005s ]
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Library/WebServer/Documents/csoaAPI/Application/Home/Controller/GraduateController.class.php:908) /Library/WebServer/Documents/csoaAPI/ThinkPHP/Library/Think/Controller.class.php 第 215 行.
+
+[ 2017-10-23T22:39:30+08:00 ] ::1 /csoaAPI/index.php/Home/Graduate/projectModify
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000369s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000686s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000753s ]
+SQL: SHOW COLUMNS FROM `project` [ RunTime:0.0010s ]
+SQL: UPDATE `project` SET `project_name`='师生共拟',`project_from`='学生自拟',`project_direction`='应用开发',`number`='1',`project_background`='测试111',`project_work`='测试',`demand`='测试',`other`='null',`state`='0' WHERE `id` = 9 [ RunTime:0.0015s ]
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Library/WebServer/Documents/csoaAPI/Application/Home/Controller/GraduateController.class.php:908) /Library/WebServer/Documents/csoaAPI/ThinkPHP/Library/Think/Controller.class.php 第 215 行.
+
+[ 2017-10-23T22:39:36+08:00 ] ::1 /csoaAPI/index.php/Home/Graduate/projectModify
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001029s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000463s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000603s ]
+SQL: SHOW COLUMNS FROM `project` [ RunTime:0.0014s ]
+SQL: UPDATE `project` SET `project_name`='师生共拟',`project_from`='学生自拟',`project_direction`='应用开发',`number`='1',`project_background`='测试111',`project_work`='测试',`demand`='测试1111',`other`='null',`state`='0' WHERE `id` = 9 [ RunTime:0.0014s ]
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Library/WebServer/Documents/csoaAPI/Application/Home/Controller/GraduateController.class.php:908) /Library/WebServer/Documents/csoaAPI/ThinkPHP/Library/Think/Controller.class.php 第 215 行.
+
+[ 2017-10-23T22:39:42+08:00 ] ::1 /csoaAPI/index.php/Home/Graduate/projectModify
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000229s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000469s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000621s ]
+SQL: SHOW COLUMNS FROM `project` [ RunTime:0.0010s ]
+SQL: UPDATE `project` SET `project_name`='师生共拟',`project_from`='学生自拟',`project_direction`='应用开发',`number`='1',`project_background`='测试111',`project_work`='测试',`demand`='测试1111',`other`='null',`state`='0' WHERE `id` = 9 [ RunTime:0.0004s ]
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Library/WebServer/Documents/csoaAPI/Application/Home/Controller/GraduateController.class.php:908) /Library/WebServer/Documents/csoaAPI/ThinkPHP/Library/Think/Controller.class.php 第 215 行.
+
+[ 2017-10-23T22:40:33+08:00 ] ::1 /csoaAPI/index.php/Home/User/getRole
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000326s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000376s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000443s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `role` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0005s ]
+
+[ 2017-10-23T22:40:33+08:00 ] ::1 /csoaAPI/index.php/Home/Graduate/getProject
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000181s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000469s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000529s ]
+SQL: SHOW COLUMNS FROM `graduate_year` [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `project` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `graduate_year` ORDER BY year desc LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `project` WHERE ( year_id = 4 )  [ RunTime:0.0004s ]
+
+[ 2017-10-23T22:40:35+08:00 ] ::1 /csoaAPI/index.php/Home/Graduate/getOneProject?id=11
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000346s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000438s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000555s ]
+SQL: SHOW COLUMNS FROM `project` [ RunTime:0.0007s ]
+SQL: SELECT project.id,`teacher_id`,`year_id`,`project_name`,`project_from`,`project_direction`,`number`,`apply_number`,`project_background`,`project_work`,`demand`,`other`,project.state,`name`,`office`,`telephone`,`phone`,`short_phone`,`email`,`qq`,`wechat`,`department` FROM `project` INNER JOIN teacher on teacher.id = project.teacher_id  WHERE project.id = '11' LIMIT 1   [ RunTime:0.0007s ]
+
+[ 2017-10-23T22:40:37+08:00 ] ::1 /csoaAPI/index.php/Home/Graduate/projectModify
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000200s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000248s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000284s ]
+SQL: SHOW COLUMNS FROM `project` [ RunTime:0.0008s ]
+SQL: UPDATE `project` SET `project_name`='测试2',`project_from`='国家级项目',`project_direction`='理论研究',`number`='1',`project_background`='哈哈哈哈111',`project_work`='哈哈哈哈',`demand`='哈哈哈',`other`='undefined',`state`='0' WHERE `id` = 11 [ RunTime:0.0005s ]
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Library/WebServer/Documents/csoaAPI/Application/Home/Controller/GraduateController.class.php:908) /Library/WebServer/Documents/csoaAPI/ThinkPHP/Library/Think/Controller.class.php 第 215 行.
+
+[ 2017-10-23T22:40:57+08:00 ] ::1 /csoaAPI/index.php/Home/Graduate/projectModify
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000669s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003884s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003962s ]
+SQL: SHOW COLUMNS FROM `project` [ RunTime:0.0007s ]
+SQL: UPDATE `project` SET `project_name`='测试2',`project_from`='国家级项目',`project_direction`='理论研究',`number`='1',`project_background`='哈哈哈哈111',`project_work`='哈哈哈哈',`demand`='哈哈哈',`other`='undefined',`state`='0' WHERE `id` = 11 [ RunTime:0.0004s ]
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Library/WebServer/Documents/csoaAPI/Application/Home/Controller/GraduateController.class.php:908) /Library/WebServer/Documents/csoaAPI/ThinkPHP/Library/Think/Controller.class.php 第 215 行.
+
+[ 2017-10-23T22:41:03+08:00 ] ::1 /csoaAPI/index.php/Home/Graduate/projectModify
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000240s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000407s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000475s ]
+SQL: SHOW COLUMNS FROM `project` [ RunTime:0.0009s ]
+SQL: UPDATE `project` SET `project_name`='测试2',`project_from`='国家级项目',`project_direction`='理论研究',`number`='1',`project_background`='哈哈哈哈111',`project_work`='哈哈哈哈111',`demand`='哈哈哈',`other`='undefined',`state`='0' WHERE `id` = 11 [ RunTime:0.0006s ]
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Library/WebServer/Documents/csoaAPI/Application/Home/Controller/GraduateController.class.php:908) /Library/WebServer/Documents/csoaAPI/ThinkPHP/Library/Think/Controller.class.php 第 215 行.
+
+[ 2017-10-23T22:41:32+08:00 ] ::1 /csoaAPI/index.php/Home/Graduate/getProject
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000032s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000670s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000620s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000692s ]
+SQL: SHOW COLUMNS FROM `graduate_year` [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `project` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `graduate_year` ORDER BY year desc LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT * FROM `project` WHERE ( year_id = 4 )  [ RunTime:0.0005s ]
+
+[ 2017-10-23T22:41:33+08:00 ] ::1 /csoaAPI/index.php/Home/Graduate/getOneProject?id=9
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000279s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000265s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000304s ]
+SQL: SHOW COLUMNS FROM `project` [ RunTime:0.0008s ]
+SQL: SELECT project.id,`teacher_id`,`year_id`,`project_name`,`project_from`,`project_direction`,`number`,`apply_number`,`project_background`,`project_work`,`demand`,`other`,project.state,`name`,`office`,`telephone`,`phone`,`short_phone`,`email`,`qq`,`wechat`,`department` FROM `project` INNER JOIN teacher on teacher.id = project.teacher_id  WHERE project.id = '9' LIMIT 1   [ RunTime:0.0009s ]
+
+[ 2017-10-23T22:41:35+08:00 ] ::1 /csoaAPI/index.php/Home/Graduate/projectModify
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000230s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000424s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000479s ]
+SQL: SHOW COLUMNS FROM `project` [ RunTime:0.0006s ]
+SQL: UPDATE `project` SET `project_name`='测试2',`project_from`='国家级项目',`project_direction`='理论研究',`number`='1',`project_background`='哈哈哈哈111',`project_work`='哈哈哈哈111',`demand`='哈哈哈11',`other`='null',`state`='0' WHERE `id` = 9 [ RunTime:0.0005s ]
+
+[ 2017-10-23T22:41:35+08:00 ] ::1 /csoaAPI/index.php/Home/Graduate/getProject
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000277s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000266s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000302s ]
+SQL: SHOW COLUMNS FROM `graduate_year` [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `project` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `graduate_year` ORDER BY year desc LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `project` WHERE ( year_id = 4 )  [ RunTime:0.0006s ]
+
+[ 2017-10-23T22:41:38+08:00 ] ::1 /csoaAPI/index.php/Home/Graduate/getOneProject?id=9
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000434s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001178s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001243s ]
+SQL: SHOW COLUMNS FROM `project` [ RunTime:0.0008s ]
+SQL: SELECT project.id,`teacher_id`,`year_id`,`project_name`,`project_from`,`project_direction`,`number`,`apply_number`,`project_background`,`project_work`,`demand`,`other`,project.state,`name`,`office`,`telephone`,`phone`,`short_phone`,`email`,`qq`,`wechat`,`department` FROM `project` INNER JOIN teacher on teacher.id = project.teacher_id  WHERE project.id = '9' LIMIT 1   [ RunTime:0.0007s ]
+
+[ 2017-10-23T22:41:39+08:00 ] ::1 /csoaAPI/index.php/Home/Graduate/getProject
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000453s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000454s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000519s ]
+SQL: SHOW COLUMNS FROM `graduate_year` [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `project` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `graduate_year` ORDER BY year desc LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `project` WHERE ( year_id = 4 )  [ RunTime:0.0004s ]
+
+[ 2017-10-23T22:42:08+08:00 ] ::1 /csoaAPI/index.php/Home/Graduate/getProjectByTeacher
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000390s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000467s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000532s ]
+SQL: SHOW COLUMNS FROM `graduate_year` [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `project` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `graduate_year` ORDER BY year desc LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `project` WHERE `year_id` = 4 AND `teacher_id` = 64  [ RunTime:0.0003s ]
+
+[ 2017-10-23T22:42:09+08:00 ] ::1 /csoaAPI/index.php/Home/Graduate/getProject
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000433s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000598s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000677s ]
+SQL: SHOW COLUMNS FROM `graduate_year` [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `project` [ RunTime:0.0012s ]
+SQL: SELECT * FROM `graduate_year` ORDER BY year desc LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `project` WHERE ( year_id = 4 )  [ RunTime:0.0016s ]
+
+[ 2017-10-23T22:42:13+08:00 ] ::1 /csoaAPI/index.php/Home/Graduate/getOneProject?id=11
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000391s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000780s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000849s ]
+SQL: SHOW COLUMNS FROM `project` [ RunTime:0.0008s ]
+SQL: SELECT project.id,`teacher_id`,`year_id`,`project_name`,`project_from`,`project_direction`,`number`,`apply_number`,`project_background`,`project_work`,`demand`,`other`,project.state,`name`,`office`,`telephone`,`phone`,`short_phone`,`email`,`qq`,`wechat`,`department` FROM `project` INNER JOIN teacher on teacher.id = project.teacher_id  WHERE project.id = '11' LIMIT 1   [ RunTime:0.0008s ]
+
+[ 2017-10-23T22:42:15+08:00 ] ::1 /csoaAPI/index.php/Home/Graduate/getProject
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000327s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000420s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000477s ]
+SQL: SHOW COLUMNS FROM `graduate_year` [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `project` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `graduate_year` ORDER BY year desc LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT * FROM `project` WHERE ( year_id = 4 )  [ RunTime:0.0006s ]
+
+[ 2017-10-23T22:42:16+08:00 ] ::1 /csoaAPI/index.php/Home/Graduate/getOneProject?id=9
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000432s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000278s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000315s ]
+SQL: SHOW COLUMNS FROM `project` [ RunTime:0.0008s ]
+SQL: SELECT project.id,`teacher_id`,`year_id`,`project_name`,`project_from`,`project_direction`,`number`,`apply_number`,`project_background`,`project_work`,`demand`,`other`,project.state,`name`,`office`,`telephone`,`phone`,`short_phone`,`email`,`qq`,`wechat`,`department` FROM `project` INNER JOIN teacher on teacher.id = project.teacher_id  WHERE project.id = '9' LIMIT 1   [ RunTime:0.0006s ]
+
+[ 2017-10-23T22:42:17+08:00 ] ::1 /csoaAPI/index.php/Home/Graduate/getProject
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000372s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000460s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000523s ]
+SQL: SHOW COLUMNS FROM `graduate_year` [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `project` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `graduate_year` ORDER BY year desc LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `project` WHERE ( year_id = 4 )  [ RunTime:0.0004s ]
+
+[ 2017-10-23T22:42:19+08:00 ] ::1 /csoaAPI/index.php/Home/Graduate/getOneProject?id=11
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000380s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000876s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001109s ]
+SQL: SHOW COLUMNS FROM `project` [ RunTime:0.0005s ]
+SQL: SELECT project.id,`teacher_id`,`year_id`,`project_name`,`project_from`,`project_direction`,`number`,`apply_number`,`project_background`,`project_work`,`demand`,`other`,project.state,`name`,`office`,`telephone`,`phone`,`short_phone`,`email`,`qq`,`wechat`,`department` FROM `project` INNER JOIN teacher on teacher.id = project.teacher_id  WHERE project.id = '11' LIMIT 1   [ RunTime:0.0019s ]
+
+[ 2017-10-23T22:42:21+08:00 ] ::1 /csoaAPI/index.php/Home/Graduate/getProject
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000207s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000465s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000529s ]
+SQL: SHOW COLUMNS FROM `graduate_year` [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `project` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `graduate_year` ORDER BY year desc LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `project` WHERE ( year_id = 4 )  [ RunTime:0.0004s ]
+
+[ 2017-10-23T22:42:22+08:00 ] ::1 /csoaAPI/index.php/Home/Graduate/getOneProject?id=9
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000208s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000256s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000289s ]
+SQL: SHOW COLUMNS FROM `project` [ RunTime:0.0006s ]
+SQL: SELECT project.id,`teacher_id`,`year_id`,`project_name`,`project_from`,`project_direction`,`number`,`apply_number`,`project_background`,`project_work`,`demand`,`other`,project.state,`name`,`office`,`telephone`,`phone`,`short_phone`,`email`,`qq`,`wechat`,`department` FROM `project` INNER JOIN teacher on teacher.id = project.teacher_id  WHERE project.id = '9' LIMIT 1   [ RunTime:0.0005s ]
+
+[ 2017-10-23T22:42:23+08:00 ] ::1 /csoaAPI/index.php/Home/Graduate/getProject
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000257s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000261s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000295s ]
+SQL: SHOW COLUMNS FROM `graduate_year` [ RunTime:0.0013s ]
+SQL: SHOW COLUMNS FROM `project` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `graduate_year` ORDER BY year desc LIMIT 1   [ RunTime:0.0009s ]
+SQL: SELECT * FROM `project` WHERE ( year_id = 4 )  [ RunTime:0.0007s ]
+
+[ 2017-10-23T22:42:42+08:00 ] ::1 /csoaAPI/index.php/Home/User/logout
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000435s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000518s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000560s ]
+
+[ 2017-10-23T22:42:46+08:00 ] ::1 /csoaAPI/index.php/Home/User/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000227s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000279s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000319s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `student` [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `teacher` [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `log` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `user` LIMIT 1   [ RunTime:0.0014s ]
+SQL: SELECT * FROM `teacher` WHERE `card_number` = '72796' LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT * FROM `student` WHERE `card_number` = '72796' LIMIT 1   [ RunTime:0.0021s ]
+SQL: INSERT INTO `log` (`userName`,`time`,`ip`,`state`) VALUES ('72796','1508769766','0.0.0.0','登陆成功') [ RunTime:0.0023s ]
+
+[ 2017-10-23T22:42:46+08:00 ] ::1 /csoaAPI/index.php/Home/User/getRole
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000412s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000441s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000515s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `role` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0006s ]
+
+[ 2017-10-23T22:42:46+08:00 ] ::1 /csoaAPI/index.php/Home/User/getUserInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000432s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000522s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000594s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `student` [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `teacher` [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `log` [ RunTime:0.0010s ]
+SQL: SELECT `id`,`card_number`,`name`,`office`,`telephone`,`phone`,`short_phone`,`email`,`qq`,`wechat`,`department`,`comment`,`state`,`role_id` FROM `teacher` WHERE `card_number` = '72796' LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT `userName`,`time`,`state`,`ip` FROM `log` ORDER BY time desc LIMIT 1   [ RunTime:0.0036s ]
+
+[ 2017-10-23T22:42:48+08:00 ] ::1 /csoaAPI/index.php/Home/Graduate/getYear
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000527s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000480s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000538s ]
+SQL: SHOW COLUMNS FROM `graduate_year` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `graduate_year` ORDER BY year desc  [ RunTime:0.0004s ]
+
+[ 2017-10-23T22:42:48+08:00 ] ::1 /csoaAPI/index.php/Home/Graduate/getGraduateStudent?year_id=4
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000196s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000477s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000592s ]
+SQL: SHOW COLUMNS FROM `graduate_student` [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `project` [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `teacher` [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `student` [ RunTime:0.0007s ]
+SQL: SELECT graduate_student.id,`project_id`,`year_id`,`student_id`,`grade`,`name`,`card_number` FROM `graduate_student` INNER JOIN student ON graduate_student.student_id = student.id  WHERE ( graduate_student.year_id = 4 ) ORDER BY card_number  [ RunTime:0.0008s ]
+SQL: SELECT * FROM `project` WHERE ( id = 9 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `project_name` FROM `project` WHERE ( id = 9 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `name` FROM `teacher` WHERE ( id = 64 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `project` WHERE ( id = 9 ) LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT `project_name` FROM `project` WHERE ( id = 9 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `name` FROM `teacher` WHERE ( id = 64 ) LIMIT 1   [ RunTime:0.0004s ]
+
+[ 2017-10-23T22:42:51+08:00 ] ::1 /csoaAPI/index.php/Home/Practice/export?year_id=4
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000346s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000485s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000533s ]
+SQL: SHOW COLUMNS FROM `practice_student` [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `job` [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `teacher` [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `student` [ RunTime:0.0010s ]
+SQL: SELECT `grade`,`name`,`major`,`class`,`card_number`,`identity_card`,`phone` FROM `practice_student` INNER JOIN student ON practice_student.student_id = student.id  WHERE ( practice_student.year_id = 4 ) ORDER BY card_number  [ RunTime:0.0016s ]
+NOTIC: [8] Undefined variable: fileName /Library/WebServer/Documents/csoaAPI/Application/Home/Controller/PracticeController.class.php 第 183 行.
+NOTIC: [8] ob_end_clean(): failed to delete buffer. No buffer to delete /Library/WebServer/Documents/csoaAPI/Application/Home/Controller/PracticeController.class.php 第 235 行.
+
+[ 2017-10-23T22:43:43+08:00 ] ::1 /csoaAPI/index.php/Home/User/getRole
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000526s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000627s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000687s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0014s ]
+SQL: SELECT * FROM `role` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0005s ]
+
+[ 2017-10-23T22:43:43+08:00 ] ::1 /csoaAPI/index.php/Home/Graduate/getYear
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000325s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000748s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000842s ]
+SQL: SHOW COLUMNS FROM `graduate_year` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `graduate_year` ORDER BY year desc  [ RunTime:0.0003s ]
+
+[ 2017-10-23T22:43:43+08:00 ] ::1 /csoaAPI/index.php/Home/Graduate/getGraduateStudent?year_id=4
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000349s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000504s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000591s ]
+SQL: SHOW COLUMNS FROM `graduate_student` [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `project` [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `teacher` [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `student` [ RunTime:0.0010s ]
+SQL: SELECT graduate_student.id,`project_id`,`year_id`,`student_id`,`grade`,`name`,`card_number` FROM `graduate_student` INNER JOIN student ON graduate_student.student_id = student.id  WHERE ( graduate_student.year_id = 4 ) ORDER BY card_number  [ RunTime:0.0012s ]
+SQL: SELECT * FROM `project` WHERE ( id = 9 ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `project_name` FROM `project` WHERE ( id = 9 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `name` FROM `teacher` WHERE ( id = 64 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `project` WHERE ( id = 9 ) LIMIT 1   [ RunTime:0.0015s ]
+SQL: SELECT `project_name` FROM `project` WHERE ( id = 9 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `name` FROM `teacher` WHERE ( id = 64 ) LIMIT 1   [ RunTime:0.0006s ]
+
+[ 2017-10-23T22:44:37+08:00 ] ::1 /csoaAPI/index.php/Home/User/getRole
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000591s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000743s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000820s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `role` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0005s ]
+
+[ 2017-10-23T22:44:37+08:00 ] ::1 /csoaAPI/index.php/Home/Graduate/getYear
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000203s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000301s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000389s ]
+SQL: SHOW COLUMNS FROM `graduate_year` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `graduate_year` ORDER BY year desc  [ RunTime:0.0004s ]
+
+[ 2017-10-23T22:44:37+08:00 ] ::1 /csoaAPI/index.php/Home/Graduate/getGraduateStudent?year_id=4
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000330s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.005566s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005646s ]
+SQL: SHOW COLUMNS FROM `graduate_student` [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `project` [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `teacher` [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `student` [ RunTime:0.0010s ]
+SQL: SELECT graduate_student.id,`project_id`,`year_id`,`student_id`,`grade`,`name`,`card_number` FROM `graduate_student` INNER JOIN student ON graduate_student.student_id = student.id  WHERE ( graduate_student.year_id = 4 ) ORDER BY card_number  [ RunTime:0.0015s ]
+SQL: SELECT * FROM `project` WHERE ( id = 9 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT `project_name` FROM `project` WHERE ( id = 9 ) LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT `name` FROM `teacher` WHERE ( id = 64 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `project` WHERE ( id = 9 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `project_name` FROM `project` WHERE ( id = 9 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `name` FROM `teacher` WHERE ( id = 64 ) LIMIT 1   [ RunTime:0.0004s ]
+
+[ 2017-10-23T22:54:29+08:00 ] ::1 /csoaAPI/index.php/Home/User/getRole
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000693s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000886s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000973s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `role` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0006s ]
+
+[ 2017-10-23T22:54:29+08:00 ] ::1 /csoaAPI/index.php/Home/Graduate/getYear
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000382s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000465s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000529s ]
+SQL: SHOW COLUMNS FROM `graduate_year` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `graduate_year` ORDER BY year desc  [ RunTime:0.0003s ]
+
+[ 2017-10-23T22:54:29+08:00 ] ::1 /csoaAPI/index.php/Home/Graduate/getGraduateStudent?year_id=4
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000330s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000463s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000527s ]
+SQL: SHOW COLUMNS FROM `graduate_student` [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `project` [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `teacher` [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `student` [ RunTime:0.0009s ]
+SQL: SELECT graduate_student.id,`project_id`,`year_id`,`student_id`,`grade`,`name`,`card_number` FROM `graduate_student` INNER JOIN student ON graduate_student.student_id = student.id  WHERE ( graduate_student.year_id = 4 ) ORDER BY card_number  [ RunTime:0.0007s ]
+SQL: SELECT * FROM `project` WHERE ( id = 9 ) LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT `project_name` FROM `project` WHERE ( id = 9 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `name` FROM `teacher` WHERE ( id = 64 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `project` WHERE ( id = 9 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `project_name` FROM `project` WHERE ( id = 9 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `name` FROM `teacher` WHERE ( id = 64 ) LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2017-10-23T22:54:32+08:00 ] ::1 /csoaAPI/index.php/Home/Graduate/export?year_id=4
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000323s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000442s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000502s ]
+SQL: SHOW COLUMNS FROM `graduate_student` [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `project` [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `teacher` [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `student` [ RunTime:0.0010s ]
+SQL: SELECT student.name,student.card_number,`major`,`class`,`project_name`,teacher.name FROM `graduate_student` INNER JOIN student ON graduate_student.student_id = student.id INNER JOIN project ON project.id = graduate_student.project_id INNER JOIN teacher ON teacher.id = project.teacher_id  WHERE ( graduate_student.year_id = 4 ) ORDER BY card_number  [ RunTime:0.0020s ]
+NOTIC: [8] Undefined variable: fileName /Library/WebServer/Documents/csoaAPI/Application/Home/Controller/GraduateController.class.php 第 161 行.
+NOTIC: [8] Undefined index: phone /Library/WebServer/Documents/csoaAPI/Application/Home/Controller/GraduateController.class.php 第 187 行.
+NOTIC: [8] Undefined index: phone /Library/WebServer/Documents/csoaAPI/Application/Home/Controller/GraduateController.class.php 第 187 行.
+NOTIC: [8] ob_end_clean(): failed to delete buffer. No buffer to delete /Library/WebServer/Documents/csoaAPI/Application/Home/Controller/GraduateController.class.php 第 209 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Library/WebServer/Documents/csoaAPI/Application/Home/Controller/GraduateController.class.php:145) /Library/WebServer/Documents/csoaAPI/Application/Home/Controller/GraduateController.class.php 第 210 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Library/WebServer/Documents/csoaAPI/Application/Home/Controller/GraduateController.class.php:145) /Library/WebServer/Documents/csoaAPI/Application/Home/Controller/GraduateController.class.php 第 211 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Library/WebServer/Documents/csoaAPI/Application/Home/Controller/GraduateController.class.php:145) /Library/WebServer/Documents/csoaAPI/Application/Home/Controller/GraduateController.class.php 第 212 行.
+
+[ 2017-10-23T22:55:34+08:00 ] ::1 /csoaAPI/index.php/Home/Graduate/export?year_id=4
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000663s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000950s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001014s ]
+SQL: SHOW COLUMNS FROM `graduate_student` [ RunTime:0.0013s ]
+SQL: SHOW COLUMNS FROM `project` [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `teacher` [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `student` [ RunTime:0.0006s ]
+SQL: SELECT student.name,student.card_number,`major`,`class`,`project_name`,teacher.name as teacher_name FROM `graduate_student` INNER JOIN student ON graduate_student.student_id = student.id INNER JOIN project ON project.id = graduate_student.project_id INNER JOIN teacher ON teacher.id = project.teacher_id  WHERE ( graduate_student.year_id = 4 ) ORDER BY card_number  [ RunTime:0.0008s ]
+NOTIC: [8] Undefined variable: fileName /Library/WebServer/Documents/csoaAPI/Application/Home/Controller/GraduateController.class.php 第 161 行.
+NOTIC: [8] ob_end_clean(): failed to delete buffer. No buffer to delete /Library/WebServer/Documents/csoaAPI/Application/Home/Controller/GraduateController.class.php 第 209 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Library/WebServer/Documents/csoaAPI/Application/Home/Controller/GraduateController.class.php:145) /Library/WebServer/Documents/csoaAPI/Application/Home/Controller/GraduateController.class.php 第 210 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Library/WebServer/Documents/csoaAPI/Application/Home/Controller/GraduateController.class.php:145) /Library/WebServer/Documents/csoaAPI/Application/Home/Controller/GraduateController.class.php 第 211 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Library/WebServer/Documents/csoaAPI/Application/Home/Controller/GraduateController.class.php:145) /Library/WebServer/Documents/csoaAPI/Application/Home/Controller/GraduateController.class.php 第 212 行.
+
+[ 2017-10-23T22:55:37+08:00 ] ::1 /csoaAPI/index.php/Home/User/getRole
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000346s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000409s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000465s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0009s ]
+SQL: SELECT * FROM `role` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0008s ]
+
+[ 2017-10-23T22:55:37+08:00 ] ::1 /csoaAPI/index.php/Home/Graduate/getYear
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000349s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000414s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000472s ]
+SQL: SHOW COLUMNS FROM `graduate_year` [ RunTime:0.0011s ]
+SQL: SELECT * FROM `graduate_year` ORDER BY year desc  [ RunTime:0.0004s ]
+
+[ 2017-10-23T22:55:38+08:00 ] ::1 /csoaAPI/index.php/Home/User/getRole
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000421s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000458s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000528s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0015s ]
+SQL: SELECT * FROM `role` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0007s ]
+
+[ 2017-10-23T22:55:39+08:00 ] ::1 /csoaAPI/index.php/Home/User/getUserInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000498s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000972s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002244s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0032s ]
+SQL: SHOW COLUMNS FROM `student` [ RunTime:0.0013s ]
+SQL: SHOW COLUMNS FROM `teacher` [ RunTime:0.0024s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0114s ]
+SQL: SHOW COLUMNS FROM `log` [ RunTime:0.0194s ]
+SQL: SELECT `id`,`card_number`,`name`,`office`,`telephone`,`phone`,`short_phone`,`email`,`qq`,`wechat`,`department`,`comment`,`state`,`role_id` FROM `teacher` WHERE `card_number` = '72796' LIMIT 1   [ RunTime:0.0009s ]
+SQL: SELECT `userName`,`time`,`state`,`ip` FROM `log` ORDER BY time desc LIMIT 1   [ RunTime:0.0053s ]
+
+[ 2017-10-23T22:55:42+08:00 ] ::1 /csoaAPI/index.php/Home/Graduate/getYear
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000366s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000783s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000850s ]
+SQL: SHOW COLUMNS FROM `graduate_year` [ RunTime:0.0009s ]
+SQL: SELECT * FROM `graduate_year` ORDER BY year desc  [ RunTime:0.0004s ]
+
+[ 2017-10-23T22:55:42+08:00 ] ::1 /csoaAPI/index.php/Home/Graduate/getGraduateStudent?year_id=4
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000208s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000253s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000288s ]
+SQL: SHOW COLUMNS FROM `graduate_student` [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `project` [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `teacher` [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `student` [ RunTime:0.0009s ]
+SQL: SELECT graduate_student.id,`project_id`,`year_id`,`student_id`,`grade`,`name`,`card_number` FROM `graduate_student` INNER JOIN student ON graduate_student.student_id = student.id  WHERE ( graduate_student.year_id = 4 ) ORDER BY card_number  [ RunTime:0.0007s ]
+SQL: SELECT * FROM `project` WHERE ( id = 9 ) LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT `project_name` FROM `project` WHERE ( id = 9 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `name` FROM `teacher` WHERE ( id = 64 ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `project` WHERE ( id = 9 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `project_name` FROM `project` WHERE ( id = 9 ) LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT `name` FROM `teacher` WHERE ( id = 64 ) LIMIT 1   [ RunTime:0.0005s ]
+
+[ 2017-10-23T22:55:44+08:00 ] ::1 /csoaAPI/index.php/Home/Graduate/export?year_id=4
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000309s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000265s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000298s ]
+SQL: SHOW COLUMNS FROM `graduate_student` [ RunTime:0.0017s ]
+SQL: SHOW COLUMNS FROM `project` [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `teacher` [ RunTime:0.0017s ]
+SQL: SHOW COLUMNS FROM `student` [ RunTime:0.0017s ]
+SQL: SELECT student.name,student.card_number,`major`,`class`,`project_name`,teacher.name as teacher_name FROM `graduate_student` INNER JOIN student ON graduate_student.student_id = student.id INNER JOIN project ON project.id = graduate_student.project_id INNER JOIN teacher ON teacher.id = project.teacher_id  WHERE ( graduate_student.year_id = 4 ) ORDER BY card_number  [ RunTime:0.0008s ]
+NOTIC: [8] Undefined variable: fileName /Library/WebServer/Documents/csoaAPI/Application/Home/Controller/GraduateController.class.php 第 161 行.
+NOTIC: [8] ob_end_clean(): failed to delete buffer. No buffer to delete /Library/WebServer/Documents/csoaAPI/Application/Home/Controller/GraduateController.class.php 第 209 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Library/WebServer/Documents/csoaAPI/Application/Home/Controller/GraduateController.class.php:145) /Library/WebServer/Documents/csoaAPI/Application/Home/Controller/GraduateController.class.php 第 210 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Library/WebServer/Documents/csoaAPI/Application/Home/Controller/GraduateController.class.php:145) /Library/WebServer/Documents/csoaAPI/Application/Home/Controller/GraduateController.class.php 第 211 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Library/WebServer/Documents/csoaAPI/Application/Home/Controller/GraduateController.class.php:145) /Library/WebServer/Documents/csoaAPI/Application/Home/Controller/GraduateController.class.php 第 212 行.
+
+[ 2017-10-23T22:56:04+08:00 ] ::1 /csoaAPI/index.php/Home/User/getRole
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000758s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004525s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004628s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0009s ]
+SQL: SELECT * FROM `role` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0006s ]
+
+[ 2017-10-23T22:56:04+08:00 ] ::1 /csoaAPI/index.php/Home/Graduate/getYear
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000689s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.067217s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.067471s ]
+SQL: SHOW COLUMNS FROM `graduate_year` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `graduate_year` ORDER BY year desc  [ RunTime:0.0004s ]
+
+[ 2017-10-23T22:56:04+08:00 ] ::1 /csoaAPI/index.php/Home/Graduate/getGraduateStudent?year_id=4
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000303s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000386s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000437s ]
+SQL: SHOW COLUMNS FROM `graduate_student` [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `project` [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `teacher` [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `student` [ RunTime:0.0008s ]
+SQL: SELECT graduate_student.id,`project_id`,`year_id`,`student_id`,`grade`,`name`,`card_number` FROM `graduate_student` INNER JOIN student ON graduate_student.student_id = student.id  WHERE ( graduate_student.year_id = 4 ) ORDER BY card_number  [ RunTime:0.0006s ]
+SQL: SELECT * FROM `project` WHERE ( id = 9 ) LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT `project_name` FROM `project` WHERE ( id = 9 ) LIMIT 1   [ RunTime:0.0014s ]
+SQL: SELECT `name` FROM `teacher` WHERE ( id = 64 ) LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT * FROM `project` WHERE ( id = 9 ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `project_name` FROM `project` WHERE ( id = 9 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `name` FROM `teacher` WHERE ( id = 64 ) LIMIT 1   [ RunTime:0.0004s ]
+
+[ 2017-10-23T22:56:06+08:00 ] ::1 /csoaAPI/index.php/Home/Graduate/export?year_id=4
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000351s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004076s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004146s ]
+SQL: SHOW COLUMNS FROM `graduate_student` [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `project` [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `teacher` [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `student` [ RunTime:0.0027s ]
+SQL: SELECT student.name,student.card_number,`major`,`class`,`project_name`,teacher.name as teacher_name FROM `graduate_student` INNER JOIN student ON graduate_student.student_id = student.id INNER JOIN project ON project.id = graduate_student.project_id INNER JOIN teacher ON teacher.id = project.teacher_id  WHERE ( graduate_student.year_id = 4 ) ORDER BY card_number  [ RunTime:0.0053s ]
+NOTIC: [8] Undefined variable: fileName /Library/WebServer/Documents/csoaAPI/Application/Home/Controller/GraduateController.class.php 第 161 行.
+NOTIC: [8] ob_end_clean(): failed to delete buffer. No buffer to delete /Library/WebServer/Documents/csoaAPI/Application/Home/Controller/GraduateController.class.php 第 209 行.
+

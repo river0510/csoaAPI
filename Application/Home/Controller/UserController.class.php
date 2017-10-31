@@ -3,8 +3,8 @@ namespace Home\Controller;
 use Think\Controller;
 
 // header("Access-Control-Allow-Origin:http://192.168.253.3:8000");
-header("Access-Control-Allow-Origin:http://localhost:8000");
-// header("Access-Control-Allow-Origin:http://172.31.238.205:8000");
+// header("Access-Control-Allow-Origin:http://localhost:8000");
+header("Access-Control-Allow-Origin:http://172.31.238.205:8000");
 header("Access-Control-Allow-Headers:X-Requested-With");
 header("Access-Control-Allow-Credentials:true");
 
@@ -415,6 +415,28 @@ class UserController extends Controller {
             $data['status']=400;
         }
         $this->ajaxReturn($data);
+    }
+
+    public function modifyTeacherRole(){
+        //身份验证
+        verifyRole(1);
+
+        $Teacher = M('teacher');
+
+        $id = I('get.id');
+        $role_id = I('get.role_id');
+
+        $data = [];
+        $update['role_id'] = $role_id;
+        $res = $Teacher->where("id = $id")->save($update);
+        if($res){
+            $data['status'] = 200;
+            $data['message'] = '修改成功';
+        }else{
+            $data['status']=400;
+            $data['message'] = '修改失败，请稍后再试';
+        }
+        $this->ajaxReturn($data);
     }    
 
     public function deleteTeacher(){
@@ -432,6 +454,28 @@ class UserController extends Controller {
         }else{
             $data['status'] = 400;
             $data['message'] = '删除失败，请稍后再试';
+        }
+        $this->ajaxReturn($data);
+    }
+
+
+    //重置密码
+    public function resetTeacher(){
+        //身份验证
+        verifyRole(1);
+
+        $Teacher = M('teacher');
+
+        $data = [];
+        $id = I('get.id');
+        $update['password'] = '123456';
+        $res = $Teacher->where("id = $id")->save($update);
+        if($res){
+            $data['status'] = 200;
+            $data['message'] = '重置成功';
+        }else{
+            $data['status'] = 400;
+            $data['message'] = '重置失败，请稍后再试';
         }
         $this->ajaxReturn($data);
     }
@@ -537,7 +581,7 @@ class UserController extends Controller {
         }
 
         foreach($data as $value){
-            $value['password'] = $value['card_number'];
+            $value['password'] = '123456';
             $value['role_id'] = 3;   //初始化权限为教师
             $where['card_number'] = $value['card_number'];
             $resFind = $Teacher->where($where)->find();
@@ -615,6 +659,27 @@ class UserController extends Controller {
         }else{
             $data['status'] = 400;
             $data['message'] = '删除失败，请稍后再试';
+        }
+        $this->ajaxReturn($data);
+    }
+
+    //重置密码
+    public function resetStudent(){
+        //身份验证
+        verifyRole(1);
+
+        $Student = M('student');
+
+        $data = [];
+        $id = I('get.id');
+        $update['password'] = '123456';
+        $res = $Student->where("id = $id")->save($update);
+        if($res){
+            $data['status'] = 200;
+            $data['message'] = '重置成功';
+        }else{
+            $data['status'] = 400;
+            $data['message'] = '重置失败，请稍后再试';
         }
         $this->ajaxReturn($data);
     }
