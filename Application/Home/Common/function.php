@@ -12,6 +12,8 @@
 	function verify($userName){
 		if($_SESSION['role_id'] != 1){
 			if($_SESSION['userName'] != $userName){
+				
+			print_r($_SESSION);
 				echo '兄弟，你太天真了';
 	            exit();
 			}			

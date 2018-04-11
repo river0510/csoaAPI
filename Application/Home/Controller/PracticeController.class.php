@@ -5,6 +5,7 @@ use Think\Controller;
 // header("Access-Control-Allow-Origin:http://192.168.253.3:8000");
 header("Access-Control-Allow-Origin:http://localhost:8000");
 // header("Access-Control-Allow-Origin:http://172.31.238.205:8000");
+// header("Access-Control-Allow-Origin:http://172.31.234.29:8000");
 header("Access-Control-Allow-Headers:X-Requested-With");
 header("Access-Control-Allow-Credentials:true");
 
@@ -71,7 +72,7 @@ class PracticeController extends Controller {
 
 		$students = I('post.students');
 		$year_id = I('post.year_id');
-		$GraduateStudent = M('graduate_student');
+		$PracticeStudent = M('pratice_student');
 		$Student = M('student');
 
 		$students = trim($students);
@@ -91,11 +92,11 @@ class PracticeController extends Controller {
 				'student_id' => $id,
 				'year_id' => $year_id
 			];
-			$res = $GraduateStudent->where($where)->find();
+			$res = $PracticeStudent->where($where)->find();
 			if(!$res){
 				$newData['year_id'] = $year_id;
 				$newData['student_id'] = $id;
-				$res2=$GraduateStudent->add($newData);
+				$res2=$PracticeStudent->add($newData);
 				if(!$res2)
 					$isSuccess = 0;
 			}
@@ -133,9 +134,11 @@ class PracticeController extends Controller {
 		//查询该年度所有学生数据
 		$exportData = $PracticeStudent->where("practice_student.year_id = $year_id")
 				->join('student ON practice_student.student_id = student.id')	
-				->field('grade,name,major,class,card_number,identity_card,phone')
+				->field('grade,name,major,class,card_number,identity_card,phone,job_id,teacher_id')
 				->order('card_number')
 				->select();
+
+		// print_r($exportData);
 		//查询每个学生的实习公司 和老师
 		foreach ($exportData as $key => $value) {
 			$job_id = $value['job_id'];
@@ -199,6 +202,8 @@ class PracticeController extends Controller {
         $i = 2;
         $objActSheet = $objPHPExcel->getActiveSheet();
         $key = 1;
+
+        // print_r($exportData); 
         foreach ($exportData as $d){ //行写入
             $objActSheet->setCellValue("A".$i,$key++);
             $objActSheet->setCellValue("B".$i, $d['name']);
@@ -209,8 +214,8 @@ class PracticeController extends Controller {
             $objActSheet->setCellValue("G".$i, $d['phone']);
             $objActSheet->setCellValue("H".$i, $d['company_name']);
             $objActSheet->setCellValue("I".$i, $d['job_name']);
-            $objActSheet->setCellValue("I".$i, $d['teacher_name']);
-            $objActSheet->setCellValue("I".$i, $d['grade']);
+            $objActSheet->setCellValue("J".$i, $d['teacher_name']);
+            $objActSheet->setCellValue("K".$i, $d['grade']);
             $i++;
         }
         

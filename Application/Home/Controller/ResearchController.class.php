@@ -17,8 +17,8 @@ class GraduateController extends Controller {
 		notStudent();
 
 		$year_id = I('get.year_id');
-		$GraduateStudent = M('graduate_student');
-		$Project = M('project');
+		$GraduateStudent = M('research_student');
+		$Project = M('research');
 		$Teacher = M('teacher');
 		$Student = M('student');
 		//查询该年度所有学生数据
@@ -75,7 +75,7 @@ class GraduateController extends Controller {
 
 		$students = I('post.students');
 		$year_id = I('post.year_id');
-		$GraduateStudent = M('graduate_student');
+		$GraduateStudent = M('research_student');
 		$Student = M('student');
 
 		$students = trim($students);
@@ -130,8 +130,8 @@ class GraduateController extends Controller {
 		notStudent();
 
 		$year_id = I('get.year_id');
-		$GraduateStudent = M('graduate_student');
-		$Project = M('project');
+		$GraduateStudent = M('research_student');
+		$Project = M('research');
 		$Teacher = M('teacher');
 		$Student = M('student');
 		//查询该年度所有学生数据
@@ -229,7 +229,7 @@ class GraduateController extends Controller {
 		notStudent();
 
 		$year_id = I('get.year_id');
-		$Project = M('project');
+		$Project = M('research');
 		$Teacher = M('teacher');
 		$Student = M('student');
 		//查询该年度所有学生数据
@@ -328,7 +328,7 @@ class GraduateController extends Controller {
 		//验证身份
 		notStudent();
 
-		$Year = M('graduate_year');
+		$Year = M('research_year');
 		$res = $Year->order('year desc')->select();
 		if($res){
 			foreach ($res as $key => $value) {
@@ -354,7 +354,7 @@ class GraduateController extends Controller {
 		//验证身份
 		notStudent();
 
-		$Year = M('graduate_year');
+		$Year = M('research_year');
 		$year = I('post.year');
 		$deadline = I('post.deadline');
 
@@ -401,8 +401,8 @@ class GraduateController extends Controller {
 		//验证身份
 		notStudent();
 
-		$Year = M('graduate_year');
-		$GraduateStudent = M('graduate_student');
+		$Year = M('research_year');
+		$GraduateStudent = M('research_student');
 		$id = I('get.id');
 
 		$res = $Year->where("id = $id")->delete();
@@ -427,7 +427,7 @@ class GraduateController extends Controller {
 		//验证身份
 		notStudent();
 
-		$Year = M('graduate_year');
+		$Year = M('research_year');
 		$id = I('post.id');
 		$deadline = I('post.deadline');
 
@@ -492,7 +492,7 @@ class GraduateController extends Controller {
 	// 	notStudent();
 
 	// 	$id = I('get.id');
-	// 	$Project = M('project');
+	// 	$Project = M('research');
 	// 	$where['id']=$id;
 
 	// 	$res = $Project->where($where)
@@ -602,8 +602,8 @@ class GraduateController extends Controller {
 	// }
 
 	public function deleteProject(){
-		$Project = M('project');
-		$GraduateStudent = M('graduate_student');
+		$Project = M('research');
+		$GraduateStudent = M('research_student');
 
 		$id = I('get.id');
 
@@ -669,8 +669,8 @@ class GraduateController extends Controller {
 		//验证是否为教师
 		verifyRole(3);
 
-		$GraduateStudent = M('graduate_student');
-		$Project = M('project');
+		$GraduateStudent = M('research_student');
+		$Project = M('research');
 		$project_id = I('get.project_id');
 
 		$res = $GraduateStudent
@@ -705,8 +705,8 @@ class GraduateController extends Controller {
 		//验证是否为教师
 		verifyRole(3);
 
-		$GraduateStudent = M('graduate_student');
-		$Project = M('project');
+		$GraduateStudent = M('research_student');
+		$Project = M('research');
 		$id = I('get.id');
 
 		$student = $GraduateStudent->where("id = $id")->find();
@@ -717,7 +717,7 @@ class GraduateController extends Controller {
 			//先判断所有课题确认人数 是否超过十人
 			$teacher_id = $_SESSION['id'];
 
-			$Year = M('graduate_year');
+			$Year = M('research_year');
 			$latest_year= $Year->order('year desc')->find();
 			$year_id = $latest_year['id'];
 
@@ -774,8 +774,8 @@ class GraduateController extends Controller {
 		//验证是否为教师
 		verifyRole(3);
 
-		$GraduateStudent = M('graduate_student');
-		$Project = M('project');
+		$GraduateStudent = M('research_student');
+		$Project = M('research');
 		$id = I('get.id');
 
 		$student = $GraduateStudent->where("id = $id")->find();
@@ -906,7 +906,7 @@ class GraduateController extends Controller {
 		//验证是否为教师
 		verifyRole(3);
 
-		$Year = M('graduate_year');
+		$Year = M('research_year');
 		$latest_year= $Year->order('year desc')->find();
 		$year_id = $latest_year['id'];
 
@@ -935,7 +935,7 @@ class GraduateController extends Controller {
 			'state' => $state
 		];
 
-		$Project = M('project');
+		$Project = M('research');
 		$res = $Project->add($project);
 		if($res){
 			$data = [
@@ -981,7 +981,7 @@ class GraduateController extends Controller {
 		];
 		// print_r($project);
 
-		$Project = M('project');
+		$Project = M('research');
 		$res = $Project->save($project);
 		// echo $res;
 		if($res){
@@ -1004,8 +1004,8 @@ class GraduateController extends Controller {
 		verifyRole(3);
 
 		$teacher_id = $_SESSION['id'];
-		$Year = M('graduate_year');
-		$Project = M('project');
+		$Year = M('research_year');
+		$Project = M('research');
 
 		//获取最新年度
 		$year = $Year->order('year desc')->find();
@@ -1051,8 +1051,8 @@ class GraduateController extends Controller {
 		verifyRole(3);
 
 		$teacher_id = $_SESSION['id'];
-		$Year = M('graduate_year');
-		$Project = M('project');
+		$Year = M('research_year');
+		$Project = M('research');
 
 		//获取最新年度
 		$year = $Year->order('year desc')->find();
@@ -1075,7 +1075,7 @@ class GraduateController extends Controller {
 	public function getOneProject(){
 
 		$id = I('get.id');
-		$Project = M('project');
+		$Project = M('research');
 		$where['project.id']=$id;
 
 		$res = $Project->where($where)
@@ -1104,7 +1104,7 @@ class GraduateController extends Controller {
 		verifyRole(3);
 
 		$id = I('get.id');
-		$Project = M('project');
+		$Project = M('research');
 		$where['id'] = $id;
 
 		$res = $Project->where($where)->find();
@@ -1131,9 +1131,9 @@ class GraduateController extends Controller {
 		verifyLogin();
 
 		$student_id = $_SESSION['id'];
-		$Year = M('graduate_year');
-		$Project = M('project');
-		$GraduateStudent = M('graduate_student');
+		$Year = M('research_year');
+		$Project = M('research');
+		$GraduateStudent = M('research_student');
 
 		//获取最新年度
 		$year = $Year->order('year desc')->find();
@@ -1222,7 +1222,7 @@ class GraduateController extends Controller {
 		$project_id = I('get.id');
 		$student_id = $_SESSION['id'];
 
-		$Year = M('graduate_year');
+		$Year = M('research_year');
 		$latest_year= $Year->order('year desc')->find();
 		$year_id = $latest_year['id'];
 		$deadline = $latest_year['deadline'];
@@ -1249,8 +1249,8 @@ class GraduateController extends Controller {
 			$this->ajaxReturn($data);
 		}
 
-		$GraduateStudent = M('graduate_student');
-		$Project = M('project');
+		$GraduateStudent = M('research_student');
+		$Project = M('research');
 
 		//判断今年是否已有工作
 		$where['student_id'] = $student_id;
@@ -1313,7 +1313,7 @@ class GraduateController extends Controller {
 
 		$student_id = $_SESSION['id'];
 
-		$Year = M('graduate_year');
+		$Year = M('research_year');
 		$latest_year= $Year->order('year desc')->find();
 		$year_id = $latest_year['id'];
 		$deadline = $latest_year['deadline'];
@@ -1328,8 +1328,8 @@ class GraduateController extends Controller {
 			$this->ajaxReturn($data);
 		}
 
-		$Project = M('project');
-		$GraduateStudent = M('graduate_student');
+		$Project = M('research');
+		$GraduateStudent = M('research_student');
 
 		//判断今年是否已选课题
 		$where['student_id'] = $student_id;

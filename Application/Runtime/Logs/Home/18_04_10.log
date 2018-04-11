@@ -1,0 +1,164 @@
+[ 2018-04-10T22:55:31+08:00 ] ::1 /csoaAPI/index.php/Home/User/getUserInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000041s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002763s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001029s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001075s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0349s ]
+SQL: SHOW COLUMNS FROM `student` [ RunTime:0.0013s ]
+SQL: SHOW COLUMNS FROM `teacher` [ RunTime:0.0013s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `log` [ RunTime:0.0019s ]
+NOTIC: [8] Undefined index: role_id /Library/WebServer/Documents/csoaAPI/Application/Home/Common/function.php 第 13 行.
+NOTIC: [8] Undefined index: userName /Library/WebServer/Documents/csoaAPI/Application/Home/Common/function.php 第 14 行.
+
+[ 2018-04-10T22:55:31+08:00 ] ::1 /csoaAPI/index.php/Home/User/getRole
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002782s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001794s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001852s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0349s ]
+NOTIC: [8] Undefined index: role_id /Library/WebServer/Documents/csoaAPI/Application/Home/Common/function.php 第 4 行.
+
+[ 2018-04-10T22:55:49+08:00 ] ::1 /csoaAPI/index.php/Home/User/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000756s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000537s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000562s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `student` [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `teacher` [ RunTime:0.0015s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `log` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `user` LIMIT 1   [ RunTime:0.0068s ]
+SQL: SELECT * FROM `teacher` WHERE `card_number` = '2014150121' LIMIT 1   [ RunTime:0.0066s ]
+SQL: SELECT * FROM `student` WHERE `card_number` = '2014150121' LIMIT 1   [ RunTime:0.0022s ]
+SQL: INSERT INTO `log` (`userName`,`time`,`ip`,`state`) VALUES ('2014150121','1523372149','0.0.0.0','登陆成功') [ RunTime:0.0098s ]
+
+[ 2018-04-10T22:55:49+08:00 ] ::1 /csoaAPI/index.php/Home/User/getRole
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000188s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000358s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000389s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0009s ]
+SQL: SELECT * FROM `role` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0012s ]
+
+[ 2018-04-10T22:55:49+08:00 ] ::1 /csoaAPI/index.php/Home/User/getUserInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000339s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000537s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000571s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `student` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `teacher` [ RunTime:0.0025s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `log` [ RunTime:0.0007s ]
+SQL: SELECT `id`,`card_number`,`name`,`sex`,`origin`,`class`,`major`,`dorm`,`phone`,`identity_card`,`short_phone`,`email`,`qq`,`wechat`,`comment`,`state`,`role_id` FROM `student` WHERE `card_number` = '2014150121' LIMIT 1   [ RunTime:0.0009s ]
+SQL: SELECT `userName`,`time`,`state`,`ip` FROM `log` ORDER BY time desc LIMIT 1   [ RunTime:0.0075s ]
+
+[ 2018-04-10T22:55:52+08:00 ] ::1 /csoaAPI/index.php/Home/Practice/getJobByStudent
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000177s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000245s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000265s ]
+SQL: SHOW COLUMNS FROM `practice_year` [ RunTime:0.0014s ]
+SQL: SHOW COLUMNS FROM `job` [ RunTime:0.0021s ]
+SQL: SHOW COLUMNS FROM `practice_student` [ RunTime:0.0013s ]
+SQL: SELECT * FROM `practice_year` ORDER BY year desc LIMIT 1   [ RunTime:0.0009s ]
+SQL: SELECT * FROM `practice_student` WHERE `student_id` = 196 AND `year_id` = 19 LIMIT 1   [ RunTime:0.0017s ]
+SQL: SELECT * FROM `job` WHERE ( year_id = 19 )  [ RunTime:0.0067s ]
+
+[ 2018-04-10T22:55:57+08:00 ] ::1 /csoaAPI/index.php/Home/Practice/getJobByStudent
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001355s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000635s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000676s ]
+SQL: SHOW COLUMNS FROM `practice_year` [ RunTime:0.0027s ]
+SQL: SHOW COLUMNS FROM `job` [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `practice_student` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `practice_year` ORDER BY year desc LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `practice_student` WHERE `student_id` = 196 AND `year_id` = 19 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `job` WHERE ( year_id = 19 )  [ RunTime:0.0011s ]
+
+[ 2018-04-10T22:56:19+08:00 ] ::1 /csoaAPI/index.php/Home/Graduate/getProjectByStudent
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000494s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001416s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001564s ]
+SQL: SHOW COLUMNS FROM `graduate_year` [ RunTime:0.0015s ]
+SQL: SHOW COLUMNS FROM `project` [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `graduate_student` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `graduate_year` ORDER BY year desc LIMIT 1   [ RunTime:0.0018s ]
+SQL: SELECT * FROM `graduate_student` WHERE `student_id` = 196 AND `year_id` = 4 LIMIT 1   [ RunTime:0.0009s ]
+SQL: SELECT * FROM `project` WHERE ( year_id = 4 )  [ RunTime:0.0021s ]
+NOTIC: [8] Undefined index: is_other_chose /Library/WebServer/Documents/csoaAPI/Application/Home/Controller/GraduateController.class.php 第 1173 行.
+NOTIC: [8] Undefined index: is_other_chose /Library/WebServer/Documents/csoaAPI/Application/Home/Controller/GraduateController.class.php 第 1173 行.
+
+[ 2018-04-10T22:57:15+08:00 ] ::1 /csoaAPI/index.php/Home/Practice/getJobByStudent
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000495s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001202s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001290s ]
+SQL: SHOW COLUMNS FROM `practice_year` [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `job` [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `practice_student` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `practice_year` ORDER BY year desc LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `practice_student` WHERE `student_id` = 196 AND `year_id` = 19 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `job` WHERE ( year_id = 19 )  [ RunTime:0.0007s ]
+
+[ 2018-04-10T22:57:34+08:00 ] ::1 /csoaAPI/index.php/Home/Research/getProjectByStudent
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002801s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000587s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000617s ]
+ERR: 无法加载控制器:Research
+
+[ 2018-04-10T22:57:36+08:00 ] ::1 /csoaAPI/index.php/Home/Graduate/getProjectByStudent
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000194s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000895s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000935s ]
+SQL: SHOW COLUMNS FROM `graduate_year` [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `project` [ RunTime:0.0045s ]
+SQL: SHOW COLUMNS FROM `graduate_student` [ RunTime:0.0022s ]
+SQL: SELECT * FROM `graduate_year` ORDER BY year desc LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT * FROM `graduate_student` WHERE `student_id` = 196 AND `year_id` = 4 LIMIT 1   [ RunTime:0.0011s ]
+SQL: SELECT * FROM `project` WHERE ( year_id = 4 )  [ RunTime:0.0010s ]
+NOTIC: [8] Undefined index: is_other_chose /Library/WebServer/Documents/csoaAPI/Application/Home/Controller/GraduateController.class.php 第 1173 行.
+NOTIC: [8] Undefined index: is_other_chose /Library/WebServer/Documents/csoaAPI/Application/Home/Controller/GraduateController.class.php 第 1173 行.
+
+[ 2018-04-10T22:57:38+08:00 ] ::1 /csoaAPI/index.php/Home/Practice/getJobByStudent
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000176s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000268s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000291s ]
+SQL: SHOW COLUMNS FROM `practice_year` [ RunTime:0.0018s ]
+SQL: SHOW COLUMNS FROM `job` [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `practice_student` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `practice_year` ORDER BY year desc LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `practice_student` WHERE `student_id` = 196 AND `year_id` = 19 LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT * FROM `job` WHERE ( year_id = 19 )  [ RunTime:0.0009s ]
+

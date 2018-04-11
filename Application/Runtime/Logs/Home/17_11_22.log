@@ -1,0 +1,1645 @@
+[ 2017-11-22T19:00:54+08:00 ] ::1 /csoaAPI/index.php/Home/User/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000539s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001203s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003154s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0103s ]
+SQL: SHOW COLUMNS FROM `student` [ RunTime:0.0039s ]
+SQL: SHOW COLUMNS FROM `teacher` [ RunTime:0.0026s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0029s ]
+SQL: SHOW COLUMNS FROM `log` [ RunTime:0.0098s ]
+SQL: SELECT * FROM `user` LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `teacher` WHERE `card_number` = '195857' LIMIT 1   [ RunTime:0.0024s ]
+SQL: SELECT * FROM `student` WHERE `card_number` = '195857' LIMIT 1   [ RunTime:0.0031s ]
+SQL: INSERT INTO `log` (`userName`,`time`,`ip`,`state`) VALUES ('195857','1511348454','0.0.0.0','登陆失败') [ RunTime:0.0044s ]
+
+[ 2017-11-22T19:01:14+08:00 ] ::1 /csoaAPI/index.php/Home/User/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000052s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000733s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000533s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000579s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0014s ]
+SQL: SHOW COLUMNS FROM `student` [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `teacher` [ RunTime:0.0014s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `log` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `user` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `teacher` WHERE `card_number` = '195857' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `student` WHERE `card_number` = '195857' LIMIT 1   [ RunTime:0.0005s ]
+SQL: INSERT INTO `log` (`userName`,`time`,`ip`,`state`) VALUES ('195857','1511348474','0.0.0.0','登陆失败') [ RunTime:0.0005s ]
+
+[ 2017-11-22T19:01:36+08:00 ] ::1 /csoaAPI/index.php/Home/User/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000530s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000561s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000613s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `student` [ RunTime:0.0023s ]
+SQL: SHOW COLUMNS FROM `teacher` [ RunTime:0.0016s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0019s ]
+SQL: SHOW COLUMNS FROM `log` [ RunTime:0.0019s ]
+SQL: SELECT * FROM `user` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `teacher` WHERE `card_number` = '14769' LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT * FROM `student` WHERE `card_number` = '14769' LIMIT 1   [ RunTime:0.0005s ]
+SQL: INSERT INTO `log` (`userName`,`time`,`ip`,`state`) VALUES ('14769','1511348496','0.0.0.0','登陆失败') [ RunTime:0.0005s ]
+
+[ 2017-11-22T19:01:41+08:00 ] ::1 /csoaAPI/index.php/Home/User/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000177s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000218s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000245s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `student` [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `teacher` [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `log` [ RunTime:0.0013s ]
+SQL: SELECT * FROM `user` LIMIT 1   [ RunTime:0.0009s ]
+SQL: SELECT * FROM `teacher` WHERE `card_number` = '14769' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `student` WHERE `card_number` = '14769' LIMIT 1   [ RunTime:0.0010s ]
+SQL: INSERT INTO `log` (`userName`,`time`,`ip`,`state`) VALUES ('14769','1511348501','0.0.0.0','登陆成功') [ RunTime:0.0006s ]
+
+[ 2017-11-22T19:01:41+08:00 ] ::1 /csoaAPI/index.php/Home/User/getRole
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000298s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000355s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000400s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `role` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2017-11-22T19:01:41+08:00 ] ::1 /csoaAPI/index.php/Home/User/getUserInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000210s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000339s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000384s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0028s ]
+SQL: SHOW COLUMNS FROM `student` [ RunTime:0.0038s ]
+SQL: SHOW COLUMNS FROM `teacher` [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0014s ]
+SQL: SHOW COLUMNS FROM `log` [ RunTime:0.0010s ]
+SQL: SELECT `username`,`role_id` FROM `user` LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT `userName`,`time`,`state`,`ip` FROM `log` WHERE `userName` = '14769' ORDER BY time desc LIMIT 1   [ RunTime:0.0034s ]
+
+[ 2017-11-22T19:01:45+08:00 ] ::1 /csoaAPI/index.php/Home/User/getTeacher
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000038s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000876s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000528s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000593s ]
+SQL: SHOW COLUMNS FROM `teacher` [ RunTime:0.0005s ]
+SQL: SELECT `id`,`role_id`,`name`,`card_number`,`office`,`telephone`,`department`,`phone`,`state` FROM `teacher`  [ RunTime:0.0007s ]
+
+[ 2017-11-22T19:01:46+08:00 ] ::1 /csoaAPI/index.php/Home/User/getStudent
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000246s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000258s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000291s ]
+SQL: SHOW COLUMNS FROM `student` [ RunTime:0.0064s ]
+SQL: SELECT `id`,`role_id`,`name`,`card_number`,`dorm`,`major`,`phone`,`state` FROM `student`  [ RunTime:0.0140s ]
+
+[ 2017-11-22T19:01:48+08:00 ] ::1 /csoaAPI/index.php/Home/User/getUserInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000335s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000437s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000497s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `student` [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `teacher` [ RunTime:0.0018s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `log` [ RunTime:0.0015s ]
+SQL: SELECT `username`,`role_id` FROM `user` LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `userName`,`time`,`state`,`ip` FROM `log` WHERE `userName` = '14769' ORDER BY time desc LIMIT 1   [ RunTime:0.0032s ]
+
+[ 2017-11-22T19:01:49+08:00 ] ::1 /csoaAPI/index.php/Home/User/logout
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000186s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000357s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000392s ]
+
+[ 2017-11-22T19:01:57+08:00 ] ::1 /csoaAPI/index.php/Home/User/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000188s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000325s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000363s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `student` [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `teacher` [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `log` [ RunTime:0.0012s ]
+SQL: SELECT * FROM `user` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `teacher` WHERE `card_number` = '16887' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `student` WHERE `card_number` = '16887' LIMIT 1   [ RunTime:0.0010s ]
+SQL: INSERT INTO `log` (`userName`,`time`,`ip`,`state`) VALUES ('16887','1511348517','0.0.0.0','登陆成功') [ RunTime:0.0007s ]
+
+[ 2017-11-22T19:01:57+08:00 ] ::1 /csoaAPI/index.php/Home/User/getRole
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000032s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000250s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000672s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000740s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `role` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2017-11-22T19:01:57+08:00 ] ::1 /csoaAPI/index.php/Home/User/getUserInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000194s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000483s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000612s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `student` [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `teacher` [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `log` [ RunTime:0.0008s ]
+SQL: SELECT `id`,`card_number`,`name`,`office`,`telephone`,`phone`,`short_phone`,`email`,`qq`,`wechat`,`department`,`comment`,`state`,`role_id` FROM `teacher` WHERE `card_number` = '16887' LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT `userName`,`time`,`state`,`ip` FROM `log` ORDER BY time desc LIMIT 1   [ RunTime:0.0018s ]
+
+[ 2017-11-22T19:01:59+08:00 ] ::1 /csoaAPI/index.php/Home/User/getUserInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000180s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000224s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000252s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `student` [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `teacher` [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `log` [ RunTime:0.0005s ]
+SQL: SELECT `id`,`card_number`,`name`,`office`,`telephone`,`phone`,`short_phone`,`email`,`qq`,`wechat`,`department`,`comment`,`state`,`role_id` FROM `teacher` WHERE `card_number` = '16887' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `userName`,`time`,`state`,`ip` FROM `log` ORDER BY time desc LIMIT 1   [ RunTime:0.0018s ]
+
+[ 2017-11-22T19:02:05+08:00 ] ::1 /csoaAPI/index.php/Home/User/userModify
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000193s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000930s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001827s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `student` [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `teacher` [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `log` [ RunTime:0.0017s ]
+NOTIC: [8] Undefined index: role_id /Library/WebServer/Documents/csoaAPI/Application/Home/Common/function.php 第 13 行.
+NOTIC: [8] Undefined index: userName /Library/WebServer/Documents/csoaAPI/Application/Home/Common/function.php 第 14 行.
+
+[ 2017-11-22T19:02:49+08:00 ] ::1 /csoaAPI/index.php/Home/User/userModify
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000411s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001194s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001414s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `student` [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `teacher` [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `log` [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: role_id /Library/WebServer/Documents/csoaAPI/Application/Home/Common/function.php 第 13 行.
+NOTIC: [8] Undefined index: userName /Library/WebServer/Documents/csoaAPI/Application/Home/Common/function.php 第 15 行.
+
+[ 2017-11-22T19:02:55+08:00 ] ::1 /csoaAPI/index.php/Home/User/userModify
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000323s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000287s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000332s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `student` [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `teacher` [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `log` [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: role_id /Library/WebServer/Documents/csoaAPI/Application/Home/Common/function.php 第 13 行.
+NOTIC: [8] Undefined index: userName /Library/WebServer/Documents/csoaAPI/Application/Home/Common/function.php 第 15 行.
+
+[ 2017-11-22T19:04:00+08:00 ] ::1 /csoaAPI/index.php/Home/User/logout
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000205s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000263s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000303s ]
+
+[ 2017-11-22T19:04:01+08:00 ] ::1 /csoaAPI/index.php/Home/User/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000203s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003053s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003249s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `student` [ RunTime:0.0013s ]
+SQL: SHOW COLUMNS FROM `teacher` [ RunTime:0.0038s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0014s ]
+SQL: SHOW COLUMNS FROM `log` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `user` LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `teacher` WHERE `card_number` = '16887' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `student` WHERE `card_number` = '16887' LIMIT 1   [ RunTime:0.0009s ]
+SQL: INSERT INTO `log` (`userName`,`time`,`ip`,`state`) VALUES ('16887','1511348641','0.0.0.0','登陆成功') [ RunTime:0.0007s ]
+
+[ 2017-11-22T19:04:01+08:00 ] ::1 /csoaAPI/index.php/Home/User/getRole
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000270s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000437s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000501s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0024s ]
+SQL: SELECT * FROM `role` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0004s ]
+
+[ 2017-11-22T19:04:01+08:00 ] ::1 /csoaAPI/index.php/Home/User/getUserInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000420s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000465s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000530s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0024s ]
+SQL: SHOW COLUMNS FROM `student` [ RunTime:0.0024s ]
+SQL: SHOW COLUMNS FROM `teacher` [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0014s ]
+SQL: SHOW COLUMNS FROM `log` [ RunTime:0.0082s ]
+SQL: SELECT `id`,`card_number`,`name`,`office`,`telephone`,`phone`,`short_phone`,`email`,`qq`,`wechat`,`department`,`comment`,`state`,`role_id` FROM `teacher` WHERE `card_number` = '16887' LIMIT 1   [ RunTime:0.0031s ]
+SQL: SELECT `userName`,`time`,`state`,`ip` FROM `log` ORDER BY time desc LIMIT 1   [ RunTime:0.0098s ]
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Library/WebServer/Documents/csoaAPI/Application/Home/Common/function.php:14) /Library/WebServer/Documents/csoaAPI/ThinkPHP/Library/Think/Controller.class.php 第 215 行.
+
+[ 2017-11-22T19:04:19+08:00 ] ::1 /csoaAPI/index.php/Home/User/logout
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000208s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001373s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001548s ]
+
+[ 2017-11-22T19:04:23+08:00 ] ::1 /csoaAPI/index.php/Home/User/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000336s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000372s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000421s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `student` [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `teacher` [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `log` [ RunTime:0.0015s ]
+SQL: SELECT * FROM `user` LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `teacher` WHERE `card_number` = '16887' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `student` WHERE `card_number` = '16887' LIMIT 1   [ RunTime:0.0007s ]
+SQL: INSERT INTO `log` (`userName`,`time`,`ip`,`state`) VALUES ('16887','1511348663','0.0.0.0','登陆成功') [ RunTime:0.0007s ]
+
+[ 2017-11-22T19:04:23+08:00 ] ::1 /csoaAPI/index.php/Home/User/getRole
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000438s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000426s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000485s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `role` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0006s ]
+
+[ 2017-11-22T19:04:23+08:00 ] ::1 /csoaAPI/index.php/Home/User/getUserInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000248s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000239s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000272s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `student` [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `teacher` [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `log` [ RunTime:0.0009s ]
+SQL: SELECT `id`,`card_number`,`name`,`office`,`telephone`,`phone`,`short_phone`,`email`,`qq`,`wechat`,`department`,`comment`,`state`,`role_id` FROM `teacher` WHERE `card_number` = '16887' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `userName`,`time`,`state`,`ip` FROM `log` ORDER BY time desc LIMIT 1   [ RunTime:0.0031s ]
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Library/WebServer/Documents/csoaAPI/Application/Home/Common/function.php:14) /Library/WebServer/Documents/csoaAPI/ThinkPHP/Library/Think/Controller.class.php 第 215 行.
+
+[ 2017-11-22T19:05:14+08:00 ] ::1 /csoaAPI/index.php/Home/User/logout
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000418s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000669s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000724s ]
+
+[ 2017-11-22T19:05:15+08:00 ] ::1 /csoaAPI/index.php/Home/User/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000188s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000407s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000469s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0018s ]
+SQL: SHOW COLUMNS FROM `student` [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `teacher` [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `log` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `user` LIMIT 1   [ RunTime:0.0014s ]
+SQL: SELECT * FROM `teacher` WHERE `card_number` = '16887' LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT * FROM `student` WHERE `card_number` = '16887' LIMIT 1   [ RunTime:0.0005s ]
+SQL: INSERT INTO `log` (`userName`,`time`,`ip`,`state`) VALUES ('16887','1511348715','0.0.0.0','登陆成功') [ RunTime:0.0006s ]
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Library/WebServer/Documents/csoaAPI/Application/Home/Controller/UserController.class.php:86) /Library/WebServer/Documents/csoaAPI/ThinkPHP/Library/Think/Controller.class.php 第 215 行.
+
+[ 2017-11-22T19:06:02+08:00 ] ::1 /csoaAPI/index.php/Home/User/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000320s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000250s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000286s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `student` [ RunTime:0.0013s ]
+SQL: SHOW COLUMNS FROM `teacher` [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `log` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `user` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `teacher` WHERE `card_number` = '16887' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `student` WHERE `card_number` = '16887' LIMIT 1   [ RunTime:0.0005s ]
+SQL: INSERT INTO `log` (`userName`,`time`,`ip`,`state`) VALUES ('16887','1511348762','0.0.0.0','登陆成功') [ RunTime:0.0008s ]
+
+[ 2017-11-22T19:06:02+08:00 ] ::1 /csoaAPI/index.php/Home/User/getRole
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000479s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000540s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000634s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `role` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0004s ]
+
+[ 2017-11-22T19:06:02+08:00 ] ::1 /csoaAPI/index.php/Home/User/getUserInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000319s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001023s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001108s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `student` [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `teacher` [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `log` [ RunTime:0.0007s ]
+SQL: SELECT `id`,`card_number`,`name`,`office`,`telephone`,`phone`,`short_phone`,`email`,`qq`,`wechat`,`department`,`comment`,`state`,`role_id` FROM `teacher` WHERE `card_number` = '16887' LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT `userName`,`time`,`state`,`ip` FROM `log` ORDER BY time desc LIMIT 1   [ RunTime:0.0027s ]
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Library/WebServer/Documents/csoaAPI/Application/Home/Common/function.php:13) /Library/WebServer/Documents/csoaAPI/ThinkPHP/Library/Think/Controller.class.php 第 215 行.
+
+[ 2017-11-22T19:06:07+08:00 ] ::1 /csoaAPI/index.php/Home/User/getRole
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000094s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000445s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000308s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000355s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `role` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0006s ]
+
+[ 2017-11-22T19:06:07+08:00 ] ::1 /csoaAPI/index.php/Home/User/getUserInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000198s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000407s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000466s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `student` [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `teacher` [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `log` [ RunTime:0.0038s ]
+SQL: SELECT `id`,`card_number`,`name`,`office`,`telephone`,`phone`,`short_phone`,`email`,`qq`,`wechat`,`department`,`comment`,`state`,`role_id` FROM `teacher` WHERE `card_number` = '16887' LIMIT 1   [ RunTime:0.0019s ]
+SQL: SELECT `userName`,`time`,`state`,`ip` FROM `log` ORDER BY time desc LIMIT 1   [ RunTime:0.0029s ]
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Library/WebServer/Documents/csoaAPI/Application/Home/Common/function.php:13) /Library/WebServer/Documents/csoaAPI/ThinkPHP/Library/Think/Controller.class.php 第 215 行.
+
+[ 2017-11-22T19:06:09+08:00 ] ::1 /csoaAPI/index.php/Home/User/logout
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000314s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000385s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000438s ]
+
+[ 2017-11-22T19:06:15+08:00 ] ::1 /csoaAPI/index.php/Home/User/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000519s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000241s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000272s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0013s ]
+SQL: SHOW COLUMNS FROM `student` [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `teacher` [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `log` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `user` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `teacher` WHERE `card_number` = '16887' LIMIT 1   [ RunTime:0.0042s ]
+SQL: SELECT * FROM `student` WHERE `card_number` = '16887' LIMIT 1   [ RunTime:0.0018s ]
+SQL: INSERT INTO `log` (`userName`,`time`,`ip`,`state`) VALUES ('16887','1511348775','0.0.0.0','登陆成功') [ RunTime:0.0010s ]
+
+[ 2017-11-22T19:06:15+08:00 ] ::1 /csoaAPI/index.php/Home/User/getRole
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000318s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000952s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001053s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0009s ]
+SQL: SELECT * FROM `role` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0009s ]
+
+[ 2017-11-22T19:06:15+08:00 ] ::1 /csoaAPI/index.php/Home/User/getUserInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000398s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000428s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000490s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `student` [ RunTime:0.0014s ]
+SQL: SHOW COLUMNS FROM `teacher` [ RunTime:0.0014s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0021s ]
+SQL: SHOW COLUMNS FROM `log` [ RunTime:0.0015s ]
+SQL: SELECT `id`,`card_number`,`name`,`office`,`telephone`,`phone`,`short_phone`,`email`,`qq`,`wechat`,`department`,`comment`,`state`,`role_id` FROM `teacher` WHERE `card_number` = '16887' LIMIT 1   [ RunTime:0.0024s ]
+SQL: SELECT `userName`,`time`,`state`,`ip` FROM `log` ORDER BY time desc LIMIT 1   [ RunTime:0.0055s ]
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Library/WebServer/Documents/csoaAPI/Application/Home/Common/function.php:13) /Library/WebServer/Documents/csoaAPI/ThinkPHP/Library/Think/Controller.class.php 第 215 行.
+
+[ 2017-11-22T19:06:32+08:00 ] ::1 /csoaAPI/index.php/Home/User/getUserInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000479s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002992s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003074s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `student` [ RunTime:0.0053s ]
+SQL: SHOW COLUMNS FROM `teacher` [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `log` [ RunTime:0.0022s ]
+
+[ 2017-11-22T19:07:07+08:00 ] ::1 /csoaAPI/index.php/Home/User/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000243s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000265s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000304s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `student` [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `teacher` [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `log` [ RunTime:0.0018s ]
+SQL: SELECT * FROM `user` LIMIT 1   [ RunTime:0.0018s ]
+SQL: SELECT * FROM `teacher` WHERE `card_number` = '16887' LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT * FROM `student` WHERE `card_number` = '16887' LIMIT 1   [ RunTime:0.0011s ]
+SQL: INSERT INTO `log` (`userName`,`time`,`ip`,`state`) VALUES ('16887','1511348827','0.0.0.0','登陆成功') [ RunTime:0.0039s ]
+
+[ 2017-11-22T19:07:07+08:00 ] ::1 /csoaAPI/index.php/Home/User/getRole
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000401s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000455s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000545s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `role` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0012s ]
+
+[ 2017-11-22T19:07:07+08:00 ] ::1 /csoaAPI/index.php/Home/User/getUserInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000410s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000414s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000479s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `student` [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `teacher` [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `log` [ RunTime:0.0078s ]
+SQL: SELECT `id`,`card_number`,`name`,`office`,`telephone`,`phone`,`short_phone`,`email`,`qq`,`wechat`,`department`,`comment`,`state`,`role_id` FROM `teacher` WHERE `card_number` = '16887' LIMIT 1   [ RunTime:0.0011s ]
+SQL: SELECT `userName`,`time`,`state`,`ip` FROM `log` ORDER BY time desc LIMIT 1   [ RunTime:0.0035s ]
+
+[ 2017-11-22T19:07:09+08:00 ] ::1 /csoaAPI/index.php/Home/User/getUserInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000210s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000271s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000318s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `student` [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `teacher` [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `log` [ RunTime:0.0009s ]
+SQL: SELECT `id`,`card_number`,`name`,`office`,`telephone`,`phone`,`short_phone`,`email`,`qq`,`wechat`,`department`,`comment`,`state`,`role_id` FROM `teacher` WHERE `card_number` = '16887' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `userName`,`time`,`state`,`ip` FROM `log` ORDER BY time desc LIMIT 1   [ RunTime:0.0026s ]
+
+[ 2017-11-22T19:07:42+08:00 ] ::1 /csoaAPI/index.php/Home/User/userModify
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000242s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000551s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000616s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0177s ]
+SQL: SHOW COLUMNS FROM `student` [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `teacher` [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `log` [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: role_id /Library/WebServer/Documents/csoaAPI/Application/Home/Common/function.php 第 13 行.
+NOTIC: [8] Undefined index: userName /Library/WebServer/Documents/csoaAPI/Application/Home/Common/function.php 第 14 行.
+
+[ 2017-11-22T19:07:52+08:00 ] ::1 /csoaAPI/index.php/Home/User/logout
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000300s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002074s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002144s ]
+
+[ 2017-11-22T19:07:56+08:00 ] ::1 /csoaAPI/index.php/Home/User/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000589s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000328s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000394s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0028s ]
+SQL: SHOW COLUMNS FROM `student` [ RunTime:0.0022s ]
+SQL: SHOW COLUMNS FROM `teacher` [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0016s ]
+SQL: SHOW COLUMNS FROM `log` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `user` LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT * FROM `teacher` WHERE `card_number` = '2014150121' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `student` WHERE `card_number` = '2014150121' LIMIT 1   [ RunTime:0.0007s ]
+SQL: INSERT INTO `log` (`userName`,`time`,`ip`,`state`) VALUES ('2014150121','1511348876','0.0.0.0','登陆成功') [ RunTime:0.0006s ]
+
+[ 2017-11-22T19:07:56+08:00 ] ::1 /csoaAPI/index.php/Home/User/getRole
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000259s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000449s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000490s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0009s ]
+SQL: SELECT * FROM `role` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0004s ]
+
+[ 2017-11-22T19:07:56+08:00 ] ::1 /csoaAPI/index.php/Home/User/getUserInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000204s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000458s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000495s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0026s ]
+SQL: SHOW COLUMNS FROM `student` [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `teacher` [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `log` [ RunTime:0.0024s ]
+SQL: SELECT `id`,`card_number`,`name`,`sex`,`origin`,`class`,`major`,`dorm`,`phone`,`identity_card`,`short_phone`,`email`,`qq`,`wechat`,`comment`,`state`,`role_id` FROM `student` WHERE `card_number` = '2014150121' LIMIT 1   [ RunTime:0.0019s ]
+SQL: SELECT `userName`,`time`,`state`,`ip` FROM `log` ORDER BY time desc LIMIT 1   [ RunTime:0.0034s ]
+
+[ 2017-11-22T19:07:58+08:00 ] ::1 /csoaAPI/index.php/Home/User/getUserInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000389s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.008150s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.008223s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `student` [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `teacher` [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0019s ]
+SQL: SHOW COLUMNS FROM `log` [ RunTime:0.0009s ]
+SQL: SELECT `id`,`card_number`,`name`,`sex`,`origin`,`class`,`major`,`dorm`,`phone`,`identity_card`,`short_phone`,`email`,`qq`,`wechat`,`comment`,`state`,`role_id` FROM `student` WHERE `card_number` = '2014150121' LIMIT 1   [ RunTime:0.0013s ]
+SQL: SELECT `userName`,`time`,`state`,`ip` FROM `log` ORDER BY time desc LIMIT 1   [ RunTime:0.0016s ]
+
+[ 2017-11-22T19:08:02+08:00 ] ::1 /csoaAPI/index.php/Home/User/userModify
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000199s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000242s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000272s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0013s ]
+SQL: SHOW COLUMNS FROM `student` [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `teacher` [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `log` [ RunTime:0.0010s ]
+SQL: UPDATE `student` SET `card_number`='2014150121',`class`='2',`sex`='男',`origin`='安徽',`major`='软件工程',`dorm`='乔相318',`identity_card`='340104199605100515',`phone`='18019547190',`short_phone`='无',`email`='851164343@qq.com',`qq`='851164343',`wechat`='river051011' WHERE `card_number` = '2014150121' [ RunTime:0.0036s ]
+
+[ 2017-11-22T19:08:02+08:00 ] ::1 /csoaAPI/index.php/Home/User/getUserInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000314s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000528s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000660s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `student` [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `teacher` [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `log` [ RunTime:0.0025s ]
+SQL: SELECT `id`,`card_number`,`name`,`sex`,`origin`,`class`,`major`,`dorm`,`phone`,`identity_card`,`short_phone`,`email`,`qq`,`wechat`,`comment`,`state`,`role_id` FROM `student` WHERE `card_number` = '2014150121' LIMIT 1   [ RunTime:0.0027s ]
+SQL: SELECT `userName`,`time`,`state`,`ip` FROM `log` ORDER BY time desc LIMIT 1   [ RunTime:0.0029s ]
+
+[ 2017-11-22T19:08:03+08:00 ] ::1 /csoaAPI/index.php/Home/User/getRole
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000196s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000250s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000286s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `role` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0005s ]
+
+[ 2017-11-22T19:08:03+08:00 ] ::1 /csoaAPI/index.php/Home/User/getUserInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000468s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000434s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000499s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0055s ]
+SQL: SHOW COLUMNS FROM `student` [ RunTime:0.0025s ]
+SQL: SHOW COLUMNS FROM `teacher` [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `log` [ RunTime:0.0008s ]
+SQL: SELECT `id`,`card_number`,`name`,`sex`,`origin`,`class`,`major`,`dorm`,`phone`,`identity_card`,`short_phone`,`email`,`qq`,`wechat`,`comment`,`state`,`role_id` FROM `student` WHERE `card_number` = '2014150121' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT `userName`,`time`,`state`,`ip` FROM `log` ORDER BY time desc LIMIT 1   [ RunTime:0.0047s ]
+
+[ 2017-11-22T19:08:14+08:00 ] ::1 /csoaAPI/index.php/Home/User/userModify
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000190s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000229s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000259s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `student` [ RunTime:0.0022s ]
+SQL: SHOW COLUMNS FROM `teacher` [ RunTime:0.0082s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0017s ]
+SQL: SHOW COLUMNS FROM `log` [ RunTime:0.0013s ]
+SQL: UPDATE `student` SET `card_number`='2014150121',`class`='2',`sex`='男',`origin`='安徽',`major`='软件工程',`dorm`='乔相318',`identity_card`='340104199605100515',`phone`='18019547190',`short_phone`='无',`email`='851164343@qq.com',`qq`='851164343',`wechat`='river051011' WHERE `card_number` = '2014150121' [ RunTime:0.0097s ]
+
+[ 2017-11-22T19:08:21+08:00 ] ::1 /csoaAPI/index.php/Home/User/userModify
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000188s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000226s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000256s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `student` [ RunTime:0.0015s ]
+SQL: SHOW COLUMNS FROM `teacher` [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `log` [ RunTime:0.0009s ]
+SQL: UPDATE `student` SET `card_number`='2014150121',`class`='2',`sex`='男',`origin`='安徽',`major`='软件工程',`dorm`='乔相318',`identity_card`='340104199605100515',`phone`='18019547190',`short_phone`='无',`email`='851164343@qq.com',`qq`='851164343',`wechat`='river0510' WHERE `card_number` = '2014150121' [ RunTime:0.0010s ]
+
+[ 2017-11-22T19:08:22+08:00 ] ::1 /csoaAPI/index.php/Home/User/getRole
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000241s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001649s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001739s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `role` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0005s ]
+
+[ 2017-11-22T19:08:22+08:00 ] ::1 /csoaAPI/index.php/Home/User/getUserInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000215s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000249s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000282s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0024s ]
+SQL: SHOW COLUMNS FROM `student` [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `teacher` [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `log` [ RunTime:0.0011s ]
+SQL: SELECT `id`,`card_number`,`name`,`sex`,`origin`,`class`,`major`,`dorm`,`phone`,`identity_card`,`short_phone`,`email`,`qq`,`wechat`,`comment`,`state`,`role_id` FROM `student` WHERE `card_number` = '2014150121' LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT `userName`,`time`,`state`,`ip` FROM `log` ORDER BY time desc LIMIT 1   [ RunTime:0.0026s ]
+
+[ 2017-11-22T19:08:37+08:00 ] ::1 /csoaAPI/index.php/Home/User/userModify
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000184s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000243s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000276s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `student` [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `teacher` [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `log` [ RunTime:0.0018s ]
+SQL: UPDATE `student` SET `card_number`='2014150121',`class`='2',`sex`='男',`origin`='安徽',`major`='软件工程',`dorm`='乔相318',`identity_card`='340104199605100515',`phone`='18019547190',`short_phone`='无',`email`='851164343@qq.com',`qq`='851164343',`wechat`='river0510' WHERE `card_number` = '2014150121' [ RunTime:0.0062s ]
+
+[ 2017-11-22T19:08:41+08:00 ] ::1 /csoaAPI/index.php/Home/User/userModify
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000885s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000391s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000426s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0019s ]
+SQL: SHOW COLUMNS FROM `student` [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `teacher` [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `log` [ RunTime:0.0006s ]
+SQL: UPDATE `student` SET `card_number`='2014150121',`class`='2',`sex`='男',`origin`='安徽',`major`='软件工程',`dorm`='乔相318',`identity_card`='340104199605100515',`phone`='18019547190',`short_phone`='无',`email`='851164343@qq.com',`qq`='8511643431',`wechat`='river0510' WHERE `card_number` = '2014150121' [ RunTime:0.0010s ]
+
+[ 2017-11-22T19:08:42+08:00 ] ::1 /csoaAPI/index.php/Home/User/getUserInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000198s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000248s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000280s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0037s ]
+SQL: SHOW COLUMNS FROM `student` [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `teacher` [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0013s ]
+SQL: SHOW COLUMNS FROM `log` [ RunTime:0.0022s ]
+
+[ 2017-11-22T19:08:42+08:00 ] ::1 /csoaAPI/index.php/Home/User/getUserInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000278s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000520s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000609s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0018s ]
+SQL: SHOW COLUMNS FROM `student` [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `teacher` [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `log` [ RunTime:0.0007s ]
+SQL: SELECT `id`,`card_number`,`name`,`sex`,`origin`,`class`,`major`,`dorm`,`phone`,`identity_card`,`short_phone`,`email`,`qq`,`wechat`,`comment`,`state`,`role_id` FROM `student` WHERE `card_number` = '2014150121' LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT `userName`,`time`,`state`,`ip` FROM `log` ORDER BY time desc LIMIT 1   [ RunTime:0.0029s ]
+
+[ 2017-11-22T19:09:02+08:00 ] ::1 /csoaAPI/index.php/Home/User/getRole
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000386s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000453s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000518s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `role` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0010s ]
+
+[ 2017-11-22T19:09:02+08:00 ] ::1 /csoaAPI/index.php/Home/User/getUserInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000529s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000483s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000557s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `student` [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `teacher` [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `log` [ RunTime:0.0007s ]
+SQL: SELECT `id`,`card_number`,`name`,`sex`,`origin`,`class`,`major`,`dorm`,`phone`,`identity_card`,`short_phone`,`email`,`qq`,`wechat`,`comment`,`state`,`role_id` FROM `student` WHERE `card_number` = '2014150121' LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT `userName`,`time`,`state`,`ip` FROM `log` ORDER BY time desc LIMIT 1   [ RunTime:0.0021s ]
+
+[ 2017-11-22T19:09:34+08:00 ] ::1 /csoaAPI/index.php/Home/User/getUserInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000196s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000237s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000269s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `student` [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `teacher` [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `log` [ RunTime:0.0004s ]
+SQL: SELECT `id`,`card_number`,`name`,`sex`,`origin`,`class`,`major`,`dorm`,`phone`,`identity_card`,`short_phone`,`email`,`qq`,`wechat`,`comment`,`state`,`role_id` FROM `student` WHERE `card_number` = '2014150121' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `userName`,`time`,`state`,`ip` FROM `log` ORDER BY time desc LIMIT 1   [ RunTime:0.0016s ]
+
+[ 2017-11-22T19:09:37+08:00 ] ::1 /csoaAPI/index.php/Home/User/userModify
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000219s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000416s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000475s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `student` [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `teacher` [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0013s ]
+SQL: SHOW COLUMNS FROM `log` [ RunTime:0.0004s ]
+SQL: UPDATE `student` SET `card_number`='2014150121',`class`='22',`sex`='男',`origin`='安徽',`major`='软件工程',`dorm`='乔相318',`identity_card`='340104199605100515',`phone`='18019547190',`short_phone`='无',`email`='851164343@qq.com',`qq`='8511643431',`wechat`='river0510' WHERE `card_number` = '2014150121' [ RunTime:0.0020s ]
+
+[ 2017-11-22T19:09:37+08:00 ] ::1 /csoaAPI/index.php/Home/User/getUserInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000374s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000438s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000502s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0023s ]
+SQL: SHOW COLUMNS FROM `student` [ RunTime:0.0015s ]
+SQL: SHOW COLUMNS FROM `teacher` [ RunTime:0.0013s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `log` [ RunTime:0.0010s ]
+SQL: SELECT `id`,`card_number`,`name`,`sex`,`origin`,`class`,`major`,`dorm`,`phone`,`identity_card`,`short_phone`,`email`,`qq`,`wechat`,`comment`,`state`,`role_id` FROM `student` WHERE `card_number` = '2014150121' LIMIT 1   [ RunTime:0.0009s ]
+SQL: SELECT `userName`,`time`,`state`,`ip` FROM `log` ORDER BY time desc LIMIT 1   [ RunTime:0.0103s ]
+
+[ 2017-11-22T19:09:38+08:00 ] ::1 /csoaAPI/index.php/Home/User/getRole
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000185s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000241s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000272s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `role` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2017-11-22T19:09:38+08:00 ] ::1 /csoaAPI/index.php/Home/User/getUserInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000188s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000303s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000332s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `student` [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `teacher` [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `log` [ RunTime:0.0005s ]
+SQL: SELECT `id`,`card_number`,`name`,`sex`,`origin`,`class`,`major`,`dorm`,`phone`,`identity_card`,`short_phone`,`email`,`qq`,`wechat`,`comment`,`state`,`role_id` FROM `student` WHERE `card_number` = '2014150121' LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT `userName`,`time`,`state`,`ip` FROM `log` ORDER BY time desc LIMIT 1   [ RunTime:0.0029s ]
+
+[ 2017-11-22T19:09:40+08:00 ] ::1 /csoaAPI/index.php/Home/User/userModify
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000186s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000232s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000261s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `student` [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `teacher` [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `log` [ RunTime:0.0004s ]
+SQL: UPDATE `student` SET `card_number`='2014150121',`class`='22',`sex`='男',`origin`='安徽',`major`='软件工程',`dorm`='乔相318',`identity_card`='340104199605100515',`phone`='18019547190',`short_phone`='无',`email`='851164343@qq.com',`qq`='8511643431',`wechat`='river0510' WHERE `card_number` = '2014150121' [ RunTime:0.0008s ]
+
+[ 2017-11-22T19:09:45+08:00 ] ::1 /csoaAPI/index.php/Home/User/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000859s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000609s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000663s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `student` [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `teacher` [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `log` [ RunTime:0.0018s ]
+SQL: SELECT * FROM `user` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `teacher` WHERE `card_number` = '2014150121' LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT * FROM `student` WHERE `card_number` = '2014150121' LIMIT 1   [ RunTime:0.0009s ]
+SQL: INSERT INTO `log` (`userName`,`time`,`ip`,`state`) VALUES ('2014150121','1511348985','0.0.0.0','登陆成功') [ RunTime:0.0007s ]
+
+[ 2017-11-22T19:09:45+08:00 ] ::1 /csoaAPI/index.php/Home/User/getRole
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000039s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000353s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000396s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000453s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `role` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0005s ]
+
+[ 2017-11-22T19:09:45+08:00 ] ::1 /csoaAPI/index.php/Home/User/getUserInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000400s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000505s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000680s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `student` [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `teacher` [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `log` [ RunTime:0.0013s ]
+SQL: SELECT `id`,`card_number`,`name`,`sex`,`origin`,`class`,`major`,`dorm`,`phone`,`identity_card`,`short_phone`,`email`,`qq`,`wechat`,`comment`,`state`,`role_id` FROM `student` WHERE `card_number` = '2014150121' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `userName`,`time`,`state`,`ip` FROM `log` ORDER BY time desc LIMIT 1   [ RunTime:0.0017s ]
+
+[ 2017-11-22T19:12:04+08:00 ] ::1 /csoaAPI/index.php/Home/User/getUserInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000200s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000247s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000282s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `student` [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `teacher` [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `log` [ RunTime:0.0006s ]
+SQL: SELECT `id`,`card_number`,`name`,`sex`,`origin`,`class`,`major`,`dorm`,`phone`,`identity_card`,`short_phone`,`email`,`qq`,`wechat`,`comment`,`state`,`role_id` FROM `student` WHERE `card_number` = '2014150121' LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT `userName`,`time`,`state`,`ip` FROM `log` ORDER BY time desc LIMIT 1   [ RunTime:0.0018s ]
+
+[ 2017-11-22T19:12:05+08:00 ] ::1 /csoaAPI/index.php/Home/User/userModify
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000188s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000235s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000265s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `student` [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `teacher` [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `log` [ RunTime:0.0008s ]
+SQL: UPDATE `student` SET `card_number`='2014150121',`class`='22',`sex`='男',`origin`='安徽',`major`='软件工程',`dorm`='乔相318',`identity_card`='340104199605100515',`phone`='18019547190',`short_phone`='无',`email`='851164343@qq.com',`qq`='8511643431',`wechat`='river0510' WHERE `card_number` = '2014150121' [ RunTime:0.0010s ]
+
+[ 2017-11-22T19:12:09+08:00 ] ::1 /csoaAPI/index.php/Home/User/userModify
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000208s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000265s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000303s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `student` [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `teacher` [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `log` [ RunTime:0.0005s ]
+SQL: UPDATE `student` SET `card_number`='2014150121',`class`='2',`sex`='男',`origin`='安徽',`major`='软件工程',`dorm`='乔相318',`identity_card`='340104199605100515',`phone`='18019547190',`short_phone`='无',`email`='851164343@qq.com',`qq`='8511643431',`wechat`='river0510' WHERE `card_number` = '2014150121' [ RunTime:0.0031s ]
+
+[ 2017-11-22T19:12:09+08:00 ] ::1 /csoaAPI/index.php/Home/User/getUserInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000223s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000237s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000265s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `student` [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `teacher` [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `log` [ RunTime:0.0005s ]
+SQL: SELECT `id`,`card_number`,`name`,`sex`,`origin`,`class`,`major`,`dorm`,`phone`,`identity_card`,`short_phone`,`email`,`qq`,`wechat`,`comment`,`state`,`role_id` FROM `student` WHERE `card_number` = '2014150121' LIMIT 1   [ RunTime:0.0013s ]
+SQL: SELECT `userName`,`time`,`state`,`ip` FROM `log` ORDER BY time desc LIMIT 1   [ RunTime:0.0135s ]
+
+[ 2017-11-22T19:12:10+08:00 ] ::1 /csoaAPI/index.php/Home/User/getRole
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000203s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000245s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000279s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `role` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2017-11-22T19:12:10+08:00 ] ::1 /csoaAPI/index.php/Home/User/getUserInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000178s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000222s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000249s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `student` [ RunTime:0.0018s ]
+SQL: SHOW COLUMNS FROM `teacher` [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `log` [ RunTime:0.0008s ]
+SQL: SELECT `id`,`card_number`,`name`,`sex`,`origin`,`class`,`major`,`dorm`,`phone`,`identity_card`,`short_phone`,`email`,`qq`,`wechat`,`comment`,`state`,`role_id` FROM `student` WHERE `card_number` = '2014150121' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `userName`,`time`,`state`,`ip` FROM `log` ORDER BY time desc LIMIT 1   [ RunTime:0.0024s ]
+
+[ 2017-11-22T19:12:22+08:00 ] ::1 /csoaAPI/index.php/Home/User/userModify
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000503s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000675s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000741s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `student` [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `teacher` [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `log` [ RunTime:0.0003s ]
+SQL: UPDATE `student` SET `card_number`='2014150121',`class`='2',`sex`='男',`origin`='安徽',`major`='软件工程',`dorm`='乔相318',`identity_card`='340104199605100515',`phone`='18019547190',`short_phone`='无',`email`='851164343@qq.com',`qq`='8511643431',`wechat`='river0510' WHERE `card_number` = '2014150121' [ RunTime:0.0023s ]
+
+[ 2017-11-22T19:12:28+08:00 ] ::1 /csoaAPI/index.php/Home/User/userModify
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000196s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000235s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000265s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `student` [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `teacher` [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `log` [ RunTime:0.0004s ]
+SQL: UPDATE `student` SET `card_number`='2014150121',`class`='21',`sex`='男',`origin`='安徽',`major`='软件工程',`dorm`='乔相318',`identity_card`='340104199605100515',`phone`='18019547190',`short_phone`='无',`email`='851164343@qq.com',`qq`='8511643431',`wechat`='river0510' WHERE `card_number` = '2014150121' [ RunTime:0.0009s ]
+
+[ 2017-11-22T19:12:29+08:00 ] ::1 /csoaAPI/index.php/Home/User/getRole
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000185s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000323s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000359s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `role` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0005s ]
+
+[ 2017-11-22T19:12:29+08:00 ] ::1 /csoaAPI/index.php/Home/User/getUserInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000280s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001085s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001151s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0019s ]
+SQL: SHOW COLUMNS FROM `student` [ RunTime:0.0022s ]
+SQL: SHOW COLUMNS FROM `teacher` [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0017s ]
+SQL: SHOW COLUMNS FROM `log` [ RunTime:0.0015s ]
+SQL: SELECT `id`,`card_number`,`name`,`sex`,`origin`,`class`,`major`,`dorm`,`phone`,`identity_card`,`short_phone`,`email`,`qq`,`wechat`,`comment`,`state`,`role_id` FROM `student` WHERE `card_number` = '2014150121' LIMIT 1   [ RunTime:0.0011s ]
+SQL: SELECT `userName`,`time`,`state`,`ip` FROM `log` ORDER BY time desc LIMIT 1   [ RunTime:0.0030s ]
+
+[ 2017-11-22T19:13:32+08:00 ] ::1 /csoaAPI/index.php/Home/User/userModify
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000389s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000565s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000607s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `student` [ RunTime:0.0090s ]
+SQL: SHOW COLUMNS FROM `teacher` [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `log` [ RunTime:0.0014s ]
+SQL: UPDATE `student` SET `card_number`='2014150121',`class`='21',`sex`='男',`origin`='安徽',`major`='软件工程',`dorm`='乔相318',`identity_card`='340104199605100515',`phone`='18019547190',`short_phone`='无',`email`='851164343@qq.com',`qq`='8511643431',`wechat`='river0510' WHERE `card_number` = '2014150121' [ RunTime:0.0012s ]
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Library/WebServer/Documents/csoaAPI/Application/Home/Common/function.php:14) /Library/WebServer/Documents/csoaAPI/ThinkPHP/Library/Think/Controller.class.php 第 215 行.
+
+[ 2017-11-22T19:13:59+08:00 ] ::1 /csoaAPI/index.php/Home/User/userModify
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000184s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000269s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000308s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `student` [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `teacher` [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `log` [ RunTime:0.0004s ]
+SQL: UPDATE `student` SET `card_number`='2014150121',`class`='211',`sex`='男',`origin`='安徽',`major`='软件工程',`dorm`='乔相318',`identity_card`='340104199605100515',`phone`='18019547190',`short_phone`='无',`email`='851164343@qq.com',`qq`='8511643431',`wechat`='river0510' WHERE `card_number` = '2014150121' [ RunTime:0.0012s ]
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Library/WebServer/Documents/csoaAPI/Application/Home/Common/function.php:14) /Library/WebServer/Documents/csoaAPI/ThinkPHP/Library/Think/Controller.class.php 第 215 行.
+
+[ 2017-11-22T19:14:03+08:00 ] ::1 /csoaAPI/index.php/Home/User/logout
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000197s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000267s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000335s ]
+
+[ 2017-11-22T19:14:07+08:00 ] ::1 /csoaAPI/index.php/Home/User/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000184s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000690s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000751s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0016s ]
+SQL: SHOW COLUMNS FROM `student` [ RunTime:0.0079s ]
+SQL: SHOW COLUMNS FROM `teacher` [ RunTime:0.0026s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `log` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `user` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `teacher` WHERE `card_number` = '16887' LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT * FROM `student` WHERE `card_number` = '16887' LIMIT 1   [ RunTime:0.0006s ]
+SQL: INSERT INTO `log` (`userName`,`time`,`ip`,`state`) VALUES ('16887','1511349247','0.0.0.0','登陆成功') [ RunTime:0.0006s ]
+
+[ 2017-11-22T19:14:07+08:00 ] ::1 /csoaAPI/index.php/Home/User/getRole
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000537s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000375s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000427s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `role` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0005s ]
+
+[ 2017-11-22T19:14:07+08:00 ] ::1 /csoaAPI/index.php/Home/User/getUserInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000280s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000366s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000419s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `student` [ RunTime:0.0024s ]
+SQL: SHOW COLUMNS FROM `teacher` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `log` [ RunTime:0.0007s ]
+SQL: SELECT `id`,`card_number`,`name`,`office`,`telephone`,`phone`,`short_phone`,`email`,`qq`,`wechat`,`department`,`comment`,`state`,`role_id` FROM `teacher` WHERE `card_number` = '16887' LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT `userName`,`time`,`state`,`ip` FROM `log` ORDER BY time desc LIMIT 1   [ RunTime:0.0119s ]
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Library/WebServer/Documents/csoaAPI/Application/Home/Common/function.php:14) /Library/WebServer/Documents/csoaAPI/ThinkPHP/Library/Think/Controller.class.php 第 215 行.
+
+[ 2017-11-22T19:14:19+08:00 ] ::1 /csoaAPI/index.php/Home/User/getUserInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000424s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002221s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002311s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0023s ]
+SQL: SHOW COLUMNS FROM `student` [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `teacher` [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0018s ]
+SQL: SHOW COLUMNS FROM `log` [ RunTime:0.0012s ]
+
+[ 2017-11-22T19:14:30+08:00 ] ::1 /csoaAPI/index.php/Home/User/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000198s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000262s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000298s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `student` [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `teacher` [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `log` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `user` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `teacher` WHERE `card_number` = '16887' LIMIT 1   [ RunTime:0.0080s ]
+SQL: SELECT * FROM `student` WHERE `card_number` = '16887' LIMIT 1   [ RunTime:0.0008s ]
+SQL: INSERT INTO `log` (`userName`,`time`,`ip`,`state`) VALUES ('16887','1511349270','0.0.0.0','登陆成功') [ RunTime:0.0006s ]
+
+[ 2017-11-22T19:14:30+08:00 ] ::1 /csoaAPI/index.php/Home/User/getRole
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000260s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000339s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000381s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `role` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2017-11-22T19:14:30+08:00 ] ::1 /csoaAPI/index.php/Home/User/getUserInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000695s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000408s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000468s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0014s ]
+SQL: SHOW COLUMNS FROM `student` [ RunTime:0.0013s ]
+SQL: SHOW COLUMNS FROM `teacher` [ RunTime:0.0014s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `log` [ RunTime:0.0007s ]
+SQL: SELECT `id`,`card_number`,`name`,`office`,`telephone`,`phone`,`short_phone`,`email`,`qq`,`wechat`,`department`,`comment`,`state`,`role_id` FROM `teacher` WHERE `card_number` = '16887' LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT `userName`,`time`,`state`,`ip` FROM `log` ORDER BY time desc LIMIT 1   [ RunTime:0.0108s ]
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Library/WebServer/Documents/csoaAPI/Application/Home/Common/function.php:14) /Library/WebServer/Documents/csoaAPI/ThinkPHP/Library/Think/Controller.class.php 第 215 行.
+
+[ 2017-11-22T19:15:24+08:00 ] ::1 /csoaAPI/index.php/Home/User/getRole
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000555s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000535s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000584s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0078s ]
+SQL: SELECT * FROM `role` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0025s ]
+
+[ 2017-11-22T19:15:24+08:00 ] ::1 /csoaAPI/index.php/Home/User/getUserInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000266s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000250s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000286s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0032s ]
+SQL: SHOW COLUMNS FROM `student` [ RunTime:0.0088s ]
+SQL: SHOW COLUMNS FROM `teacher` [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `log` [ RunTime:0.0010s ]
+SQL: SELECT `id`,`card_number`,`name`,`office`,`telephone`,`phone`,`short_phone`,`email`,`qq`,`wechat`,`department`,`comment`,`state`,`role_id` FROM `teacher` WHERE `card_number` = '16887' LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT `userName`,`time`,`state`,`ip` FROM `log` ORDER BY time desc LIMIT 1   [ RunTime:0.0059s ]
+
+[ 2017-11-22T19:15:26+08:00 ] ::1 /csoaAPI/index.php/Home/User/getUserInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000188s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000239s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000270s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0116s ]
+SQL: SHOW COLUMNS FROM `student` [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `teacher` [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `log` [ RunTime:0.0007s ]
+SQL: SELECT `id`,`card_number`,`name`,`office`,`telephone`,`phone`,`short_phone`,`email`,`qq`,`wechat`,`department`,`comment`,`state`,`role_id` FROM `teacher` WHERE `card_number` = '16887' LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT `userName`,`time`,`state`,`ip` FROM `log` ORDER BY time desc LIMIT 1   [ RunTime:0.0055s ]
+
+[ 2017-11-22T19:15:32+08:00 ] ::1 /csoaAPI/index.php/Home/User/userModify
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001432s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000792s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000866s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `student` [ RunTime:0.0024s ]
+SQL: SHOW COLUMNS FROM `teacher` [ RunTime:0.0018s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0013s ]
+SQL: SHOW COLUMNS FROM `log` [ RunTime:0.0008s ]
+NOTIC: [8] Undefined index: role_id /Library/WebServer/Documents/csoaAPI/Application/Home/Common/function.php 第 13 行.
+NOTIC: [8] Undefined index: userName /Library/WebServer/Documents/csoaAPI/Application/Home/Common/function.php 第 14 行.
+
+[ 2017-11-22T19:21:39+08:00 ] ::1 /csoaAPI/index.php/Home/User/getUserInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000454s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000506s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000549s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `student` [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `teacher` [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `log` [ RunTime:0.0008s ]
+SQL: SELECT `id`,`card_number`,`name`,`office`,`telephone`,`phone`,`short_phone`,`email`,`qq`,`wechat`,`department`,`comment`,`state`,`role_id` FROM `teacher` WHERE `card_number` = '16887' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `userName`,`time`,`state`,`ip` FROM `log` ORDER BY time desc LIMIT 1   [ RunTime:0.0016s ]
+
+[ 2017-11-22T19:21:44+08:00 ] ::1 /csoaAPI/index.php/Home/User/getRole
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000203s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000259s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000296s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `role` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0004s ]
+
+[ 2017-11-22T19:21:45+08:00 ] ::1 /csoaAPI/index.php/Home/User/getUserInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000290s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001982s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002044s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `student` [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `teacher` [ RunTime:0.0015s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0205s ]
+SQL: SHOW COLUMNS FROM `log` [ RunTime:0.0009s ]
+SQL: SELECT `id`,`card_number`,`name`,`office`,`telephone`,`phone`,`short_phone`,`email`,`qq`,`wechat`,`department`,`comment`,`state`,`role_id` FROM `teacher` WHERE `card_number` = '16887' LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT `userName`,`time`,`state`,`ip` FROM `log` ORDER BY time desc LIMIT 1   [ RunTime:0.0033s ]
+
+[ 2017-11-22T19:21:48+08:00 ] ::1 /csoaAPI/index.php/Home/User/logout
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000175s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000217s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000242s ]
+
+[ 2017-11-22T19:21:50+08:00 ] ::1 /csoaAPI/index.php/Home/User/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000241s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000243s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000274s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `student` [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `teacher` [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `log` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `user` LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `teacher` WHERE `card_number` = '16887' LIMIT 1   [ RunTime:0.0012s ]
+SQL: SELECT * FROM `student` WHERE `card_number` = '16887' LIMIT 1   [ RunTime:0.0008s ]
+SQL: INSERT INTO `log` (`userName`,`time`,`ip`,`state`) VALUES ('16887','1511349710','0.0.0.0','登陆成功') [ RunTime:0.0010s ]
+
+[ 2017-11-22T19:21:50+08:00 ] ::1 /csoaAPI/index.php/Home/User/getRole
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000298s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000257s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000292s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `role` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0004s ]
+
+[ 2017-11-22T19:21:50+08:00 ] ::1 /csoaAPI/index.php/Home/User/getUserInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000291s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000236s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000264s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `student` [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `teacher` [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `log` [ RunTime:0.0005s ]
+SQL: SELECT `id`,`card_number`,`name`,`office`,`telephone`,`phone`,`short_phone`,`email`,`qq`,`wechat`,`department`,`comment`,`state`,`role_id` FROM `teacher` WHERE `card_number` = '16887' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `userName`,`time`,`state`,`ip` FROM `log` ORDER BY time desc LIMIT 1   [ RunTime:0.0026s ]
+
+[ 2017-11-22T19:21:51+08:00 ] ::1 /csoaAPI/index.php/Home/User/getUserInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000191s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000236s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000266s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `student` [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `teacher` [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `log` [ RunTime:0.0006s ]
+SQL: SELECT `id`,`card_number`,`name`,`office`,`telephone`,`phone`,`short_phone`,`email`,`qq`,`wechat`,`department`,`comment`,`state`,`role_id` FROM `teacher` WHERE `card_number` = '16887' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `userName`,`time`,`state`,`ip` FROM `log` ORDER BY time desc LIMIT 1   [ RunTime:0.0033s ]
+
+[ 2017-11-22T19:21:55+08:00 ] ::1 /csoaAPI/index.php/Home/User/userModify
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000207s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000749s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000803s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `student` [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `teacher` [ RunTime:0.0016s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `log` [ RunTime:0.0003s ]
+SQL: UPDATE `teacher` SET `card_number`='16887',`office`='南区822',`telephone`='2653-4078',`department`='123',`phone`='13632859928',`short_phone`='123',`email`='wjd@szu.edu.cn',`qq`='123',`wechat`='123' WHERE `card_number` = '16887' [ RunTime:0.0021s ]
+
+[ 2017-11-22T19:21:55+08:00 ] ::1 /csoaAPI/index.php/Home/User/getUserInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000232s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000242s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000274s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `student` [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `teacher` [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `log` [ RunTime:0.0016s ]
+SQL: SELECT `id`,`card_number`,`name`,`office`,`telephone`,`phone`,`short_phone`,`email`,`qq`,`wechat`,`department`,`comment`,`state`,`role_id` FROM `teacher` WHERE `card_number` = '16887' LIMIT 1   [ RunTime:0.0015s ]
+SQL: SELECT `userName`,`time`,`state`,`ip` FROM `log` ORDER BY time desc LIMIT 1   [ RunTime:0.0284s ]
+
+[ 2017-11-22T19:21:56+08:00 ] ::1 /csoaAPI/index.php/Home/User/getRole
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000362s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000280s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000319s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `role` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2017-11-22T19:21:56+08:00 ] ::1 /csoaAPI/index.php/Home/User/getUserInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000195s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000315s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000348s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `student` [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `teacher` [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `log` [ RunTime:0.0006s ]
+SQL: SELECT `id`,`card_number`,`name`,`office`,`telephone`,`phone`,`short_phone`,`email`,`qq`,`wechat`,`department`,`comment`,`state`,`role_id` FROM `teacher` WHERE `card_number` = '16887' LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT `userName`,`time`,`state`,`ip` FROM `log` ORDER BY time desc LIMIT 1   [ RunTime:0.0019s ]
+
+[ 2017-11-22T19:22:02+08:00 ] ::1 /csoaAPI/index.php/Home/User/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000173s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000384s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000425s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `student` [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `teacher` [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `log` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `user` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `teacher` WHERE `card_number` = '16887' LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT * FROM `student` WHERE `card_number` = '16887' LIMIT 1   [ RunTime:0.0005s ]
+SQL: INSERT INTO `log` (`userName`,`time`,`ip`,`state`) VALUES ('16887','1511349722','0.0.0.0','登陆成功') [ RunTime:0.0004s ]
+
+[ 2017-11-22T19:22:02+08:00 ] ::1 /csoaAPI/index.php/Home/User/getRole
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000659s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000411s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000470s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `role` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0004s ]
+
+[ 2017-11-22T19:22:02+08:00 ] ::1 /csoaAPI/index.php/Home/User/getUserInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000299s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000600s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000666s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `student` [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `teacher` [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `log` [ RunTime:0.0005s ]
+SQL: SELECT `id`,`card_number`,`name`,`office`,`telephone`,`phone`,`short_phone`,`email`,`qq`,`wechat`,`department`,`comment`,`state`,`role_id` FROM `teacher` WHERE `card_number` = '16887' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `userName`,`time`,`state`,`ip` FROM `log` ORDER BY time desc LIMIT 1   [ RunTime:0.0022s ]
+
+[ 2017-11-22T19:23:47+08:00 ] ::1 /csoaAPI/index.php/Home/User/getRole
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000412s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000448s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000488s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `role` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2017-11-22T19:23:47+08:00 ] ::1 /csoaAPI/index.php/Home/User/getUserInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000192s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000239s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000270s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `student` [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `teacher` [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `log` [ RunTime:0.0004s ]
+SQL: SELECT `id`,`card_number`,`name`,`office`,`telephone`,`phone`,`short_phone`,`email`,`qq`,`wechat`,`department`,`comment`,`state`,`role_id` FROM `teacher` WHERE `card_number` = '16887' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `userName`,`time`,`state`,`ip` FROM `log` ORDER BY time desc LIMIT 1   [ RunTime:0.0020s ]
+
+[ 2017-11-22T19:23:48+08:00 ] ::1 /csoaAPI/index.php/Home/User/getUserInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000413s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000510s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000568s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `student` [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `teacher` [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `log` [ RunTime:0.0235s ]
+SQL: SELECT `id`,`card_number`,`name`,`office`,`telephone`,`phone`,`short_phone`,`email`,`qq`,`wechat`,`department`,`comment`,`state`,`role_id` FROM `teacher` WHERE `card_number` = '16887' LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT `userName`,`time`,`state`,`ip` FROM `log` ORDER BY time desc LIMIT 1   [ RunTime:0.0022s ]
+
+[ 2017-11-22T19:23:51+08:00 ] ::1 /csoaAPI/index.php/Home/User/userModify
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000356s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000238s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000271s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `student` [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `teacher` [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `log` [ RunTime:0.0004s ]
+SQL: UPDATE `teacher` SET `card_number`='16887',`office`='南区822',`telephone`='2653-4078',`department`='123',`phone`='13632859928',`short_phone`='123',`email`='wjd@szu.edu.cn',`qq`='1235',`wechat`='123' WHERE `card_number` = '16887' [ RunTime:0.0009s ]
+
+[ 2017-11-22T19:23:51+08:00 ] ::1 /csoaAPI/index.php/Home/User/getUserInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000210s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000238s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000272s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `student` [ RunTime:0.0018s ]
+SQL: SHOW COLUMNS FROM `teacher` [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0016s ]
+SQL: SHOW COLUMNS FROM `log` [ RunTime:0.0015s ]
+SQL: SELECT `id`,`card_number`,`name`,`office`,`telephone`,`phone`,`short_phone`,`email`,`qq`,`wechat`,`department`,`comment`,`state`,`role_id` FROM `teacher` WHERE `card_number` = '16887' LIMIT 1   [ RunTime:0.0011s ]
+SQL: SELECT `userName`,`time`,`state`,`ip` FROM `log` ORDER BY time desc LIMIT 1   [ RunTime:0.0019s ]
+
+[ 2017-11-22T19:24:28+08:00 ] ::1 /csoaAPI/index.php/Home/User/getRole
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000195s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000232s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000261s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `role` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2017-11-22T19:24:28+08:00 ] ::1 /csoaAPI/index.php/Home/User/getUserInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000189s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000230s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000261s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `student` [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `teacher` [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `log` [ RunTime:0.0006s ]
+SQL: SELECT `id`,`card_number`,`name`,`office`,`telephone`,`phone`,`short_phone`,`email`,`qq`,`wechat`,`department`,`comment`,`state`,`role_id` FROM `teacher` WHERE `card_number` = '16887' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `userName`,`time`,`state`,`ip` FROM `log` ORDER BY time desc LIMIT 1   [ RunTime:0.0016s ]
+
+[ 2017-11-22T19:24:29+08:00 ] ::1 /csoaAPI/index.php/Home/User/getUserInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000195s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000311s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000353s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `student` [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `teacher` [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `log` [ RunTime:0.0006s ]
+SQL: SELECT `id`,`card_number`,`name`,`office`,`telephone`,`phone`,`short_phone`,`email`,`qq`,`wechat`,`department`,`comment`,`state`,`role_id` FROM `teacher` WHERE `card_number` = '16887' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `userName`,`time`,`state`,`ip` FROM `log` ORDER BY time desc LIMIT 1   [ RunTime:0.0019s ]
+
+[ 2017-11-22T19:24:34+08:00 ] ::1 /csoaAPI/index.php/Home/User/userModify
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000730s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000385s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000436s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `student` [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `teacher` [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `log` [ RunTime:0.0003s ]
+SQL: UPDATE `teacher` SET `card_number`='16887',`office`='南区822',`telephone`='2653-4078',`department`='123',`phone`='13632859928',`short_phone`='123',`email`='wjd@szu.edu.cn',`qq`='',`wechat`='' WHERE `card_number` = '16887' [ RunTime:0.0007s ]
+
+[ 2017-11-22T19:24:34+08:00 ] ::1 /csoaAPI/index.php/Home/User/getUserInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000221s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000236s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000267s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `student` [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `teacher` [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0024s ]
+SQL: SHOW COLUMNS FROM `log` [ RunTime:0.0006s ]
+SQL: SELECT `id`,`card_number`,`name`,`office`,`telephone`,`phone`,`short_phone`,`email`,`qq`,`wechat`,`department`,`comment`,`state`,`role_id` FROM `teacher` WHERE `card_number` = '16887' LIMIT 1   [ RunTime:0.0011s ]
+SQL: SELECT `userName`,`time`,`state`,`ip` FROM `log` ORDER BY time desc LIMIT 1   [ RunTime:0.0017s ]
+
+[ 2017-11-22T19:24:36+08:00 ] ::1 /csoaAPI/index.php/Home/User/getUserInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000206s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000246s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000277s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `student` [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `teacher` [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `log` [ RunTime:0.0004s ]
+SQL: SELECT `id`,`card_number`,`name`,`office`,`telephone`,`phone`,`short_phone`,`email`,`qq`,`wechat`,`department`,`comment`,`state`,`role_id` FROM `teacher` WHERE `card_number` = '16887' LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT `userName`,`time`,`state`,`ip` FROM `log` ORDER BY time desc LIMIT 1   [ RunTime:0.0024s ]
+
+[ 2017-11-22T19:24:37+08:00 ] ::1 /csoaAPI/index.php/Home/User/userModify
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000197s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000331s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000376s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `student` [ RunTime:0.0018s ]
+SQL: SHOW COLUMNS FROM `teacher` [ RunTime:0.0017s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `log` [ RunTime:0.0005s ]
+SQL: UPDATE `teacher` SET `card_number`='16887',`office`='南区822',`telephone`='2653-4078',`department`='123',`phone`='13632859928',`short_phone`='123',`email`='wjd@szu.edu.cn',`qq`='',`wechat`='' WHERE `card_number` = '16887' [ RunTime:0.0008s ]
+

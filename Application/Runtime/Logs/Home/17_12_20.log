@@ -1,0 +1,36 @@
+[ 2017-12-20T11:56:46+08:00 ] ::1 /csoaAPI/index.php/Home/Graduate/getProject
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000749s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001028s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001145s ]
+SQL: SHOW COLUMNS FROM `graduate_year` [ RunTime:0.0278s ]
+SQL: SHOW COLUMNS FROM `project` [ RunTime:0.0011s ]
+SQL: SELECT * FROM `graduate_year` ORDER BY year desc LIMIT 1   [ RunTime:0.0028s ]
+SQL: SELECT project.id,`teacher_id`,`project_name`,`project_direction`,`number`,`apply_number`,project.state,name as teacher_name FROM `project` INNER JOIN teacher on teacher.id = project.teacher_id  WHERE ( year_id = 4 ) ORDER BY teacher.name  [ RunTime:0.0111s ]
+
+[ 2017-12-20T11:56:48+08:00 ] ::1 /csoaAPI/index.php/Home/Graduate/getProjectByTeacher
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000254s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000439s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000496s ]
+SQL: SHOW COLUMNS FROM `graduate_year` [ RunTime:0.0018s ]
+SQL: SHOW COLUMNS FROM `project` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `graduate_year` ORDER BY year desc LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `project` WHERE `year_id` = 4 AND `teacher_id` = 43  [ RunTime:0.0004s ]
+
+[ 2017-12-20T11:56:50+08:00 ] ::1 /csoaAPI/index.php/Home/Graduate/getProject
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000189s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000255s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000289s ]
+SQL: SHOW COLUMNS FROM `graduate_year` [ RunTime:0.0019s ]
+SQL: SHOW COLUMNS FROM `project` [ RunTime:0.0014s ]
+SQL: SELECT * FROM `graduate_year` ORDER BY year desc LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT project.id,`teacher_id`,`project_name`,`project_direction`,`number`,`apply_number`,project.state,name as teacher_name FROM `project` INNER JOIN teacher on teacher.id = project.teacher_id  WHERE ( year_id = 4 ) ORDER BY teacher.name  [ RunTime:0.0028s ]
+

@@ -1,0 +1,42 @@
+[ 2017-12-19T23:52:46+08:00 ] ::1 /csoaAPI/index.php/Home/User/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001112s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001104s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001206s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0042s ]
+SQL: SHOW COLUMNS FROM `student` [ RunTime:0.0015s ]
+SQL: SHOW COLUMNS FROM `teacher` [ RunTime:0.0041s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `log` [ RunTime:0.0012s ]
+SQL: SELECT * FROM `user` LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `teacher` WHERE `card_number` = '16887' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `student` WHERE `card_number` = '16887' LIMIT 1   [ RunTime:0.0015s ]
+SQL: INSERT INTO `log` (`userName`,`time`,`ip`,`state`) VALUES ('16887','1513698766','0.0.0.0','登陆成功') [ RunTime:0.0064s ]
+
+[ 2017-12-19T23:52:46+08:00 ] ::1 /csoaAPI/index.php/Home/User/getRole
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000401s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000287s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000324s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `role` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0004s ]
+
+[ 2017-12-19T23:52:46+08:00 ] ::1 /csoaAPI/index.php/Home/User/getUserInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000304s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000364s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000421s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `student` [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `teacher` [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `log` [ RunTime:0.0005s ]
+SQL: SELECT `id`,`card_number`,`name`,`office`,`telephone`,`phone`,`short_phone`,`email`,`qq`,`wechat`,`department`,`comment`,`state`,`role_id` FROM `teacher` WHERE `card_number` = '16887' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `userName`,`time`,`state`,`ip` FROM `log` ORDER BY time desc LIMIT 1   [ RunTime:0.0040s ]
+
